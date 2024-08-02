@@ -23,6 +23,7 @@ Given a `.ipynb` file use:
 ## Online version
 
 This repository has a GitHub action publishing everything online at [https://ercoppa.github.io/labds/](https://ercoppa.github.io/labds/):
-- 
+- 00: [myFirstNotebook](https://ercoppa.github.io/labds/00/00-myFirstNotebook.slides.html)
+- 01: [Python Basics](https://ercoppa.github.io/labds/01/01-Python-basics.slides.html)
 
-**TODO**: the GitHub action should fix the img path from local path to remote path.
+**TODO**: the GitHub action should fix the images path from local path to remote path.
