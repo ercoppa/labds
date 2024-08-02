@@ -1,6 +1,6 @@
 ## How to (re)generate HTML slide file for a notebook
 
-Given a `.ipynb` file use:
+Given a `.ipynb` file:
 - Generate once:
 ```
 bash scripts/process.sh <file>.ipynb
