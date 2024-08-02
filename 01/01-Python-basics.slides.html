@@ -14056,6 +14056,149 @@ global x: 4
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Modules-and-Packags">Modules and Packags<a class="anchor-link" href="#Modules-and-Packags">¶</a></h1>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Each-Python-file-is-a-module">Each Python file is a module<a class="anchor-link" href="#Each-Python-file-is-a-module">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In Python, each <code>.py</code> file is called a <em><strong>module</strong></em> and we can we can <code>import</code> its functions from other modules. For instance, let suppose we have <code>my_math.py</code> containing:</p>
+<pre><code>def custom_add(a, b):
+    return a + b
+
+def custom_sub(a, b):
+    return a - b
+</code></pre>
+<p>Then, in other file, e.g., <code>test.py</code>, we can reuse the functions from <code>my_math.py</code>:</p>
+<pre><code>import my_math # import the entire module
+
+# we can call a function from an imported module using the dot notation:
+# &lt;module_name&gt;.&lt;function_name&gt;
+print(my_math.custom_add(10, 20)) 
+</code></pre>
+<p>Or:</p>
+<pre><code>from my_math import custom_add, custom_sub # import specific functions
+from my_math import *                      # import all functions 
+
+# we can call the function(s) directly!
+print(custom_add(10, 20))
+</code></pre>
+<p>Notice that <code>import</code> will look for the imported module in the current directory (of the module importing it) or a few fixed locations on our filesystem (e.g., a few system directory related to Python).</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Package:-collection-of-modules">Package: collection of modules<a class="anchor-link" href="#Package:-collection-of-modules">¶</a></h2><p>Often, we want to organize our functions in different modules but group them together into the same logical <em>container</em>. This brings the idea of a <em><strong>package</strong></em>.</p>
+<p>For instance, let suppose we have in the <code>mypackage</code>:</p>
+<ul>
+<li><code>my_math.py</code>: functions <code>custom_add</code> and <code>custom_sub</code></li>
+<li><code>my_utils.py</code>: functions <code>say_hello</code></li>
+</ul>
+<p>To make it a package, we need to add within the same directory a file called <code>__init__.py</code>:</p>
+<pre><code>from . import my_math
+from . import my_utils
+</code></pre>
+<p>Then, any other module can import the package:</p>
+<pre><code>import mypackage # entire package
+print(mypackage.my_math.custom_add(10, 20))
+# or...
+from mypackage import my_math # import module from package
+print(my_math.custom_add(10, 20))
+# or...
+from mypackage import * # all modules from the package
+print(my_math.custom_add(10, 20))
+</code></pre>
+<p>Again, <code>import</code> will look for our package in the current directory and specific system directories.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Python-pre-installed-packages">Python pre-installed packages<a class="anchor-link" href="#Python-pre-installed-packages">¶</a></h2><p>Python ships with many pre-installed packages:</p>
+<ul>
+<li><code>string</code>: additional string functions</li>
+<li><code>math</code>: additional mathematical functions</li>
+<li><code>io</code>: utils to read and write files</li>
+<li><code>random</code>: pseudo-random number generator</li>
+<li><code>sys</code>: check execution environment aspects</li>
+</ul>
+<p>We will cover their interesting bits when needed. For instance:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Square root of 9 is </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s2">, while pi is </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Square root of 9 is 3.0, while pi is 3.141592653589793
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>However, there is way more in <code>math</code>: <code>acos</code>, <code>acosh</code>, <code>asin</code>, <code>asinh</code>, <code>atan</code>, <code>atan2</code>, <code>atanh</code>, <code>ceil</code>, <code>comb</code>, <code>copysign</code>, <code>cos</code>, <code>cosh</code>, <code>degrees</code>, <code>dist</code>, <code>e</code>, <code>erf</code>, <code>erfc</code>, <code>exp</code>, <code>expm1</code>, <code>fabs</code>, <code>factorial</code>, <code>floor</code>, <code>fmod</code>, <code>frexp</code>, <code>fsum</code>, <code>gamma</code>, <code>gcd</code>, <code>hypot</code>, <code>inf</code>, <code>isclose</code>, <code>isfinite</code>, <code>isinf</code>, <code>isnan</code>, <code>isqrt</code>, <code>lcm</code>, <code>ldexp</code>, <code>lgamma</code>, <code>log</code>, <code>log10</code>, <code>log1p</code>, <code>log2</code>, <code>modf</code>, <code>nan</code>, <code>nextafter</code>, <code>perm</code>, <code>pi</code>, <code>pow</code>, <code>prod</code>, <code>radians</code>, <code>remainder</code>, <code>sin</code>, <code>sinh</code>, <code>sqrt</code>, <code>tan</code>, <code>tanh</code>, <code>tau</code>, <code>trunc</code>, <code>ulp</code>.</p>
+</div>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
