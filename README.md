@@ -26,4 +26,6 @@ This repository has a GitHub action publishing everything online at [https://erc
 - 00: [myFirstNotebook](https://ercoppa.github.io/labds/00/00-myFirstNotebook.slides.html)
 - 01: [Python Basics](https://ercoppa.github.io/labds/01/01-Python-basics.slides.html)
 
-**TODO**: the GitHub action should fix the images path from local path to remote path.
+## Issues
+
+When redistributing the `ipynb` files on LUISS Learn, the image url will not work. We need to fix this by using fixing the URL by adding the prefix `https://ercoppa.github.io/labds/`. We should to this automatically with a GitHub action.
