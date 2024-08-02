@@ -28,4 +28,5 @@ This repository has a GitHub action publishing everything online at [https://erc
 
 ## Issues
 
-When redistributing the `ipynb` files on LUISS Learn, the image url will not work. We need to fix this by using fixing the URL by adding the prefix `https://ercoppa.github.io/labds/`. We should to this automatically with a GitHub action.
+- When redistributing the `ipynb` files on LUISS Learn, the image url will not work. We need to fix this by using fixing the URL by adding the prefix `https://ercoppa.github.io/labds/`. We should to this automatically with a GitHub action.
+- The slides are not compliant with LUISS guidelines wrt branding, e.g., using the suggested slide template, font, etc. I have made a hack to use the LUISS font but disable it since the LUISS font is kind of inconsistent with respect to other fonts that we use (e.g., for code). 
