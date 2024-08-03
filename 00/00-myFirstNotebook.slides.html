@@ -10,7 +10,7 @@
   mermaid.initialize({ startOnLoad: true });
 </script>
 <!-- General and theme style sheets -->
-<link href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css" rel="stylesheet"/>
+<link href="../dist/reveal.css" rel="stylesheet"/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
 if( window.location.search.match( /print-pdf/gi ) ) {
@@ -48,6 +48,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -7427,7 +7428,7 @@ main {
     init_mathjax();
     </script>
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
-<link href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme" rel="stylesheet"/>
+<link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
 </head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
@@ -7483,8 +7484,8 @@ require(
       waitSeconds: 15
     },
     [
-      "https://unpkg.com/reveal.js@4.0.2/dist/reveal.js",
-      "https://unpkg.com/reveal.js@4.0.2/plugin/notes/notes.js"
+      "../dist/reveal.js",
+      "../plugin/notes/notes.js"
     ],
 
     function(Reveal, RevealNotes){
