@@ -38,5 +38,5 @@ parse:
   myst_enable_extensions:
     - html_image
 
-launch_buttons:
-  colab_url: "https://colab.research.google.com"
+# launch_buttons:
+#   colab_url: "https://colab.research.google.com"
