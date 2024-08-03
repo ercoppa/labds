@@ -1,2 +1,3 @@
 all:
-	jupyter-book build --path-output book --config _config.jupyterbook.yml .
+	jupyter-book build --config _config.jupyterbook.yml .
+	cp -r _build/html/* book/

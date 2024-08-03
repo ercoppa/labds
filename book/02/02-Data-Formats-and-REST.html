@@ -1,0 +1,1209 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Preliminaries &#8212; Python and R for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02/02-Data-Formats-and-REST';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Python and R for Data Science - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Python and R for Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python and R for Data Science
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-basics.html">Python Basics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/02/02-Data-Formats-and-REST.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preliminaries</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preliminaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science">Data Science</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-faces-of-the-data">Many faces of the data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-everything-local">Keep everything local?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-access-to-a-dataset">Remote access to a dataset?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#then-how-to-access-the-remote-data-rest-api">Then, how to access the remote data? <strong>REST API</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-open-meteo-com">Example: open-meteo.com</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-open-meteo-com-cont-d">Example: open-meteo.com (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example: open-meteo.com (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example: open-meteo.com (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-in-practice">REST API in practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-request">REST API request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-automatically-perform-rest-api-requests">How to automatically perform REST API requests?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-make-a-get-request"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: make a GET request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-request-parameters"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: request parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-status-code">Response status code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-check-response-status-code"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: check response status code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-retrieve-response-data"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: retrieve response data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-textual-response"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: textual response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-json-response"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: JSON response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-raw-response"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: raw response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-other-features"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: other features</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formats">Data Formats</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-data-formats">Popular data formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt-parsing">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>): parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv-parsing">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-tsv">TSV file (<code class="docutils literal notranslate"><span class="pre">.tsv</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-csv-parsing">TSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format">JSON file format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example">JSON file format: example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example-cont-d">JSON file format: example (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-parsing">JSON file format: parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-cons">JSON file format: cons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx-parsing">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>): parsing</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <center>
+<h1><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Data Science</h3>
+<img src="../dist/img/cliente-luiss.png">
+</center><section id="preliminaries">
+<h1>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h1>
+<section id="data-science">
+<h2>Data Science<a class="headerlink" href="#data-science" title="Link to this heading">#</a></h2>
+<p>In data science, we have few key steps:</p>
+<ol class="arabic simple">
+<li><p>Get the dataset</p></li>
+<li><p>Load the dataset</p></li>
+<li><p>Clean the dataset</p></li>
+<li><p>Process and analyze the dataset</p></li>
+<li><p>Visualize the dataset</p></li>
+</ol>
+<p>Throughout the course, we will cover these steps and refine them.</p>
+<p>Nonetheless, the starting point is… <strong>obtain the data</strong>.</p>
+</section>
+<section id="many-faces-of-the-data">
+<h2>Many faces of the data<a class="headerlink" href="#many-faces-of-the-data" title="Link to this heading">#</a></h2>
+<p>About the data, we need to understand:</p>
+<ul class="simple">
+<li><p><em>where it is stored</em>:</p>
+<ul>
+<li><p><em><strong>locally</strong></em> (e.g., our disk)</p></li>
+<li><p><em><strong>remotely</strong></em> (e.g., website)</p></li>
+</ul>
+</li>
+<li><p><em>how it is stored</em>: its data structure, i.e., its data <em><strong>format</strong></em></p></li>
+</ul>
+</section>
+</section>
+<section id="data-collection">
+<h1>Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h1>
+<section id="keep-everything-local">
+<h2>Keep everything local?<a class="headerlink" href="#keep-everything-local" title="Link to this heading">#</a></h2>
+<p>In principle, we may want to have the entire dataset on our local machine. For instance, by manually downloading the dataset from the web.</p>
+<p>However, this is not always possible:</p>
+<ul class="simple">
+<li><p><em>the dataset is too large</em>: we can only locally store chunks of data</p></li>
+<li><p><em>the dataset is not fully available</em>: several web services do not allow us to obtain the entire dataset for different (good or bad) reasons. For instance:</p>
+<ul>
+<li><p>A service is selling the access to the data and wants to give you limited access to it.</p></li>
+<li><p>Privacy concerns (e.g., health sector) that require to track exactly the data that you request to collect.</p></li>
+<li><p>Give you the entire dataset would generate excessive network traffic.</p></li>
+</ul>
+</li>
+<li><p><em>the dataset is live</em>: it has frequent updates.</p></li>
+</ul>
+</section>
+<section id="remote-access-to-a-dataset">
+<h2>Remote access to a dataset?<a class="headerlink" href="#remote-access-to-a-dataset" title="Link to this heading">#</a></h2>
+<p>A <em>data provider</em> may store the dataset in quite different and undocumented ways. <br>
+Most likely, there will be for you <strong>no direct access</strong> to the dataset or to the system handling the data.</p>
+<center>
+<img src="img/no-direct-data-access.png" />
+</center>
+<p>Indeed, the data provider:</p>
+<ul class="simple">
+<li><p>wants to control how you access the data (<em>pay as you call</em>)</p></li>
+<li><p>does not want to give you insights about its internal infrastructure:</p>
+<ul>
+<li><p>it may lead to security issues</p></li>
+<li><p>it may lead to data leaks</p></li>
+<li><p>it wants to be free to change how it works over time</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="then-how-to-access-the-remote-data-rest-api">
+<h2>Then, how to access the remote data? <strong>REST API</strong><a class="headerlink" href="#then-how-to-access-the-remote-data-rest-api" title="Link to this heading">#</a></h2>
+<p>For these reasons, datasets are often exposed to the external world through a <em>standard remote interface</em> called <em><strong>REST API</strong></em> (or, RESTful API):</p>
+<center>
+<img src="img/data-rest.png" />
+</center>
+<p>A REST API:</p>
+<ul class="simple">
+<li><p>is simple to implement (provider) and use (users)</p></li>
+<li><p>is typically reachable from the internet via HTTPS (i.e., web)</p></li>
+<li><p>can easily integrate authentication</p></li>
+<li><p>is often documented by the data provider</p></li>
+<li><p>can be fine-grained: users can retrieve exactly the needed bit of data</p></li>
+<li><p>can be inefficient: there are better solutions that, however, are less widespread and more complex</p></li>
+</ul>
+</section>
+<section id="example-open-meteo-com">
+<h2>Example: open-meteo.com<a class="headerlink" href="#example-open-meteo-com" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/open-meteo.png" />
+</center>
+<p>The free access is limited to a subset of the data! <br>
+<strong>Data has a huge money value</strong> and most of the time you will have to pay for it!</p>
+</section>
+<section id="example-open-meteo-com-cont-d">
+<h2>Example: open-meteo.com (cont’d)<a class="headerlink" href="#example-open-meteo-com-cont-d" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/open-meteo-api.png" width="600" />
+</center>
+<p>Full documentation: <strong>https://open-meteo.com/en/docs</strong></p>
+</section>
+<section id="id1">
+<h2>Example: open-meteo.com (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Data can be accessed on the web via the endpoint: https://api.open-meteo.com/v1/forecast</p>
+<p>For instance, after checking the documentation, we can build the following request:</p>
+<p>https://api.open-meteo.com/v1/forecast?latitude=41.8967&amp;longitude=12.4822&amp;hourly=temperature_2m</p>
+<p>which returns the last temperature measurements in Rome. You can open this URL with your browser:</p>
+<center>
+<img src="img/open-meteo-data-1.png" width="700" />
+</center>
+</section>
+<section id="id2">
+<h2>Example: open-meteo.com (cont’d)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>If we look closely at the response, we can see the data that we care for:</p>
+<center>
+<img src="img/open-meteo-data-2.png" width="900" />
+</center>
+These are the temperature measurements!</section>
+<section id="rest-api-in-practice">
+<h2>REST API in practice<a class="headerlink" href="#rest-api-in-practice" title="Link to this heading">#</a></h2>
+<p>Given a data provider, we need to:</p>
+<ul class="simple">
+<li><p><strong>[problem #1]</strong> how to build the REST API requests: check the documentation!</p></li>
+<li><p><strong>[problem #2]</strong> perform such <strong>requests</strong> in a fully automatic way:</p>
+<ul>
+<li><p>while we could do them manually, it is not convenient</p></li>
+<li><p>live data must be fetched periodically</p></li>
+</ul>
+</li>
+<li><p><strong>[problem #3]</strong> interpret the <strong>responses</strong>:</p>
+<ul>
+<li><p>the response can be anything:</p>
+<ul>
+<li><p>text file</p></li>
+<li><p>image</p></li>
+<li><p>raw data</p></li>
+</ul>
+</li>
+<li><p>we need to identify the proper <strong>data format</strong></p></li>
+<li><p>the data format is documented by the data provider</p></li>
+<li><p>the data format will be standard to favor interoperability</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="rest-api-request">
+<h2>REST API request<a class="headerlink" href="#rest-api-request" title="Link to this heading">#</a></h2>
+<p>In REST API, a request:</p>
+<ul class="simple">
+<li><p>can have some <em><strong>request headers</strong></em>: we may need to set some headers to, e.g., perform authentication</p></li>
+<li><p>is performed using a <em><strong>URL</strong></em> which combines:</p>
+<ul>
+<li><p><em><strong>request endpoint</strong></em>, e.g., <code class="docutils literal notranslate"><span class="pre">https://api.open-meteo.com/v1/forecast</span></code></p></li>
+<li><p><em><strong>request parameters</strong></em>: e.g., <code class="docutils literal notranslate"><span class="pre">?latitude=41.8967&amp;longitude=12.4822</span></code><br> The question mark <code class="docutils literal notranslate"><span class="pre">?</span></code> starts the paramters list, where each parameter is a key-value pair, such as <code class="docutils literal notranslate"><span class="pre">&lt;parameter_name&gt;=&lt;parameter_value&gt;</span></code>, or  <code class="docutils literal notranslate"><span class="pre">&lt;parameter_name&gt;=&lt;parameter_value1&gt;,&lt;parameter_value2&gt;</span></code>, where key-value pairs are separated by the symbol <code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></li>
+</ul>
+</li>
+<li><p>can be performed using two HTTP methods:</p>
+<ul>
+<li><p><em><strong>GET method</strong></em>: the most common one (previous example). Any parameter will be embedded into the URL.</p></li>
+<li><p><em><strong>POST method</strong></em>: more advanced, often used when we need to send some data that cannot be embedded through headers or request parameters</p></li>
+</ul>
+</li>
+</ul>
+<p>All these details will be written by the documentation.</p>
+</section>
+<section id="how-to-automatically-perform-rest-api-requests">
+<h2>How to automatically perform REST API requests?<a class="headerlink" href="#how-to-automatically-perform-rest-api-requests" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Data provider API Python package: some services, or the community, may offer a dedicated Python package. For instance, for the Open Meteo API, we could install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> this package: https://pypi.org/project/open-meteo/</p></li>
+<li><p>We can use a popular and well-known Python package: <code class="docutils literal notranslate"><span class="pre">requests</span></code><br>It will work for any REST API. We can install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /home/ercoppa/.local/lib/python3.10/site-packages (2.31.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/ercoppa/.local/lib/python3.10/site-packages (from requests) (3.1.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/lib/python3/dist-packages (from requests) (2020.6.20)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packages (from requests) (3.3)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/lib/python3/dist-packages (from requests) (1.26.5)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="requests-make-a-get-request">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: make a GET request<a class="headerlink" href="#requests-make-a-get-request" title="Link to this heading">#</a></h2>
+<p>First, we need to import it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can make our first GET request:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.open-meteo.com/v1/forecast?latitude=41.89&amp;longitude=12.48&amp;hourly=temperature_2m&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, the response is stored in the <code class="docutils literal notranslate"><span class="pre">response</span></code> variable. Depending on the data format, we must parse it in a different way.</p>
+</section>
+<section id="requests-request-parameters">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: request parameters<a class="headerlink" href="#requests-request-parameters" title="Link to this heading">#</a></h2>
+<p>Instead of manually setting the list of parameters in the url, we can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://api.open-meteo.com/v1/forecast&#39;</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="mf">41.89</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="mf">12.48</span><span class="p">,</span> <span class="s1">&#39;hourly&#39;</span><span class="p">:</span> <span class="s1">&#39;temperature_2m&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>which is way more readable and less error-prone!</p>
+</section>
+<section id="response-status-code">
+<h2>Response status code<a class="headerlink" href="#response-status-code" title="Link to this heading">#</a></h2>
+<p>Each response come with a <em><strong>status code</strong></em> that indicates whether the request has been successfully completed:</p>
+<center>
+<img src="img/http-status-code.png" width="200" /><br>
+<a src="https://www.infidigit.com/blog/http-status-codes/">[image credits]<a>
+</center></section>
+<section id="requests-check-response-status-code">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: check response status code<a class="headerlink" href="#requests-check-response-status-code" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.open-meteo.com/v1/forecast?latitude=41.89&amp;longitude=12.48&amp;hourly=temperature_2m&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status code: 200
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our request was successful and we can now get the data our of it :)</p>
+</section>
+<section id="requests-retrieve-response-data">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: retrieve response data<a class="headerlink" href="#requests-retrieve-response-data" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">requests</span></code> allows us to retrieve the data in the following formats:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">response.text</span></code>: textual format. Used only when the response data is a single value (e.g., a string, integer, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">response.json()</span></code>: JSON format. The most common choice. Easy to parse (see later slides!).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">response.content</span></code>: the response is an arbitrary format and we are getting the raw bytes. Need to carefully check the API documentation. It can be used when downloading files (e.g., an image, a zip file, etc.) from arbitrary websites.</p></li>
+</ul>
+<p>For instance, in the case of Open Meteo API, the documentation reports that the response is in a JSON format:</p>
+<center>
+<img src="img/open-meteo-doc.png" width="800" />
+</center></section>
+<section id="requests-textual-response">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: textual response<a class="headerlink" href="#requests-textual-response" title="Link to this heading">#</a></h2>
+<p>We treat the response data as a Python string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://google.it&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">50</span><span class="p">])</span> <span class="c1"># first 50 characters of google page</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;&lt;html itemscope=&quot;&quot; itemtype=&quot;http:/
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="requests-json-response">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: JSON response<a class="headerlink" href="#requests-json-response" title="Link to this heading">#</a></h2>
+<p>A JSON is like a Python Dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.open-meteo.com/v1/forecast?latitude=41.89&amp;longitude=12.48&amp;hourly=temperature_2m&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature: </span><span class="si">{</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;hourly&#39;</span><span class="p">][</span><span class="s1">&#39;temperature_2m&#39;</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature: [28.1, 27.4, 27.0, 26.8, 26.8, 26.7, 27.5, 29.2, 29.9, 31.5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The structure of the dictionary, i.e., which key-value pairs are inside it, it expected to be documented by the data provider.</p>
+<p>Hence, in our example, the documentation from Open Meteo is reporting that there is <code class="docutils literal notranslate"><span class="pre">hourly</span></code> key, whose associated value is a dictionary containing the key <code class="docutils literal notranslate"><span class="pre">temperature_2m</span></code>, whose associated value is a list of <code class="docutils literal notranslate"><span class="pre">float</span></code> values, i..e, our temperatures.</p>
+<p>More details on the JSON format in later slides!</p>
+</section>
+<section id="requests-raw-response">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: raw response<a class="headerlink" href="#requests-raw-response" title="Link to this heading">#</a></h2>
+<p>When we want to download an arbitrary file over the web, we can get the file and save it to our local filesystem.</p>
+<p>For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a pic from the web</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://cdn.pixabay.com/photo/2023/11/14/20/08/woman-8388428_1280.jpg&quot;</span>
+<span class="n">rawdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span> <span class="c1"># get the image</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myimage.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span> <span class="c1"># saved the image to a file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>88584
+</pre></div>
+</div>
+</div>
+</div>
+<p>After executing these lines of code, you have a local file <code class="docutils literal notranslate"><span class="pre">myimage.png</span></code>. You can open it with your image viewer.</p>
+</section>
+<section id="requests-other-features">
+<h2><code class="docutils literal notranslate"><span class="pre">requests</span></code>: other features<a class="headerlink" href="#requests-other-features" title="Link to this heading">#</a></h2>
+<p>This package is extremely powerful and make it easy to:</p>
+<ul class="simple">
+<li><p>perform a POST request:</p>
+<ul>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">requests.post(url,</span> <span class="pre">data=&lt;our</span> <span class="pre">data&gt;)</span></code></p></li>
+</ul>
+</li>
+<li><p>add headers to a request:</p>
+<ul>
+<li><p>pass a dictionary with the key-value pairs</p></li>
+<li><p>e.g., <code class="docutils literal notranslate"><span class="pre">request.get(url,</span> <span class="pre">headers={'User-Agent':'MyApp'})</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Look at its documentation for more details:</p>
+<p>https://requests.readthedocs.io/en/latest/user/quickstart/</p>
+<p>In future lectures, we may come back to <code class="docutils literal notranslate"><span class="pre">requests</span></code>.</p>
+</section>
+</section>
+<section id="data-formats">
+<h1>Data Formats<a class="headerlink" href="#data-formats" title="Link to this heading">#</a></h1>
+<section id="popular-data-formats">
+<h2>Popular data formats<a class="headerlink" href="#popular-data-formats" title="Link to this heading">#</a></h2>
+<p>Datasets may come in different common formats:</p>
+<ul class="simple">
+<li><p>Textual: <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file</p></li>
+<li><p>CSV: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file</p></li>
+<li><p>TSV: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file</p></li>
+<li><p>JSON: often retrieved via a REST API</p></li>
+<li><p>XSLX: <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> file, Microsoft Excel format</p></li>
+</ul>
+</section>
+<section id="textual-file-txt">
+<h2>Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>)<a class="headerlink" href="#textual-file-txt" title="Link to this heading">#</a></h2>
+<p>The most intuitive one. Human-friendly but hard to parse when we have complex data inside it. Used in the real-world only when the data is indeed a simple text (e.g., a book). We can open the local file and fetch its content as a Python string.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello, LUISS!
+Hello, World!
+</pre></div>
+</div>
+<p>Remarks:</p>
+<ul class="simple">
+<li><p>Should we split it by lines? Most of the time makes sense to do it.</p></li>
+<li><p>No hint on how to split internally each line. Most of the time does not makes sense to do it.</p></li>
+</ul>
+</section>
+<section id="textual-file-txt-parsing">
+<h2>Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>): parsing<a class="headerlink" href="#textual-file-txt-parsing" title="Link to this heading">#</a></h2>
+<p>Since a textual file is just a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, LUISS!
+Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since it is a string, we can manipulate it through the string functions and operators available in Python.<br>
+For instance, we may want to split by newline:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Line #</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Line #0: Hello, LUISS!
+Line #1: Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Splitting the text file by line can done more quickly via:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hello, LUISS!\n&#39;, &#39;Hello, World!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="csv-file-csv">
+<h2>CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>)<a class="headerlink" href="#csv-file-csv" title="Link to this heading">#</a></h2>
+<p>A <em>Comma-Separated Values</em> (<strong>CSV</strong>) file:</p>
+<ul class="simple">
+<li><p>is a text file format</p></li>
+<li><p>storing tabular data (numbers and text), where each line of the file typically represents one data record</p></li>
+<li><p>uses <em>commas</em> (<code class="docutils literal notranslate"><span class="pre">,</span></code>) or semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) to separate values and newlines to separate records</p></li>
+<li><p>quite easy to parse (even without dedicated support)</p></li>
+<li><p>the first line may contain the table headers, i.e., column names</p></li>
+<li><p>can be imported in Spreadsheet app (e.g., Excel)</p></li>
+</ul>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">myfile.csv</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Username</span><span class="p">,</span><span class="n">Identifier</span><span class="p">,</span><span class="n">First</span> <span class="n">name</span><span class="p">,</span><span class="n">Last</span> <span class="n">name</span>
+<span class="n">booker12</span><span class="p">,</span><span class="mi">9012</span><span class="p">,</span><span class="n">Rachel</span><span class="p">,</span><span class="n">Booker</span>
+<span class="n">grey07</span><span class="p">,</span><span class="mi">2070</span><span class="p">,</span><span class="n">Laura</span><span class="p">,</span><span class="n">Grey</span>
+</pre></div>
+</div>
+<p>Should be seen as:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Username</p></th>
+<th class="head text-center"><p>Identifier</p></th>
+<th class="head text-center"><p>First name</p></th>
+<th class="head text-center"><p>Last name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>booker12</p></td>
+<td class="text-center"><p>9012</p></td>
+<td class="text-center"><p>Rachel</p></td>
+<td class="text-center"><p>Booker</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>grey07</p></td>
+<td class="text-center"><p>2070</p></td>
+<td class="text-center"><p>Laura</p></td>
+<td class="text-center"><p>Grey</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="csv-file-csv-parsing">
+<h2>CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing<a class="headerlink" href="#csv-file-csv-parsing" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Manually: not hard but a bit raw</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># you have the prev example file!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Username&#39;, &#39;Identifier&#39;, &#39;First name&#39;, &#39;Last name&#39;]
+[&#39;booker12&#39;, &#39;9012&#39;, &#39;Rachel&#39;, &#39;Booker&#39;]
+[&#39;grey07&#39;, &#39;2070&#39;, &#39;Laura&#39;, &#39;Grey&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are getting one list for each record. The list contains strings. If a data value is a number, we should perform a type conversion: e.g., <code class="docutils literal notranslate"><span class="pre">int(line[1])</span></code>.<br><br></p>
+<ol class="arabic simple" start="2">
+<li><p>[<strong>Suggested</strong>] Using third-party Python packages:</p>
+<ul class="simple">
+<li><p>several options out there</p></li>
+<li><p>we will see <code class="docutils literal notranslate"><span class="pre">pandas</span></code> later on</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="tsv-file-tsv">
+<h2>TSV file (<code class="docutils literal notranslate"><span class="pre">.tsv</span></code>)<a class="headerlink" href="#tsv-file-tsv" title="Link to this heading">#</a></h2>
+<p>A <em>Tab-Separated Values</em> (<strong>TSV</strong>) is just a CSV using the tab character (<code class="docutils literal notranslate"><span class="pre">\t</span></code>) as separator (instead of comma).</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">myfile.tsv</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Username</span>	<span class="n">Identifier</span>	<span class="n">First</span> <span class="n">name</span>	<span class="n">Last</span> <span class="n">name</span>
+<span class="n">booker12</span>	<span class="mi">9012</span>	<span class="n">Rachel</span>	<span class="n">Booker</span>
+<span class="n">grey07</span>	<span class="mi">2070</span>	<span class="n">Laura</span>	<span class="n">Grey</span>
+</pre></div>
+</div>
+<p>Remarks:</p>
+<ul class="simple">
+<li><p>Main benefit wrt CSV: the tab character is more convenient than comma or semicolon because it is rarely used with real-world data. Hence, it is more robust, less ambiguous, delimiter.</p></li>
+<li><p>The tab character should help visually align and space the data. It fails to do it in most cases when different values have too different lengths.</p></li>
+</ul>
+</section>
+<section id="tsv-file-csv-parsing">
+<h2>TSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing<a class="headerlink" href="#tsv-file-csv-parsing" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Manually: not hard but a bit raw</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># you have the prev example file!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Username&#39;, &#39;Identifier&#39;, &#39;First name&#39;, &#39;Last name&#39;]
+[&#39;booker12&#39;, &#39;9012&#39;, &#39;Rachel&#39;, &#39;Booker&#39;]
+[&#39;grey07&#39;, &#39;2070&#39;, &#39;Laura&#39;, &#39;Grey&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are getting one list for each record. The list contains strings. If a data value is a number, we should perform a type conversion: e.g., <code class="docutils literal notranslate"><span class="pre">int(line[1])</span></code>.<br><br></p>
+<ol class="arabic simple" start="2">
+<li><p>[<strong>Suggested</strong>] Using third-party Python packages:</p>
+<ul class="simple">
+<li><p>several options out there</p></li>
+<li><p>we will see <code class="docutils literal notranslate"><span class="pre">pandas</span></code> later on</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="json-file-format">
+<h2>JSON file format<a class="headerlink" href="#json-file-format" title="Link to this heading">#</a></h2>
+<p><em>JavaScript Object Notation</em> (<strong>JSON</strong>):</p>
+<ul class="simple">
+<li><p>is an open standard file format</p></li>
+<li><p>often used for data interchange over the network or across different programming languages</p></li>
+<li><p>its syntax derives from JavaScript, the programming language supported by browser</p></li>
+<li><p>luckily its syntax is quite similar to what your would see when printing Python data</p></li>
+<li><p>is like a Python dictionary, recursively containing:</p>
+<ul>
+<li><p>scalar types: <code class="docutils literal notranslate"><span class="pre">int</span></code>s, <code class="docutils literal notranslate"><span class="pre">float</span></code>s, <code class="docutils literal notranslate"><span class="pre">bool</span></code>s, <code class="docutils literal notranslate"><span class="pre">str</span></code>s, <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>non-scalar types: list, tuple, dictionary</p></li>
+</ul>
+</li>
+<li><p>to convert other Python types to JSON we will have to battle a bit</p></li>
+</ul>
+</section>
+<section id="json-file-format-example">
+<h2>JSON file format: example<a class="headerlink" href="#json-file-format-example" title="Link to this heading">#</a></h2>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;booker12&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">9012</span><span class="p">,</span>
+      <span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Rachel&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Booker&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;grey07&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">2070</span><span class="p">,</span>
+      <span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Laura&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Grey&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Remarks:</p>
+<ul class="simple">
+<li><p>In our example, we have a dictionary containing a key <code class="docutils literal notranslate"><span class="pre">users</span></code>, whose associated value is a list of users, where each user is a dictionary with the key-value pairs representing the different user attributes.</p></li>
+<li><p>Notice that key <code class="docutils literal notranslate"><span class="pre">Identifier</span></code> has a value that is an integer (not a string as the other attributes!). Hence, we can preserve (at least some) data types.</p></li>
+<li><p>Differently from TXT and CSV, we can have a quite complex nested structure.</p></li>
+<li><p>Most programming languages have the data types supported by JSON, making it a convenient format to pass data over the nework (different machines) or across programs (same machine with programs written in different ways)</p></li>
+</ul>
+</section>
+<section id="json-file-format-example-cont-d">
+<h2>JSON file format: example (cont’d)<a class="headerlink" href="#json-file-format-example-cont-d" title="Link to this heading">#</a></h2>
+<p>Notice that spacing is not important for the format. Indeed, this would be equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;booker12&quot;</span><span class="p">,</span><span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">9012</span><span class="p">,</span><span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Rachel&quot;</span><span class="p">,</span><span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Booker&quot;</span><span class="p">},{</span><span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;grey07&quot;</span><span class="p">,</span><span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">2070</span><span class="p">,</span><span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Laura&quot;</span><span class="p">,</span><span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Grey&quot;</span><span class="p">}]}</span>
+</pre></div>
+</div>
+<p>Nonetheless, it would be less readable for a human. If you get a poorly formatted JSON, you can use some tools to format it properly and make it human readable:</p>
+<ul class="simple">
+<li><p>editor extensions: e.g., “Format” in VSCode</p></li>
+<li><p>websites: e.g., https://jsonformatter.org/</p></li>
+</ul>
+<center>
+<img src="img/json-format.png" width=200 />
+</center></section>
+<section id="json-file-format-parsing">
+<h2>JSON file format: parsing<a class="headerlink" href="#json-file-format-parsing" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Manually: <em>doable but do not even try… almost impossible!</em></p></li>
+<li><p>Python <code class="docutils literal notranslate"><span class="pre">json</span></code> package (pre-installed):</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let suppose you get this from a network request</span>
+<span class="n">jsondata</span> <span class="o">=</span> <span class="s1">&#39;{&quot;users&quot;: [{&quot;Username&quot;:&quot;booker12&quot;,&quot;Identifier&quot;:9012,&quot;First name&quot;:&quot;Rachel&quot;,&quot;Last name&quot;: &quot;Booker&quot;},{&quot;Username&quot;:&quot;grey07&quot;,&quot;Identifier&quot;:2070,&quot;First name&quot;:&quot;Laura&quot;,&quot;Last name&quot;: &quot;Grey&quot;}]}&#39;</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsondata</span><span class="p">)</span> <span class="c1"># we get a Python dictionary</span>
+<span class="c1"># let us print the username of the first user</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;users&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Username&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>booker12
+</pre></div>
+</div>
+</div>
+</div>
+<p>To navigate the dictionary obtained from a JSON, you need to know its structure. The data provider should give you this information. Otherwise, you can guess it by looking at a first few bits of its textual representation.</p>
+<ol class="arabic simple" start="3">
+<li><p>Most third-party Python packages support JSON. We have already seen that <code class="docutils literal notranslate"><span class="pre">requests</span></code> can automatically parse the JSON data using <code class="docutils literal notranslate"><span class="pre">response.json()</span></code>. Later on, we will introduce <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that supports it as well.</p></li>
+</ol>
+</section>
+<section id="json-file-format-cons">
+<h2>JSON file format: cons<a class="headerlink" href="#json-file-format-cons" title="Link to this heading">#</a></h2>
+<p>JSON is nowadays standard way of exchange data. Since in the end, it can be stored as a textual file, it is quite convenient for most use cases. For instance, a Jupyter notebook (file <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) is a JSON file.</p>
+<p>However, it comes with some downsides:</p>
+<ol class="arabic simple">
+<li><p>If we build it by hand, we need to escape <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> if we use it inside our strings.</p></li>
+<li><p>It is not efficient: it does not have by design compression</p></li>
+<li><p>It is not <em>secure</em>: it does not have by design encryption</p></li>
+<li><p>It cannot store raw data: e.g., to store an image into a JSON we have to use a special encoding (e.g., Base64)</p></li>
+<li><p>It cannot be easily inspected when the dataset is large: when having millions of values, we cannot just open it with a text editor and inspect it since it would fill our memory. We must inspect programmatically (which is fine!).</p></li>
+<li><p>A JSON does not necessarily represent tabular data: spreadsheet programs, such as Excel, do not have a clue on how to deal with a JSON.</p></li>
+</ol>
+</section>
+<section id="xslx-file-format-xlsx">
+<h2>XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>)<a class="headerlink" href="#xslx-file-format-xlsx" title="Link to this heading">#</a></h2>
+<p>XLSX is a file format that:</p>
+<ul class="simple">
+<li><p>was designed by Microsoft for the spreadsheet application Excel</p></li>
+<li><p>went through a standardization process and thus should be fully documented. However, it is not.</p></li>
+<li><p>is partially supported even by some third-party spreadsheet applications, such as LibreOffice Calc.</p></li>
+<li><p>is not human-readable.</p></li>
+<li><p>does not scale: it struggles in the presence of millions of values.</p></li>
+</ul>
+<center>
+<h1>AVOID IT IF YOU CAN</h1>
+<h2>OTHERWISE...RUN... RUN AWAY!</h2>
+</center></section>
+<section id="xslx-file-format-xlsx-parsing">
+<h2>XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>): parsing<a class="headerlink" href="#xslx-file-format-xlsx-parsing" title="Link to this heading">#</a></h2>
+<p><strong>It is a ~~pain-in-the-ass~~ mess to parse it</strong>.</p>
+<p>Some third-party Python packages provide some basic support to such file format.<br>
+One of these is <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that will be introduced later on.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preliminaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science">Data Science</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-faces-of-the-data">Many faces of the data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-everything-local">Keep everything local?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-access-to-a-dataset">Remote access to a dataset?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#then-how-to-access-the-remote-data-rest-api">Then, how to access the remote data? <strong>REST API</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-open-meteo-com">Example: open-meteo.com</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-open-meteo-com-cont-d">Example: open-meteo.com (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example: open-meteo.com (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example: open-meteo.com (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-in-practice">REST API in practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-request">REST API request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-automatically-perform-rest-api-requests">How to automatically perform REST API requests?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-make-a-get-request"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: make a GET request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-request-parameters"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: request parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-status-code">Response status code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-check-response-status-code"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: check response status code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-retrieve-response-data"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: retrieve response data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-textual-response"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: textual response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-json-response"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: JSON response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-raw-response"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: raw response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-other-features"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: other features</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formats">Data Formats</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-data-formats">Popular data formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt-parsing">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>): parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv-parsing">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-tsv">TSV file (<code class="docutils literal notranslate"><span class="pre">.tsv</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-csv-parsing">TSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format">JSON file format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example">JSON file format: example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example-cont-d">JSON file format: example (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-parsing">JSON file format: parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-cons">JSON file format: cons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx-parsing">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>): parsing</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
