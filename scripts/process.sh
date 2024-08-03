@@ -7,10 +7,9 @@ killall jupyter
 # see: 
 # https://nbconvert.readthedocs.io/en/latest/config_options.html
 
-    # --SlidesExporter.reveal_url_prefix=".." \
-    # --SlidesExporter.reveal_theme="luiss" \
-
 jupyter nbconvert ${1} --to slides \
+    --SlidesExporter.reveal_url_prefix=".." \
+    --SlidesExporter.reveal_theme="luiss" \
     --SlidesExporter.reveal_number="c/t" \
     --SlidesExporter.reveal_transition="none" \
     --SlidesExporter.reveal_width=1280 \

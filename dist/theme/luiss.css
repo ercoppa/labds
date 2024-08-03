@@ -35,12 +35,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  *********************************************/
 :root {
   --r-background-color: #fff;
-  --r-main-font: LUISS, sans-serif;
+  --r-main-font: Lato, sans-serif;
   --r-main-font-size: 40px;
   --r-main-color: #000;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: LUISS, Impact, sans-serif;
+  --r-heading-font: News Cycle, Impact, sans-serif;
   --r-heading-color: #000;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
@@ -325,22 +325,5 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 @media print {
   .backgrounds {
     background-color: var(--r-background-color); } }
-.jp-RenderedHTMLCommon h1 code {
-  font-size: calc(var(--jp-content-font-size1) + 50px); }
-
-.jp-RenderedHTMLCommon h2 code {
-  font-size: calc(var(--jp-content-font-size1) + 16px); }
-
-.jp-RenderedHTMLCommon p code {
-  font-size: calc(var(--jp-code-font-size) + 4px); }
-
-.jp-RenderedHTMLCommon ul code {
-  font-size: calc(var(--jp-code-font-size) + 4px); }
-
-.reveal table {
-  font-size: calc(var(--jp-ui-font-size1) + 6px); }
-
-.reveal strong {
-  font-size: 29px; }
 
 /*# sourceMappingURL=luiss.css.map */
