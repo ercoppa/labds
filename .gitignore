@@ -1,3 +1,4 @@
 .ipynb_checkpoints
 .sass-cache
 __pycache__
+book/_build/jupyter_execute
