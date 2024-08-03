@@ -8164,7 +8164,26 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Textual-file-(.txt)">Textual file (<code>.txt</code>)<a class="anchor-link" href="#Textual-file-(.txt)">¶</a></h2><p>The most intuitive one. Human-friendly but hard to parse when we have complex data inside it. Used in the real-world only when the data is indeed a simple text (e.g., a book). We can open the local file and fetch its content as a Python string.</p>
-<p>For instance, assuming you have a local file <code>myfile.txt</code>:</p>
+<p>Example: <code>myfile.txt</code></p>
+<pre><code>Hello, LUISS!
+Hello, World!
+</code></pre>
+<p>Remarks:</p>
+<ul>
+<li>Should we split it by lines? Most of the time makes sense to do it.</li>
+<li>No hint on how to split internally each line. Most of the time does not makes sense to do it.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Textual-file-(.txt):-parsing">Textual file (<code>.txt</code>): parsing<a class="anchor-link" href="#Textual-file-(.txt):-parsing">¶</a></h2><p>Since a textual file is just a string:</p>
 </div>
 </div>
 </div>
@@ -8173,7 +8192,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">content</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -8191,6 +8210,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Hello, LUISS!
+Hello, World!
 </pre>
 </div>
 </div>
@@ -8203,7 +8223,477 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Since it is a string, we can manipulate it through the string functions and operators available in Python.</p>
+<p>Since it is a string, we can manipulate it through the string functions and operators available in Python.<br/>
+For instance, we may want to split by newline:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Line #</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Line #0: Hello, LUISS!
+Line #1: Hello, World!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Splitting the text file by line can done more quickly via:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>['Hello, LUISS!\n', 'Hello, World!']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="CSV-file-(.csv)">CSV file (<code>.csv</code>)<a class="anchor-link" href="#CSV-file-(.csv)">¶</a></h2><p>A <em>Comma-Separated Values</em> (<strong>CSV</strong>) file:</p>
+<ul>
+<li>is a text file format</li>
+<li>storing tabular data (numbers and text), where each line of the file typically represents one data record</li>
+<li>uses <em>commas</em> (<code>,</code>) or semicolon (<code>;</code>) to separate values and newlines to separate records</li>
+<li>quite easy to parse (even without dedicated support)</li>
+<li>the first line may contain the table headers, i.e., column names</li>
+<li>can be imported in Spreadsheet app (e.g., Excel)</li>
+</ul>
+<p>Example: <code>myfile.csv</code></p>
+<pre><code>Username,Identifier,First name,Last name
+booker12,9012,Rachel,Booker
+grey07,2070,Laura,Grey
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Should be seen as:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Username</th>
+<th style="text-align:center">Identifier</th>
+<th style="text-align:center">First name</th>
+<th style="text-align:center">Last name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">booker12</td>
+<td style="text-align:center">9012</td>
+<td style="text-align:center">Rachel</td>
+<td style="text-align:center">Booker</td>
+</tr>
+<tr>
+<td style="text-align:center">grey07</td>
+<td style="text-align:center">2070</td>
+<td style="text-align:center">Laura</td>
+<td style="text-align:center">Grey</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="CSV-file-(.csv):-parsing">CSV file (<code>.csv</code>): parsing<a class="anchor-link" href="#CSV-file-(.csv):-parsing">¶</a></h2><ol>
+<li>Manually: not hard but a bit raw</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.csv'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># you have the prev example file!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>['Username', 'Identifier', 'First name', 'Last name']
+['booker12', '9012', 'Rachel', 'Booker']
+['grey07', '2070', 'Laura', 'Grey']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We are getting one list for each record. The list contains strings. If a data value is a number, we should perform a type conversion: e.g., <code>int(line[1])</code>.<br/><br/></p>
+<ol start="2">
+<li>[<strong>Suggested</strong>] Using third-party Python packages:<ul>
+<li>several options out there</li>
+<li>we will see <code>pandas</code> later on</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="TSV-file-(.tsv)">TSV file (<code>.tsv</code>)<a class="anchor-link" href="#TSV-file-(.tsv)">¶</a></h2><p>A <em>Tab-Separated Values</em> (<strong>TSV</strong>) is just a CSV using the tab character (<code>\t</code>) as separator (instead of comma).</p>
+<p>Example: <code>myfile.tsv</code></p>
+<pre><code>Username	Identifier	First name	Last name
+booker12	9012	Rachel	Booker
+grey07	2070	Laura	Grey
+</code></pre>
+<p>Remarks:</p>
+<ul>
+<li><p>Main benefit wrt CSV: the tab character is more convenient than comma or semicolon because it is rarely used with real-world data. Hence, it is more robust, less ambiguous, delimiter.</p>
+</li>
+<li><p>The tab character should help visually align and space the data. It fails to do it in most cases when different values have too different lengths.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="TSV-file-(.csv):-parsing">TSV file (<code>.csv</code>): parsing<a class="anchor-link" href="#TSV-file-(.csv):-parsing">¶</a></h2><ol>
+<li>Manually: not hard but a bit raw</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.tsv'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># you have the prev example file!</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>['Username', 'Identifier', 'First name', 'Last name']
+['booker12', '9012', 'Rachel', 'Booker']
+['grey07', '2070', 'Laura', 'Grey']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We are getting one list for each record. The list contains strings. If a data value is a number, we should perform a type conversion: e.g., <code>int(line[1])</code>.<br/><br/></p>
+<ol start="2">
+<li>[<strong>Suggested</strong>] Using third-party Python packages:<ul>
+<li>several options out there</li>
+<li>we will see <code>pandas</code> later on</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="JSON-file-format">JSON file format<a class="anchor-link" href="#JSON-file-format">¶</a></h2><p><em>JavaScript Object Notation</em> (<strong>JSON</strong>):</p>
+<ul>
+<li>is an open standard file format</li>
+<li>often used for data interchange over the network or across different programming languages</li>
+<li>its syntax derives from JavaScript, the programming language supported by browser</li>
+<li>luckily its syntax is quite similar to what your would see when printing Python data</li>
+<li>is like a Python dictionary, recursively containing:<ul>
+<li>scalar types: <code>int</code>s, <code>float</code>s, <code>bool</code>s, <code>str</code>s, <code>None</code></li>
+<li>non-scalar types: list, tuple, dictionary</li>
+</ul>
+</li>
+<li>to convert other Python types to JSON we will have to battle a bit</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="JSON-file-format:-example">JSON file format: example<a class="anchor-link" href="#JSON-file-format:-example">¶</a></h2><p>Example:</p>
+<pre><code>{
+  "users": [
+    {
+      "Username":"booker12",
+      "Identifier":9012,
+      "First name":"Rachel",
+      "Last name": "Booker"
+    },
+    {
+      "Username":"grey07",
+      "Identifier":2070,
+      "First name":"Laura",
+      "Last name": "Grey"
+    }
+  ]
+}
+</code></pre>
+<p>Remarks:</p>
+<ul>
+<li>In our example, we have a dictionary containing a key <code>users</code>, whose associated value is a list of users, where each user is a dictionary with the key-value pairs representing the different user attributes.</li>
+<li>Notice that key <code>Identifier</code> has a value that is an integer (not a string as the other attributes!). Hence, we can preserve (at least some) data types.</li>
+<li>Differently from TXT and CSV, we can have a quite complex nested structure.</li>
+<li>Most programming languages have the data types supported by JSON, making it a convenient format to pass data over the nework (different machines) or across programs (same machine with programs written in different ways)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="JSON-file-format:-example-(cont'd)">JSON file format: example (cont'd)<a class="anchor-link" href="#JSON-file-format:-example-(cont'd)">¶</a></h2><p>Notice that spacing is not important for the format. Indeed, this would be equivalent:</p>
+<pre><code>{"users": [{"Username":"booker12","Identifier":9012,"First name":"Rachel","Last name": "Booker"},{"Username":"grey07","Identifier":2070,"First name":"Laura","Last name": "Grey"}]}
+</code></pre>
+<p>Nonetheless, it would be less readable for a human. If you get a poorly formatted JSON, you can use some tools to format it properly and make it human readable:</p>
+<ul>
+<li>editor extensions: e.g., "Format" in VSCode</li>
+<li>websites: e.g., <a href="https://jsonformatter.org/">https://jsonformatter.org/</a></li>
+</ul>
+<center>
+<img alt="No description has been provided for this image" src="img/json-format.png" width="200"/>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="JSON-file-format:-parsing">JSON file format: parsing<a class="anchor-link" href="#JSON-file-format:-parsing">¶</a></h2><ol>
+<li><p>Manually: <em>doable but do not even try... almost impossible!</em></p>
+</li>
+<li><p>Python <code>json</code> package (pre-installed):</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># let suppose you get this from a network request</span>
+<span class="n">jsondata</span> <span class="o">=</span> <span class="s1">'{"users": [{"Username":"booker12","Identifier":9012,"First name":"Rachel","Last name": "Booker"},{"Username":"grey07","Identifier":2070,"First name":"Laura","Last name": "Grey"}]}'</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsondata</span><span class="p">)</span> <span class="c1"># we get a Python dictionary</span>
+<span class="c1"># let us print the username of the first user</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'users'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'Username'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>booker12
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To navigate the dictionary obtained from a JSON, you need to know its structure. The data provider should give you this information. Otherwise, you can guess it by looking at a first few bits of its textual representation.</p>
+<ol start="3">
+<li>Most third-party Python packages support JSON. We have already seen that <code>requests</code> can automatically parse the JSON data using <code>response.json()</code>. Later on, we will introduce <code>pandas</code> that supports it as well.</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="JSON-file-format:-cons">JSON file format: cons<a class="anchor-link" href="#JSON-file-format:-cons">¶</a></h2><p>JSON is nowadays standard way of exchange data. Since in the end, it can be stored as a textual file, it is quite convenient for most use cases. For instance, a Jupyter notebook (file <code>.ipynb</code>) is a JSON file.</p>
+<p>However, it comes with some downsides:</p>
+<ol>
+<li>If we build it by hand, we need to escape <code>"</code> if we use it inside our strings.</li>
+<li>It is not efficient: it does not have by design compression</li>
+<li>It is not <em>secure</em>: it does not have by design encryption</li>
+<li>It cannot store raw data: e.g., to store an image into a JSON we have to use a special encoding (e.g., Base64)</li>
+<li>It cannot be easily inspected when the dataset is large: when having millions of values, we cannot just open it with a text editor and inspect it since it would fill our memory. We must inspect programmatically (which is fine!).</li>
+<li>A JSON does not necessarily represent tabular data: spreadsheet programs, such as Excel, do not have a clue on how to deal with a JSON.</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="XSLX-file-format-(.xlsx)">XSLX file format (<code>.xlsx</code>)<a class="anchor-link" href="#XSLX-file-format-(.xlsx)">¶</a></h2><p>XLSX is a file format that:</p>
+<ul>
+<li>was designed by Microsoft for the spreadsheet application Excel</li>
+<li>went through a standardization process and thus should be fully documented. However, it is not.</li>
+<li>is partially supported even by some third-party spreadsheet applications, such as LibreOffice Calc.</li>
+<li>is not human-readable.</li>
+<li>does not scale: it struggles in the presence of millions of values.</li>
+</ul>
+<center>
+<h1>AVOID IT IF YOU CAN</h1>
+<h2>OTHERWISE...RUN... RUN AWAY!</h2>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="XSLX-file-format-(.xlsx):-parsing">XSLX file format (<code>.xlsx</code>): parsing<a class="anchor-link" href="#XSLX-file-format-(.xlsx):-parsing">¶</a></h2><p><strong>It is a <del>pain-in-the-ass</del> mess to parse it</strong>.</p>
+<p>Some third-party Python packages provide some basic support to such file format.<br/>
+One of these is <code>pandas</code> that will be introduced later on.</p>
 </div>
 </div>
 </div>
