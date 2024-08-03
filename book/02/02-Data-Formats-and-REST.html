@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Preliminaries &#8212; Python and R for Data Science</title>
+    <title>Data Loading &#8212; Python and R for Data Science</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '02/02-Data-Formats-and-REST';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Python Basics" href="../01/01-Python-basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,8 +178,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-basics.html">Python Basics</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-basics.html"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></a></li>
 
 
 
@@ -195,6 +194,10 @@
 
 
 
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></a></li>
 
 
 
@@ -290,7 +293,21 @@
 
 
 
-<button onclick="toggleFullScreen()"
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -336,7 +353,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preliminaries</h1>
+    <h1><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -346,7 +363,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preliminaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">Preliminaries</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science">Data Science</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-faces-of-the-data">Many faces of the data</a></li>
 </ul>
@@ -403,11 +421,14 @@ document.write(`
                 <article class="bd-article">
                   
   <center>
-<h1><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></h1>
+<section id="data-loading">
+<h1><b style="font-family: 'LUISS', 'Lato'">Data Loading</b><a class="headerlink" href="#data-loading" title="Link to this heading">#</a></h1>
 <h2 style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Data Science</h3>
-<img src="../dist/img/cliente-luiss.png">
-</center><section id="preliminaries">
+<img src="https://ercoppa.github.io/labds/dist/img/cliente-luiss.png">
+<br><br><br>
+</center></section>
+<section id="preliminaries">
 <h1>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h1>
 <section id="data-science">
 <h2>Data Science<a class="headerlink" href="#data-science" title="Link to this heading">#</a></h2>
@@ -1091,6 +1112,15 @@ One of these is <code class="docutils literal notranslate"><span class="pre">pan
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../01/01-Python-basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -1107,7 +1137,8 @@ One of these is <code class="docutils literal notranslate"><span class="pre">pan
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preliminaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">Preliminaries</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science">Data Science</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-faces-of-the-data">Many faces of the data</a></li>
 </ul>

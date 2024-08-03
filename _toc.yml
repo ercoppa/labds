@@ -5,3 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: 01/01-Python-basics.ipynb
+- file: 02/02-Data-Formats-and-REST.ipynb
