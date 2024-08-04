@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: 01/01-Python-basics.ipynb
+- file: 01/01-Python-Basics.ipynb
 - file: 02/02-Data-Loading.ipynb
 - file: 03/03-Data-Processing.ipynb
