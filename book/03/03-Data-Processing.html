@@ -401,6 +401,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-informal-definition"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: informal definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-construction-from-dictionary"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: construction from dictionary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-construction-from-csv"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: construction from CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-construction-from-popular-data-formats"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: construction from popular data formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-basic-attributes"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: basic attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-cumulative-info"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-sampling"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sampling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-columns"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select columns</a></li>
 </ul>
 </li>
 </ul>
@@ -536,10 +542,10 @@ document.write(`
  [0. 0. 0.]]
 Ones: [[1. 1. 1.]
  [1. 1. 1.]]
-Random: [[0.52731504 0.16182072 0.44771069]
- [0.0208337  0.00410009 0.60789368]]
-Garbage: [[0.52731504 0.16182072 0.44771069]
- [0.0208337  0.00410009 0.60789368]]
+Random: [[0.27637429 0.88095389 0.10092623]
+ [0.68347393 0.62206335 0.28338739]]
+Garbage: [[0.27637429 0.88095389 0.10092623]
+ [0.68347393 0.62206335 0.28338739]]
 </pre></div>
 </div>
 </div>
@@ -580,9 +586,6 @@ Linspace: [ 1.    3.25  5.5   7.75 10.  ]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -931,13 +934,13 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/ercoppa/.local/lib/python3.10/site-packages (2.2.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.9.0.post0)
-Requirement already satisfied: numpy&gt;=1.22.4 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (1.26.4)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (2024.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: numpy&gt;=1.22.4 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (1.26.4)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (2024.1)
+Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
 </div>
@@ -1308,7 +1311,8 @@ Length: 3, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sepal_Length&#39;</span><span class="p">,</span><span class="s1">&#39;Sepal_Width&#39;</span><span class="p">,</span><span class="s1">&#39;Petal_Length&#39;</span><span class="p">,</span><span class="s1">&#39;Petal_Width&#39;</span><span class="p">,</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">col_names</span><span class="p">)</span> <span class="c1"># the CSV does not have a header, we provide it.</span>
 </pre></div>
 </div>
 </div>
@@ -1331,16 +1335,24 @@ Length: 3, dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>5.1</th>
-      <th>3.5</th>
-      <th>1.4</th>
-      <th>0.2</th>
-      <th>Iris-setosa</th>
+      <th>Sepal_Length</th>
+      <th>Sepal_Width</th>
+      <th>Petal_Length</th>
+      <th>Petal_Width</th>
+      <th>Class</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
       <td>4.9</td>
       <td>3.0</td>
       <td>1.4</td>
@@ -1348,7 +1360,7 @@ Length: 3, dtype: int64
       <td>Iris-setosa</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>2</th>
       <td>4.7</td>
       <td>3.2</td>
       <td>1.3</td>
@@ -1356,7 +1368,7 @@ Length: 3, dtype: int64
       <td>Iris-setosa</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>3</th>
       <td>4.6</td>
       <td>3.1</td>
       <td>1.5</td>
@@ -1364,19 +1376,11 @@ Length: 3, dtype: int64
       <td>Iris-setosa</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>4</th>
       <td>5.0</td>
       <td>3.6</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.4</td>
-      <td>3.9</td>
-      <td>1.7</td>
-      <td>0.4</td>
       <td>Iris-setosa</td>
     </tr>
     <tr>
@@ -1388,7 +1392,7 @@ Length: 3, dtype: int64
       <td>...</td>
     </tr>
     <tr>
-      <th>144</th>
+      <th>145</th>
       <td>6.7</td>
       <td>3.0</td>
       <td>5.2</td>
@@ -1396,7 +1400,7 @@ Length: 3, dtype: int64
       <td>Iris-virginica</td>
     </tr>
     <tr>
-      <th>145</th>
+      <th>146</th>
       <td>6.3</td>
       <td>2.5</td>
       <td>5.0</td>
@@ -1404,7 +1408,7 @@ Length: 3, dtype: int64
       <td>Iris-virginica</td>
     </tr>
     <tr>
-      <th>146</th>
+      <th>147</th>
       <td>6.5</td>
       <td>3.0</td>
       <td>5.2</td>
@@ -1412,7 +1416,7 @@ Length: 3, dtype: int64
       <td>Iris-virginica</td>
     </tr>
     <tr>
-      <th>147</th>
+      <th>148</th>
       <td>6.2</td>
       <td>3.4</td>
       <td>5.4</td>
@@ -1420,7 +1424,7 @@ Length: 3, dtype: int64
       <td>Iris-virginica</td>
     </tr>
     <tr>
-      <th>148</th>
+      <th>149</th>
       <td>5.9</td>
       <td>3.0</td>
       <td>5.1</td>
@@ -1429,7 +1433,394 @@ Length: 3, dtype: int64
     </tr>
   </tbody>
 </table>
-<p>149 rows × 5 columns</p>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-construction-from-popular-data-formats">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: construction from popular data formats<a class="headerlink" href="#pandas-dataframe-construction-from-popular-data-formats" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> can be built (converted) from (to) several popular data formats:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Type</p></th>
+<th class="head text-center"><p>Format</p></th>
+<th class="head text-center"><p>Reader</p></th>
+<th class="head text-center"><p>Writer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>text</p></td>
+<td class="text-center"><p>CSV</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">read_csv</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">to_csv</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>text</p></td>
+<td class="text-center"><p>TSV</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">read_csv(...,</span> <span class="pre">sep='\t')</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">to_csv(...,</span> <span class="pre">sep='\t')</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>binary</p></td>
+<td class="text-center"><p>XSLX</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">read_excel</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">to_excel</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>text</p></td>
+<td class="text-center"><p>JSON</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">read_json</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">to_json</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>text</p></td>
+<td class="text-center"><p>SQL</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">read_sql</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">to_sql</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>But the list is larger: <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/io.html#io-tools-text-csv-hdf5">supported data formats</a></p>
+<p>Some of these data formats are not designed for tabular data, e.g., JSON. <br>
+Hence, we have to give insight to <code class="docutils literal notranslate"><span class="pre">pandas</span></code> on how to extract the tabular data from them!</p>
+</section>
+<section id="pandas-dataframe-basic-attributes">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: basic attributes<a class="headerlink" href="#pandas-dataframe-basic-attributes" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="s1">&#39;Canada&#39;</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame index:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame columns:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame shape:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame size:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="c1"># number of elements wrt all columns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame data type:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame values:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame index: RangeIndex(start=0, stop=2, step=1)
+DataFrame columns: Index([&#39;Name&#39;, &#39;Age&#39;, &#39;Country&#39;], dtype=&#39;object&#39;)
+DataFrame shape: (2, 3)
+DataFrame size: 6
+
+DataFrame data type:
+Name       object
+Age         int64
+Country    object
+dtype: object
+
+DataFrame values:
+[[&#39;Alice&#39; 25 &#39;USA&#39;]
+ [&#39;Bob&#39; 30 &#39;Canada&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pandas-dataframe-cumulative-info">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative info<a class="headerlink" href="#pandas-dataframe-cumulative-info" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="s1">&#39;Canada&#39;</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame info:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 2 entries, 0 to 1
+Data columns (total 3 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   Name     2 non-null      object
+ 1   Age      2 non-null      int64 
+ 2   Country  2 non-null      object
+dtypes: int64(1), object(2)
+memory usage: 176.0+ bytes
+DataFrame info:
+None
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pandas-dataframe-sampling">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sampling<a class="headerlink" href="#pandas-dataframe-sampling" title="Link to this heading">#</a></h2>
+<p>Printing the entire <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can be inefficient, hence we can get a sample out of it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="s1">&#39;Canada&#39;</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># first n row(s)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>USA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># last n row(s)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>Canada</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># random n row(s)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>USA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-select-rows">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select rows<a class="headerlink" href="#pandas-dataframe-select-rows" title="Link to this heading">#</a></h2>
+<p>We can easily obtain a row:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>    <span class="c1"># we ask for a single row</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name       Bob
+Age         30
+Country     CA
+Name: 1, dtype: object
+result type: &lt;class &#39;pandas.core.series.Series&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or a subsequence of the rows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result type for a slice:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>result type for a slice: &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-select-columns">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select columns<a class="headerlink" href="#pandas-dataframe-select-columns" title="Link to this heading">#</a></h2>
+<p>We can easily obtain a column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    Alice
+1      Bob
+2     Carl
+Name: Name, dtype: object
+result type: &lt;class &#39;pandas.core.series.Series&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, a subset of columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;result type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]]))</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]]</span> <span class="c1"># list of the columns we want back</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>result type: &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+    </tr>
+  </tbody>
+</table>
 </div></div></div>
 </div>
 </section>
@@ -1525,6 +1916,12 @@ Length: 3, dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-informal-definition"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: informal definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-construction-from-dictionary"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: construction from dictionary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-construction-from-csv"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: construction from CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-construction-from-popular-data-formats"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: construction from popular data formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-basic-attributes"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: basic attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-cumulative-info"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-sampling"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sampling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-columns"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select columns</a></li>
 </ul>
 </li>
 </ul>
