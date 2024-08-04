@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Processing &#8212; Python and R for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03/03-Data-Processing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Data Loading" href="../02/02-Data-Loading.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Python and R for Data Science - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Python and R for Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python and R for Data Science
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-basics.html"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02/02-Data-Loading.html"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/03/03-Data-Processing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-numpy">Package <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-numpy">Why <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">What is <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-install-and-import"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: install and import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-construction"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: construction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-construction-cont-d"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: construction (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-data-type"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-is-similar-to-a-list"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array is similar to a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-operations"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-try-them"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: try them!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-filtering"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-nonzero"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentaion"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <center>
+<section id="data-processing">
+<h1><b style="font-family: 'LUISS', 'Lato'">Data Processing</b><a class="headerlink" href="#data-processing" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Data Science</h3>
+<img src="https://ercoppa.github.io/labds/dist/img/cliente-luiss.png">
+<br><br><br>
+</center></section>
+<section id="package-numpy">
+<h1>Package <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#package-numpy" title="Link to this heading">#</a></h1>
+<section id="why-numpy">
+<h2>Why <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?<a class="headerlink" href="#why-numpy" title="Link to this heading">#</a></h2>
+<p>In science, we often want to work on multidimensional data:</p>
+<ul class="simple">
+<li><p>one dimension: list or <em>array</em> (<em>an efficient list with fixed size</em>)</p></li>
+<li><p>two dimensions: matrix, also dubbed 2d-array</p></li>
+<li><p>three dimensions: 3d-array</p></li>
+<li><p>n dimensions: nd-array</p></li>
+</ul>
+<p>In theory, we could just use lists and nest them, e.g.:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span> <span class="c1"># 2x3 matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># first element of second row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, lists are not very efficient. Hence, we we have thousands of data values they can be quite slow and memory hungry. This why we may want to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+</section>
+<section id="what-is-numpy">
+<h2>What is <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?<a class="headerlink" href="#what-is-numpy" title="Link to this heading">#</a></h2>
+<center>
+<img alt="../_images/numpylogo.svg" src="../_images/numpylogo.svg" />
+</center>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> (Numerical Python) contains <strong>multidimensional array data structures</strong>, such as the homogeneous, N-dimensional nd-array, and a large library of <strong>functions that operate efficiently</strong> on them.</p>
+<p>Main difference with Python lists:</p>
+<ul class="simple">
+<li><p>a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nd-array must contain values of the same numerical type</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nd-array has a fixed size</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nd-array should have a shape that is <em>rectangular</em>, i.e., different rows must have the same number of columns</p></li>
+</ul>
+</section>
+<section id="numpy-install-and-import">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: install and import<a class="headerlink" href="#numpy-install-and-import" title="Link to this heading">#</a></h2>
+<p>Install <code class="docutils literal notranslate"><span class="pre">numpy</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>numpy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /home/ercoppa/.local/lib/python3.10/site-packages (1.26.4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>By convention <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is imported with an alias <code class="docutils literal notranslate"><span class="pre">np</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># now we can use numpy using np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-array-construction">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: construction<a class="headerlink" href="#numpy-array-construction" title="Link to this heading">#</a></h2>
+<p>We can build an array by passing a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>              <span class="c1"># 1D array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span> <span class="c1"># 2D array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[[1 2 3]
+ [4 5 6]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For our goals, we often get the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays built from other packages, e.g., as a result of a complex data processing.</p>
+</section>
+<section id="numpy-array-construction-cont-d">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: construction (cont’d)<a class="headerlink" href="#numpy-array-construction-cont-d" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> comes with many useful constructors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 2x3 array of zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zeros:&quot;</span><span class="p">,</span> <span class="n">a3</span><span class="p">)</span>
+<span class="n">a4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># 2x3 array of ones</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ones:&quot;</span><span class="p">,</span> <span class="n">a4</span><span class="p">)</span>
+<span class="n">a5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 2x3 array of random numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random:&quot;</span><span class="p">,</span> <span class="n">a5</span><span class="p">)</span>
+<span class="n">a6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 2x3 array of numbers already in memory</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Garbage:&quot;</span><span class="p">,</span> <span class="n">a6</span><span class="p">)</span> <span class="c1"># this is used when we do not care</span>
+                      <span class="c1"># for the values of the array</span>
+                      <span class="c1"># but they are guaranteed to be random!</span>
+<span class="n">a7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># array of numbers from 0 to 10 with step 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Range:&quot;</span><span class="p">,</span> <span class="n">a7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zeros: [[0. 0. 0.]
+ [0. 0. 0.]]
+Ones: [[1. 1. 1.]
+ [1. 1. 1.]]
+Random: [[0.31663121 0.76485752 0.15391613]
+ [0.50842799 0.73209713 0.18856706]]
+Garbage: [[0.31663121 0.76485752 0.15391613]
+ [0.50842799 0.73209713 0.18856706]]
+Range: [0 2 4 6 8]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-array-data-type">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: data type<a class="headerlink" href="#numpy-array-data-type" title="Link to this heading">#</a></h2>
+<p>Be default, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array uses floating-point values. However, we can set the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> data type during construction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">))</span> <span class="c1"># 1D array of ones with int type</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is used to efficiently perform scientific computations, it comes with a wide range of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> data types, that goes beyond the Python types <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, and <code class="docutils literal notranslate"><span class="pre">str</span></code>. For instance, it supports complex numbers or <em>smaller</em> integers (which require less memory but are less accurate).</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, for our goals, we can stick with <code class="docutils literal notranslate"><span class="pre">np.dtype('int')</span></code> and <code class="docutils literal notranslate"><span class="pre">np.dtype('float')</span></code> types.</p>
+</section>
+<section id="numpy-array-is-similar-to-a-list">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array is similar to a list<a class="headerlink" href="#numpy-array-is-similar-to-a-list" title="Link to this heading">#</a></h2>
+<p>Similarly to lists, we can:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;array:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;element:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>     <span class="c1"># access an element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slice:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>     <span class="c1"># access a slice</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A slice is still an numpy array:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
+
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>                   <span class="c1"># modify an element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated array:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>            <span class="c1"># 2x3 array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;element:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;same as&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># first element of second row</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>                                       <span class="c1"># modify the first row</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated 2D array:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array: [1 2 3 4 5 6]
+element: 1
+slice: [2 3]
+A slice is still an numpy array: &lt;class &#39;numpy.ndarray&#39;&gt;
+Updated array: [10  2  3  4  5  6]
+element: 4 same as 4
+Updated 2D array: [[10 10 10]
+ [ 4  5  6]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-array-attributes">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: attributes<a class="headerlink" href="#numpy-array-attributes" title="Link to this heading">#</a></h2>
+<p>A few useful attributes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>            <span class="c1"># random 2x3 array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data type:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>            <span class="c1"># data type of the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>                <span class="c1"># shape of the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>                  <span class="c1"># number of elements in the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of dimensions:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>  <span class="c1"># number of dimensions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data type: float64
+Shape: (2, 3)
+Size: 6
+Number of dimensions: 2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-array-operations">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: operations<a class="headerlink" href="#numpy-array-operations" title="Link to this heading">#</a></h2>
+<p>Given <code class="docutils literal notranslate"><span class="pre">a1</span> <span class="pre">=</span> <span class="pre">np.array([[1,</span> <span class="pre">2],</span> <span class="pre">[4,</span> <span class="pre">5]])</span></code> and <code class="docutils literal notranslate"><span class="pre">a2</span> <span class="pre">=</span> <span class="pre">np.array([[6,</span> <span class="pre">7],</span> <span class="pre">[8,</span> <span class="pre">9]])</span></code>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Semantics</p></th>
+<th class="head text-center"><p>Example</p></th>
+<th class="head text-center"><p>Example Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>element-wise sum</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1</span> <span class="pre">+</span> <span class="pre">a2</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">7</span>&#160; <span class="pre">9]</span> <span class="pre">[12</span> <span class="pre">14]]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>element-wise difference</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1</span> <span class="pre">-</span> <span class="pre">a2</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">[[-5</span> <span class="pre">-5]</span> <span class="pre">[-4</span> <span class="pre">-4]]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>element-wise product</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1</span> <span class="pre">-</span> <span class="pre">a2</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">6</span> <span class="pre">14]</span> <span class="pre">[32</span> <span class="pre">45]]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>element-wise division</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1</span> <span class="pre">/</span> <span class="pre">a2</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">[[0.16</span> <span class="pre">0.28]</span> <span class="pre">[0.5</span> <span class="pre">0.55]]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td><p>element-wise remainder</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a2</span> <span class="pre">%</span> <span class="pre">a1</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">1</span>&#160; <span class="pre">4]</span> <span class="pre">[16</span> <span class="pre">25]]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td><p>element-wise exp</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1**2</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">6</span> <span class="pre">14]</span> <span class="pre">[32</span> <span class="pre">45]]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.dot()</span></code></p></td>
+<td><p>matrix product</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">np.dot(a1,</span> <span class="pre">a2)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">[[22</span> <span class="pre">25]</span> <span class="pre">[64</span> <span class="pre">73]]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">a1.min()</span></code></p></td>
+<td><p>minimum value</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1.min()</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">a1.max()</span></code></p></td>
+<td><p>maximum value</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1.max()</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">a1.sum()</span></code></p></td>
+<td><p>sum of values</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">a1.sum()</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">12</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="numpy-array-try-them">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: try them!<a class="headerlink" href="#numpy-array-try-them" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum:&quot;</span><span class="p">,</span> <span class="n">a1</span> <span class="o">+</span> <span class="n">a2</span><span class="p">)</span>          <span class="c1"># element-wise sum</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference:&quot;</span><span class="p">,</span> <span class="n">a1</span> <span class="o">-</span> <span class="n">a2</span><span class="p">)</span>   <span class="c1"># element-wise difference</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Product:&quot;</span><span class="p">,</span> <span class="n">a1</span> <span class="o">*</span> <span class="n">a2</span><span class="p">)</span>      <span class="c1"># element-wise product</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division:&quot;</span><span class="p">,</span> <span class="n">a1</span> <span class="o">/</span> <span class="n">a2</span><span class="p">)</span>     <span class="c1"># element-wise division</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Module:&quot;</span><span class="p">,</span> <span class="n">a2</span> <span class="o">%</span> <span class="n">a1</span><span class="p">)</span>       <span class="c1"># element-wise module</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Power:&quot;</span><span class="p">,</span> <span class="n">a1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>        <span class="c1"># element-wise power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix product:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">))</span> <span class="c1"># matrix product</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix product:&quot;</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a2</span><span class="p">))</span>     <span class="c1"># matrix product</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Min:&quot;</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>         <span class="c1"># minimum element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max:&quot;</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>         <span class="c1"># maximum element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum:&quot;</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>         <span class="c1"># sum of all elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sum: [[ 7  9]
+ [12 14]]
+Difference: [[-5 -5]
+ [-4 -4]]
+Product: [[ 6 14]
+ [32 45]]
+Division: [[0.16666667 0.28571429]
+ [0.5        0.55555556]]
+Module: [[0 1]
+ [0 4]]
+Power: [[ 1  4]
+ [16 25]]
+Matrix product: [[22 25]
+ [64 73]]
+Matrix product: [[22 25]
+ [64 73]]
+Min: 1
+Max: 5
+Sum: 12
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-array-filtering">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: filtering<a class="headerlink" href="#numpy-array-filtering" title="Link to this heading">#</a></h2>
+<p>We can easily filter values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filtered array (less than 6):&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">])</span>        <span class="c1"># elements less than 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filtered array (even):&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>          <span class="c1"># even elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filtered array (and):&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">)])</span>   <span class="c1"># conjunction of two conditions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filtered array (or):&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)])</span>    <span class="c1"># disjunction of two conditions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check conditions:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">5</span><span class="p">))</span>          <span class="c1"># check conditions    </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+Filtered array (less than 6): [1 2 3 4 5]
+Filtered array (even): [ 2  4  6  8 10 12]
+Filtered array (and): [ 3  4  5  6  7  8  9 10]
+Filtered array (or): [ 1 11 12]
+Check conditions: [[False False False False]
+ [ True  True  True  True]
+ [ True  True  True  True]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-array-nonzero">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code><a class="headerlink" href="#numpy-array-nonzero" title="Link to this heading">#</a></h2>
+<p>A convenient function is <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code> that:</p>
+<ul class="simple">
+<li><p>takes an array</p></li>
+<li><p>returns one array for each dimension containing the index of elements that are different than zero</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="n">nonzero_a_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># default condition: a != 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Indexes of non-zero elements:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Non-zero elements:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">nonzero_a_idx</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Indexes of non-zero elements: (array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]), array([0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]))
+Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, instead of checking for the nonzero condition, we can pass an arbitrary condition:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g10_a_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># condition: a &gt; 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Indexes of condition &gt; 10:&quot;</span><span class="p">,</span> <span class="n">g10_a_idx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt; 10 elements:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">g10_a_idx</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Indexes of condition &gt; 10: (array([2, 2]), array([2, 3]))
+&gt; 10 elements: [11 12]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-documentaion">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion<a class="headerlink" href="#numpy-documentaion" title="Link to this heading">#</a></h2>
+<p>There is <em><strong>way more</strong></em> to say about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Check its documentation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/user/index.html#user">Getting started</a></p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#reference">API reference</a></p></li>
+</ul>
+<p>We will cover other bits of it when needed.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../02/02-Data-Loading.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-numpy">Package <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-numpy">Why <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">What is <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-install-and-import"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: install and import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-construction"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: construction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-construction-cont-d"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: construction (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-data-type"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-is-similar-to-a-list"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array is similar to a list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-operations"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-try-them"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: try them!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-filtering"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-nonzero"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentaion"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>02-Data-Formats-and-REST slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>03-Data-Processing slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7441,7 +7441,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <center>
-<h1 id="Data-Loading"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b><a class="anchor-link" href="#Data-Loading">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</h2>
+<h1 id="Data-Processing"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b><a class="anchor-link" href="#Data-Processing">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Data Science</h3>
 <img alt="No description has been provided for this image" src="https://ercoppa.github.io/labds/dist/img/cliente-luiss.png"/>
 <br/><br/><br/>
@@ -7456,7 +7456,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Preliminaries">Preliminaries<a class="anchor-link" href="#Preliminaries">¶</a></h1>
+<h1 id="Package-numpy">Package <code>numpy</code><a class="anchor-link" href="#Package-numpy">¶</a></h1>
 </div>
 </div>
 </div>
@@ -7467,262 +7467,14 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Data-Science">Data Science<a class="anchor-link" href="#Data-Science">¶</a></h2><p>In data science, we have few key steps:</p>
-<ol>
-<li>Get the dataset</li>
-<li>Load the dataset</li>
-<li>Clean the dataset</li>
-<li>Process and analyze the dataset</li>
-<li>Visualize the dataset</li>
-</ol>
-<p>Throughout the course, we will cover these steps and refine them.</p>
-<p>Nonetheless, the starting point is... <strong>obtain the data</strong>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Many-faces-of-the-data">Many faces of the data<a class="anchor-link" href="#Many-faces-of-the-data">¶</a></h2><p>About the data, we need to understand:</p>
+<h2 id="Why-numpy?">Why <code>numpy</code>?<a class="anchor-link" href="#Why-numpy?">¶</a></h2><p>In science, we often want to work on multidimensional data:</p>
 <ul>
-<li><p><em>where it is stored</em>:</p>
-<ul>
-<li><em><strong>locally</strong></em> (e.g., our disk)</li>
-<li><em><strong>remotely</strong></em> (e.g., website)</li>
+<li>one dimension: list or <em>array</em> (<em>an efficient list with fixed size</em>)</li>
+<li>two dimensions: matrix, also dubbed 2d-array</li>
+<li>three dimensions: 3d-array</li>
+<li>n dimensions: nd-array</li>
 </ul>
-</li>
-<li><p><em>how it is stored</em>: its data structure, i.e., its data <em><strong>format</strong></em></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Data-Collection">Data Collection<a class="anchor-link" href="#Data-Collection">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Keep-everything-local?">Keep everything local?<a class="anchor-link" href="#Keep-everything-local?">¶</a></h2><p>In principle, we may want to have the entire dataset on our local machine. For instance, by manually downloading the dataset from the web.</p>
-<p>However, this is not always possible:</p>
-<ul>
-<li><p><em>the dataset is too large</em>: we can only locally store chunks of data</p>
-</li>
-<li><p><em>the dataset is not fully available</em>: several web services do not allow us to obtain the entire dataset for different (good or bad) reasons. For instance:</p>
-<ul>
-<li>A service is selling the access to the data and wants to give you limited access to it.</li>
-<li>Privacy concerns (e.g., health sector) that require to track exactly the data that you request to collect.</li>
-<li>Give you the entire dataset would generate excessive network traffic.</li>
-</ul>
-</li>
-<li><p><em>the dataset is live</em>: it has frequent updates.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Remote-access-to-a-dataset?">Remote access to a dataset?<a class="anchor-link" href="#Remote-access-to-a-dataset?">¶</a></h2><p>A <em>data provider</em> may store the dataset in quite different and undocumented ways. <br/>
-Most likely, there will be for you <strong>no direct access</strong> to the dataset or to the system handling the data.</p>
-<center>
-<img alt="No description has been provided for this image" src="img/no-direct-data-access.png">
-</img></center>
-<p>Indeed, the data provider:</p>
-<ul>
-<li>wants to control how you access the data (<em>pay as you call</em>)</li>
-<li>does not want to give you insights about its internal infrastructure:<ul>
-<li>it may lead to security issues</li>
-<li>it may lead to data leaks</li>
-<li>it wants to be free to change how it works over time</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Then,-how-to-access-the-remote-data?-REST-API">Then, how to access the remote data? <strong>REST API</strong><a class="anchor-link" href="#Then,-how-to-access-the-remote-data?-REST-API">¶</a></h2><p>For these reasons, datasets are often exposed to the external world through a <em>standard remote interface</em> called <em><strong>REST API</strong></em> (or, RESTful API):</p>
-<center>
-<img alt="No description has been provided for this image" src="img/data-rest.png"/>
-</center>
-<p>A REST API:</p>
-<ul>
-<li>is simple to implement (provider) and use (users)</li>
-<li>is typically reachable from the internet via HTTPS (i.e., web)</li>
-<li>can easily integrate authentication</li>
-<li>is often documented by the data provider</li>
-<li>can be fine-grained: users can retrieve exactly the needed bit of data</li>
-<li>can be inefficient: there are better solutions that, however, are less widespread and more complex</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Example:-open-meteo.com">Example: open-meteo.com<a class="anchor-link" href="#Example:-open-meteo.com">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/open-meteo.png"/>
-</center>
-<p>The free access is limited to a subset of the data! <br/>
-<strong>Data has a huge money value</strong> and most of the time you will have to pay for it!</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Example:-open-meteo.com-(cont'd)">Example: open-meteo.com (cont'd)<a class="anchor-link" href="#Example:-open-meteo.com-(cont'd)">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/open-meteo-api.png" width="600"/>
-</center>
-<p>Full documentation: <strong><a href="https://open-meteo.com/en/docs">https://open-meteo.com/en/docs</a></strong></p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Example:-open-meteo.com-(cont'd)">Example: open-meteo.com (cont'd)<a class="anchor-link" href="#Example:-open-meteo.com-(cont'd)">¶</a></h2><p>Data can be accessed on the web via the endpoint: <a href="https://api.open-meteo.com/v1/forecast">https://api.open-meteo.com/v1/forecast</a></p>
-<p>For instance, after checking the documentation, we can build the following request:</p>
-<p><a href="https://api.open-meteo.com/v1/forecast?latitude=41.8967&amp;longitude=12.4822&amp;hourly=temperature_2m">https://api.open-meteo.com/v1/forecast?latitude=41.8967&amp;longitude=12.4822&amp;hourly=temperature_2m</a></p>
-<p>which returns the last temperature measurements in Rome. You can open this URL with your browser:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/open-meteo-data-1.png" width="700"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Example:-open-meteo.com-(cont'd)">Example: open-meteo.com (cont'd)<a class="anchor-link" href="#Example:-open-meteo.com-(cont'd)">¶</a></h2><p>If we look closely at the response, we can see the data that we care for:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/open-meteo-data-2.png" width="900"/>
-</center>
-These are the temperature measurements!
-
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="REST-API-in-practice">REST API in practice<a class="anchor-link" href="#REST-API-in-practice">¶</a></h2><p>Given a data provider, we need to:</p>
-<ul>
-<li><p><strong>[problem #1]</strong> how to build the REST API requests: check the documentation!</p>
-</li>
-<li><p><strong>[problem #2]</strong> perform such <strong>requests</strong> in a fully automatic way:</p>
-<ul>
-<li>while we could do them manually, it is not convenient</li>
-<li>live data must be fetched periodically</li>
-</ul>
-</li>
-<li><p><strong>[problem #3]</strong> interpret the <strong>responses</strong>:</p>
-<ul>
-<li>the response can be anything:<ul>
-<li>text file</li>
-<li>image</li>
-<li>raw data</li>
-</ul>
-</li>
-<li>we need to identify the proper <strong>data format</strong></li>
-<li>the data format is documented by the data provider</li>
-<li>the data format will be standard to favor interoperability</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="REST-API-request">REST API request<a class="anchor-link" href="#REST-API-request">¶</a></h2><p>In REST API, a request:</p>
-<ul>
-<li><p>can have some <em><strong>request headers</strong></em>: we may need to set some headers to, e.g., perform authentication</p>
-</li>
-<li><p>is performed using a <em><strong>URL</strong></em> which combines:</p>
-<ul>
-<li><em><strong>request endpoint</strong></em>, e.g., <code>https://api.open-meteo.com/v1/forecast</code></li>
-<li><em><strong>request parameters</strong></em>: e.g., <code>?latitude=41.8967&amp;longitude=12.4822</code><br/> The question mark <code>?</code> starts the paramters list, where each parameter is a key-value pair, such as <code>&lt;parameter_name&gt;=&lt;parameter_value&gt;</code>, or  <code>&lt;parameter_name&gt;=&lt;parameter_value1&gt;,&lt;parameter_value2&gt;</code>, where key-value pairs are separated by the symbol <code>&amp;</code></li>
-</ul>
-</li>
-<li><p>can be performed using two HTTP methods:</p>
-<ul>
-<li><em><strong>GET method</strong></em>: the most common one (previous example). Any parameter will be embedded into the URL.</li>
-<li><em><strong>POST method</strong></em>: more advanced, often used when we need to send some data that cannot be embedded through headers or request parameters</li>
-</ul>
-</li>
-</ul>
-<p>All these details will be written by the documentation.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-to-automatically-perform-REST-API-requests?">How to automatically perform REST API requests?<a class="anchor-link" href="#How-to-automatically-perform-REST-API-requests?">¶</a></h2><ul>
-<li><p>Data provider API Python package: some services, or the community, may offer a dedicated Python package. For instance, for the Open Meteo API, we could install with <code>pip</code> this package: <a href="https://pypi.org/project/open-meteo/">https://pypi.org/project/open-meteo/</a></p>
-</li>
-<li><p>We can use a popular and well-known Python package: <code>requests</code><br/>It will work for any REST API. We can install it with <code>pip</code>:</p>
-</li>
-</ul>
+<p>In theory, we could just use lists and nest them, e.g.:</p>
 </div>
 </div>
 </div>
@@ -7731,10 +7483,91 @@ These are the temperature measurements!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span> <span class="c1"># 2x3 matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># first element of second row</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>4
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>However, lists are not very efficient. Hence, we we have thousands of data values they can be quite slow and memory hungry. This why we may want to use <code>numpy</code>.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-is-numpy?">What is <code>numpy</code>?<a class="anchor-link" href="#What-is-numpy?">¶</a></h2><center>
+<img alt="No description has been provided for this image" src="img/numpylogo.svg"/>
+</center>
+<p><code>numpy</code> (Numerical Python) contains <strong>multidimensional array data structures</strong>, such as the homogeneous, N-dimensional nd-array, and a large library of <strong>functions that operate efficiently</strong> on them.</p>
+<p>Main difference with Python lists:</p>
+<ul>
+<li>a <code>numpy</code> nd-array must contain values of the same numerical type</li>
+<li>a <code>numpy</code> nd-array has a fixed size</li>
+<li>a <code>numpy</code> nd-array should have a shape that is <em>rectangular</em>, i.e., different rows must have the same number of columns</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="numpy:-install-and-import"><code>numpy</code>: install and import<a class="anchor-link" href="#numpy:-install-and-import">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Install <code>numpy</code> with <code>pip</code>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>numpy
 </pre></div>
 </div>
 </div>
@@ -7748,24 +7581,20 @@ These are the temperature measurements!
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: requests in /home/ercoppa/.local/lib/python3.10/site-packages (2.31.0)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/ercoppa/.local/lib/python3.10/site-packages (from requests) (3.1.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/lib/python3/dist-packages (from requests) (2020.6.20)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/lib/python3/dist-packages (from requests) (1.26.5)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packages (from requests) (3.3)
+Requirement already satisfied: numpy in /home/ercoppa/.local/lib/python3.10/site-packages (1.26.4)
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-make-a-GET-request"><code>requests</code>: make a GET request<a class="anchor-link" href="#requests:-make-a-GET-request">¶</a></h2><p>First, we need to import it:</p>
+<p>By convention <code>numpy</code> is imported with an alias <code>np</code>:</p>
 </div>
 </div>
 </div>
@@ -7774,41 +7603,59 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># now we can use numpy using np</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Then, we can make our first GET request:</p>
+<h2 id="numpy-array:-construction"><code>numpy</code> array: construction<a class="anchor-link" href="#numpy-array:-construction">¶</a></h2><p>We can build an array by passing a list:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.open-meteo.com/v1/forecast?latitude=41.89&amp;longitude=12.48&amp;hourly=temperature_2m'</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>              <span class="c1"># 1D array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span> <span class="c1"># 2D array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[1 2 3]
+[[1 2 3]
+ [4 5 6]]
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7816,7 +7663,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now, the response is stored in the <code>response</code> variable. Depending on the data format, we must parse it in a different way.</p>
+<p>For our goals, we often get the <code>numpy</code> arrays built from other packages, e.g., as a result of a complex data processing.</p>
 </div>
 </div>
 </div>
@@ -7827,60 +7674,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-request-parameters"><code>requests</code>: request parameters<a class="anchor-link" href="#requests:-request-parameters">¶</a></h2><p>Instead of manually setting the list of parameters in the url, we can do:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">endpoint</span> <span class="o">=</span> <span class="s1">'https://api.open-meteo.com/v1/forecast'</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'latitude'</span><span class="p">:</span> <span class="mf">41.89</span><span class="p">,</span> <span class="s1">'longitude'</span><span class="p">:</span> <span class="mf">12.48</span><span class="p">,</span> <span class="s1">'hourly'</span><span class="p">:</span> <span class="s1">'temperature_2m'</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>which is way more readable and less error-prone!</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Response-status-code">Response status code<a class="anchor-link" href="#Response-status-code">¶</a></h2><p>Each response come with a <em><strong>status code</strong></em> that indicates whether the request has been successfully completed:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/http-status-code.png" width="200"/><br/>
-<a src="https://www.infidigit.com/blog/http-status-codes/">[image credits]<a>
-</a></a></center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-check-response-status-code"><code>requests</code>: check response status code<a class="anchor-link" href="#requests:-check-response-status-code">¶</a></h2>
+<h2 id="numpy-array:-construction-(cont'd)"><code>numpy</code> array: construction (cont'd)<a class="anchor-link" href="#numpy-array:-construction-(cont'd)">¶</a></h2><p><code>numpy</code> comes with many useful constructors:</p>
 </div>
 </div>
 </div>
@@ -7892,9 +7686,18 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.open-meteo.com/v1/forecast?latitude=41.89&amp;longitude=12.48&amp;hourly=temperature_2m'</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Status code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 2x3 array of zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Zeros:"</span><span class="p">,</span> <span class="n">a3</span><span class="p">)</span>
+<span class="n">a4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># 2x3 array of ones</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Ones:"</span><span class="p">,</span> <span class="n">a4</span><span class="p">)</span>
+<span class="n">a5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 2x3 array of random numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Random:"</span><span class="p">,</span> <span class="n">a5</span><span class="p">)</span>
+<span class="n">a6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 2x3 array of numbers already in memory</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Garbage:"</span><span class="p">,</span> <span class="n">a6</span><span class="p">)</span> <span class="c1"># this is used when we do not care</span>
+                      <span class="c1"># for the values of the array</span>
+                      <span class="c1"># but they are guaranteed to be random!</span>
+<span class="n">a7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># array of numbers from 0 to 10 with step 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Range:"</span><span class="p">,</span> <span class="n">a7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7907,23 +7710,20 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Status code: 200
+<pre>Zeros: [[0. 0. 0.]
+ [0. 0. 0.]]
+Ones: [[1. 1. 1.]
+ [1. 1. 1.]]
+Random: [[0.67071932 0.16095177 0.78488374]
+ [0.17997293 0.30958598 0.80442035]]
+Garbage: [[0.67071932 0.16095177 0.78488374]
+ [0.17997293 0.30958598 0.80442035]]
+Range: [0 2 4 6 8]
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Our request was successful and we can now get the data our of it :)</p>
-</div>
-</div>
-</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7931,30 +7731,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-retrieve-response-data"><code>requests</code>: retrieve response data<a class="anchor-link" href="#requests:-retrieve-response-data">¶</a></h2><p><code>requests</code> allows us to retrieve the data in the following formats:</p>
-<ul>
-<li><p><code>response.text</code>: textual format. Used only when the response data is a single value (e.g., a string, integer, etc.)</p>
-</li>
-<li><p><code>response.json()</code>: JSON format. The most common choice. Easy to parse (see later slides!).</p>
-</li>
-<li><p><code>response.content</code>: the response is an arbitrary format and we are getting the raw bytes. Need to carefully check the API documentation. It can be used when downloading files (e.g., an image, a zip file, etc.) from arbitrary websites.</p>
-</li>
-</ul>
-<p>For instance, in the case of Open Meteo API, the documentation reports that the response is in a JSON format:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/open-meteo-doc.png" width="800"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-textual-response"><code>requests</code>: textual response<a class="anchor-link" href="#requests:-textual-response">¶</a></h2><p>We treat the response data as a Python string:</p>
+<h2 id="numpy-array:-data-type"><code>numpy</code> array: data type<a class="anchor-link" href="#numpy-array:-data-type">¶</a></h2><p>Be default, a <code>numpy</code> array uses floating-point values. However, we can set the <code>numpy</code> data type during construction:</p>
 </div>
 </div>
 </div>
@@ -7963,11 +7740,11 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://google.it'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">50</span><span class="p">])</span> <span class="c1"># first 50 characters of google page</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">))</span> <span class="c1"># 1D array of ones with int type</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7980,9 +7757,21 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;!doctype html&gt;&lt;html itemscope="" itemtype="http:/
+<pre>[1 1]
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Since <code>numpy</code> is used to efficiently perform scientific computations, it comes with a wide range of <code>numpy</code> data types, that goes beyond the Python types <code>int</code>, <code>float</code>, <code>bool</code>, and <code>str</code>. For instance, it supports complex numbers or <em>smaller</em> integers (which require less memory but are less accurate).</p>
+<p>When using <code>numpy</code>, for our goals, we can stick with <code>np.dtype('int')</code> and <code>np.dtype('float')</code> types.</p>
 </div>
 </div>
 </div>
@@ -7993,7 +7782,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-JSON-response"><code>requests</code>: JSON response<a class="anchor-link" href="#requests:-JSON-response">¶</a></h2><p>A JSON is like a Python Dictionary:</p>
+<h2 id="numpy-array-is-similar-to-a-list"><code>numpy</code> array is similar to a list<a class="anchor-link" href="#numpy-array-is-similar-to-a-list">¶</a></h2><p>Similarly to lists, we can:</p>
 </div>
 </div>
 </div>
@@ -8002,12 +7791,22 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.open-meteo.com/v1/forecast?latitude=41.89&amp;longitude=12.48&amp;hourly=temperature_2m'</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Temperature: </span><span class="si">{</span><span class="n">response</span><span class="p">[</span><span class="s1">'hourly'</span><span class="p">][</span><span class="s1">'temperature_2m'</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"array:"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"element:"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>     <span class="c1"># access an element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"slice:"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>     <span class="c1"># access a slice</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A slice is still an numpy array:"</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
+
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>                   <span class="c1"># modify an element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Updated array:"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>            <span class="c1"># 2x3 array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"element:"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">"same as"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># first element of second row</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>                                       <span class="c1"># modify the first row</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Updated 2D array:"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8020,25 +7819,19 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Temperature: [27.4, 27.8, 27.1, 25.8, 25.6, 26.7, 27.9, 29.4, 31.5, 32.7]
+<pre>array: [1 2 3 4 5 6]
+element: 1
+slice: [2 3]
+A slice is still an numpy array: &lt;class 'numpy.ndarray'&gt;
+Updated array: [10  2  3  4  5  6]
+Acessing 2D array: 4 same as 4
+Updated 2D array: [[10 10 10]
+ [ 4  5  6]]
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The structure of the dictionary, i.e., which key-value pairs are inside it, it expected to be documented by the data provider.</p>
-<p>Hence, in our example, the documentation from Open Meteo is reporting that there is <code>hourly</code> key, whose associated value is a dictionary containing the key <code>temperature_2m</code>, whose associated value is a list of <code>float</code> values, i..e, our temperatures.</p>
-<p>More details on the JSON format in later slides!</p>
-</div>
-</div>
-</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8046,8 +7839,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-raw-response"><code>requests</code>: raw response<a class="anchor-link" href="#requests:-raw-response">¶</a></h2><p>When we want to download an arbitrary file over the web, we can get the file and save it to our local filesystem.</p>
-<p>For instance:</p>
+<h2 id="numpy-array:-attributes"><code>numpy</code> array: attributes<a class="anchor-link" href="#numpy-array:-attributes">¶</a></h2><p>A few useful attributes:</p>
 </div>
 </div>
 </div>
@@ -8056,148 +7848,14 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># a pic from the web</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://cdn.pixabay.com/photo/2023/11/14/20/08/woman-8388428_1280.jpg"</span>
-<span class="n">rawdata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span> <span class="c1"># get the image</span>
-<span class="nb">open</span><span class="p">(</span><span class="s1">'myimage.jpg'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span> <span class="c1"># saved the image to a file</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>88584</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>After executing these lines of code, you have a local file <code>myimage.png</code>. You can open it with your image viewer.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="requests:-other-features"><code>requests</code>: other features<a class="anchor-link" href="#requests:-other-features">¶</a></h2><p>This package is extremely powerful and make it easy to:</p>
-<ul>
-<li><p>perform a POST request:</p>
-<ul>
-<li>use <code>requests.post(url, data=&lt;our data&gt;)</code></li>
-</ul>
-</li>
-<li><p>add headers to a request:</p>
-<ul>
-<li>pass a dictionary with the key-value pairs</li>
-<li>e.g., <code>request.get(url, headers={'User-Agent':'MyApp'})</code></li>
-</ul>
-</li>
-</ul>
-<p>Look at its documentation for more details:</p>
-<p><a href="https://requests.readthedocs.io/en/latest/user/quickstart/">https://requests.readthedocs.io/en/latest/user/quickstart/</a></p>
-<p>In future lectures, we may come back to <code>requests</code>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Data-Formats">Data Formats<a class="anchor-link" href="#Data-Formats">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Popular-data-formats">Popular data formats<a class="anchor-link" href="#Popular-data-formats">¶</a></h2><p>Datasets may come in different common formats:</p>
-<ul>
-<li>Textual: <code>.txt</code> file</li>
-<li>CSV: <code>.csv</code> file</li>
-<li>TSV: <code>.csv</code> file</li>
-<li>JSON: often retrieved via a REST API</li>
-<li>XSLX: <code>xlsx</code> file, Microsoft Excel format</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Textual-file-(.txt)">Textual file (<code>.txt</code>)<a class="anchor-link" href="#Textual-file-(.txt)">¶</a></h2><p>The most intuitive one. Human-friendly but hard to parse when we have complex data inside it. Used in the real-world only when the data is indeed a simple text (e.g., a book). We can open the local file and fetch its content as a Python string.</p>
-<p>Example: <code>myfile.txt</code></p>
-<pre><code>Hello, LUISS!
-Hello, World!
-</code></pre>
-<p>Remarks:</p>
-<ul>
-<li>Should we split it by lines? Most of the time makes sense to do it.</li>
-<li>No hint on how to split internally each line. Most of the time does not makes sense to do it.</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Textual-file-(.txt):-parsing">Textual file (<code>.txt</code>): parsing<a class="anchor-link" href="#Textual-file-(.txt):-parsing">¶</a></h2><p>Since a textual file is just a string:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">content</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>            <span class="c1"># random 2x3 array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Data type:"</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>            <span class="c1"># data type of the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Shape:"</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>                <span class="c1"># shape of the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Size:"</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>                  <span class="c1"># number of elements in the array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Number of dimensions:"</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>  <span class="c1"># number of dimensions</span>
 </pre></div>
 </div>
 </div>
@@ -8210,87 +7868,10 @@ Hello, World!
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Hello, LUISS!
-Hello, World!
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Since it is a string, we can manipulate it through the string functions and operators available in Python.<br/>
-For instance, we may want to split by newline:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Line #</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Line #0: Hello, LUISS!
-Line #1: Hello, World!
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Splitting the text file by line can done more quickly via:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['Hello, LUISS!\n', 'Hello, World!']
+<pre>Data type: float64
+Shape: (2, 3)
+Size: 6
+Number of dimensions: 2
 </pre>
 </div>
 </div>
@@ -8303,52 +7884,76 @@ Line #1: Hello, World!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="CSV-file-(.csv)">CSV file (<code>.csv</code>)<a class="anchor-link" href="#CSV-file-(.csv)">¶</a></h2><p>A <em>Comma-Separated Values</em> (<strong>CSV</strong>) file:</p>
-<ul>
-<li>is a text file format</li>
-<li>storing tabular data (numbers and text), where each line of the file typically represents one data record</li>
-<li>uses <em>commas</em> (<code>,</code>) or semicolon (<code>;</code>) to separate values and newlines to separate records</li>
-<li>quite easy to parse (even without dedicated support)</li>
-<li>the first line may contain the table headers, i.e., column names</li>
-<li>can be imported in Spreadsheet app (e.g., Excel)</li>
-</ul>
-<p>Example: <code>myfile.csv</code></p>
-<pre><code>Username,Identifier,First name,Last name
-booker12,9012,Rachel,Booker
-grey07,2070,Laura,Grey
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Should be seen as:</p>
+<h2 id="numpy-array:-operations"><code>numpy</code> array: operations<a class="anchor-link" href="#numpy-array:-operations">¶</a></h2><p>Given <code>a1 = np.array([[1, 2], [4, 5]])</code> and <code>a2 = np.array([[6, 7], [8, 9]])</code>:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Username</th>
-<th style="text-align:center">Identifier</th>
-<th style="text-align:center">First name</th>
-<th style="text-align:center">Last name</th>
+<th>Operator</th>
+<th>Semantics</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Example Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">booker12</td>
-<td style="text-align:center">9012</td>
-<td style="text-align:center">Rachel</td>
-<td style="text-align:center">Booker</td>
+<td><code>+</code></td>
+<td>element-wise sum</td>
+<td style="text-align:center"><code>a1 + a2</code></td>
+<td style="text-align:center"><code>[[ 7  9] [12 14]]</code></td>
 </tr>
 <tr>
-<td style="text-align:center">grey07</td>
-<td style="text-align:center">2070</td>
-<td style="text-align:center">Laura</td>
-<td style="text-align:center">Grey</td>
+<td><code>-</code></td>
+<td>element-wise difference</td>
+<td style="text-align:center"><code>a1 - a2</code></td>
+<td style="text-align:center"><code>[[-5 -5] [-4 -4]]</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>element-wise product</td>
+<td style="text-align:center"><code>a1 - a2</code></td>
+<td style="text-align:center"><code>[[ 6 14] [32 45]]</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>element-wise division</td>
+<td style="text-align:center"><code>a1 / a2</code></td>
+<td style="text-align:center"><code>[[0.16 0.28] [0.5 0.55]]</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>element-wise remainder</td>
+<td style="text-align:center"><code>a2 % a1</code></td>
+<td style="text-align:center"><code>[[ 1  4] [16 25]]</code></td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>element-wise exp</td>
+<td style="text-align:center"><code>a1**2</code></td>
+<td style="text-align:center"><code>[[ 6 14] [32 45]]</code></td>
+</tr>
+<tr>
+<td><code>np.dot()</code></td>
+<td>matrix product</td>
+<td style="text-align:center"><code>np.dot(a1, a2)</code></td>
+<td style="text-align:center"><code>[[22 25] [64 73]]</code></td>
+</tr>
+<tr>
+<td><code>a1.min()</code></td>
+<td>minimum value</td>
+<td style="text-align:center"><code>a1.min()</code></td>
+<td style="text-align:center"><code>1</code></td>
+</tr>
+<tr>
+<td><code>a1.max()</code></td>
+<td>maximum value</td>
+<td style="text-align:center"><code>a1.max()</code></td>
+<td style="text-align:center"><code>5</code></td>
+</tr>
+<tr>
+<td><code>a1.sum()</code></td>
+<td>sum of values</td>
+<td style="text-align:center"><code>a1.sum()</code></td>
+<td style="text-align:center"><code>12</code></td>
 </tr>
 </tbody>
 </table>
@@ -8362,9 +7967,7 @@ grey07,2070,Laura,Grey
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="CSV-file-(.csv):-parsing">CSV file (<code>.csv</code>): parsing<a class="anchor-link" href="#CSV-file-(.csv):-parsing">¶</a></h2><ol>
-<li>Manually: not hard but a bit raw</li>
-</ol>
+<h2 id="numpy-array:-try-them!"><code>numpy</code> array: try them!<a class="anchor-link" href="#numpy-array:-try-them!">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8373,12 +7976,22 @@ grey07,2070,Laura,Grey
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.csv'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># you have the prev example file!</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Sum:"</span><span class="p">,</span> <span class="n">a1</span> <span class="o">+</span> <span class="n">a2</span><span class="p">)</span>          <span class="c1"># element-wise sum</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Difference:"</span><span class="p">,</span> <span class="n">a1</span> <span class="o">-</span> <span class="n">a2</span><span class="p">)</span>   <span class="c1"># element-wise difference</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Product:"</span><span class="p">,</span> <span class="n">a1</span> <span class="o">*</span> <span class="n">a2</span><span class="p">)</span>      <span class="c1"># element-wise product</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Division:"</span><span class="p">,</span> <span class="n">a1</span> <span class="o">/</span> <span class="n">a2</span><span class="p">)</span>     <span class="c1"># element-wise division</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Module:"</span><span class="p">,</span> <span class="n">a2</span> <span class="o">%</span> <span class="n">a1</span><span class="p">)</span>       <span class="c1"># element-wise module</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Power:"</span><span class="p">,</span> <span class="n">a1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>        <span class="c1"># element-wise power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Matrix product:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">))</span> <span class="c1"># matrix product</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Matrix product:"</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a2</span><span class="p">))</span>     <span class="c1"># matrix product</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Min:"</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>         <span class="c1"># minimum element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Max:"</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>         <span class="c1"># maximum element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Sum:"</span><span class="p">,</span> <span class="n">a1</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>         <span class="c1"># sum of all elements</span>
 </pre></div>
 </div>
 </div>
@@ -8391,32 +8004,30 @@ grey07,2070,Laura,Grey
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['Username', 'Identifier', 'First name', 'Last name']
-['booker12', '9012', 'Rachel', 'Booker']
-['grey07', '2070', 'Laura', 'Grey']
+<pre>Sum: [[ 7  9]
+ [12 14]]
+Difference: [[-5 -5]
+ [-4 -4]]
+Product: [[ 6 14]
+ [32 45]]
+Division: [[0.16666667 0.28571429]
+ [0.5        0.55555556]]
+Module: [[0 1]
+ [0 4]]
+Power: [[ 1  4]
+ [16 25]]
+Matrix product: [[22 25]
+ [64 73]]
+Matrix product: [[22 25]
+ [64 73]]
+Min: 1
+Max: 5
+Sum: 12
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We are getting one list for each record. The list contains strings. If a data value is a number, we should perform a type conversion: e.g., <code>int(line[1])</code>.<br/><br/></p>
-<ol start="2">
-<li>[<strong>Suggested</strong>] Using third-party Python packages:<ul>
-<li>several options out there</li>
-<li>we will see <code>pandas</code> later on</li>
-</ul>
-</li>
-</ol>
-</div>
-</div>
-</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8424,32 +8035,7 @@ grey07,2070,Laura,Grey
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="TSV-file-(.tsv)">TSV file (<code>.tsv</code>)<a class="anchor-link" href="#TSV-file-(.tsv)">¶</a></h2><p>A <em>Tab-Separated Values</em> (<strong>TSV</strong>) is just a CSV using the tab character (<code>\t</code>) as separator (instead of comma).</p>
-<p>Example: <code>myfile.tsv</code></p>
-<pre><code>Username	Identifier	First name	Last name
-booker12	9012	Rachel	Booker
-grey07	2070	Laura	Grey
-</code></pre>
-<p>Remarks:</p>
-<ul>
-<li><p>Main benefit wrt CSV: the tab character is more convenient than comma or semicolon because it is rarely used with real-world data. Hence, it is more robust, less ambiguous, delimiter.</p>
-</li>
-<li><p>The tab character should help visually align and space the data. It fails to do it in most cases when different values have too different lengths.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="TSV-file-(.csv):-parsing">TSV file (<code>.csv</code>): parsing<a class="anchor-link" href="#TSV-file-(.csv):-parsing">¶</a></h2><ol>
-<li>Manually: not hard but a bit raw</li>
-</ol>
+<h2 id="numpy-array:-filtering"><code>numpy</code> array: filtering<a class="anchor-link" href="#numpy-array:-filtering">¶</a></h2><p>We can easily filter values:</p>
 </div>
 </div>
 </div>
@@ -8458,12 +8044,16 @@ grey07	2070	Laura	Grey
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.tsv'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># you have the prev example file!</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Array:"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Filtered array (less than 6):"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">])</span>        <span class="c1"># elements less than 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Filtered array (even):"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>          <span class="c1"># even elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Filtered array (and):"</span><span class="p">,</span> <span class="n">a</span><span class="p">[(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">)])</span>   <span class="c1"># conjunction of two conditions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Filtered array (or):"</span><span class="p">,</span> <span class="n">a</span><span class="p">[(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)])</span>    <span class="c1"># disjunction of two conditions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Check conditions:"</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">5</span><span class="p">))</span>          <span class="c1"># check conditions    </span>
 </pre></div>
 </div>
 </div>
@@ -8476,32 +8066,21 @@ grey07	2070	Laura	Grey
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['Username', 'Identifier', 'First name', 'Last name']
-['booker12', '9012', 'Rachel', 'Booker']
-['grey07', '2070', 'Laura', 'Grey']
+<pre>Array: [[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+Filtered array (less than 6): [1 2 3 4 5]
+Filtered array (even): [ 2  4  6  8 10 12]
+Filtered array (and): [ 3  4  5  6  7  8  9 10]
+Filtered array (or): [ 1 11 12]
+Check conditions: [[False False False False]
+ [ True  True  True  True]
+ [ True  True  True  True]]
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We are getting one list for each record. The list contains strings. If a data value is a number, we should perform a type conversion: e.g., <code>int(line[1])</code>.<br/><br/></p>
-<ol start="2">
-<li>[<strong>Suggested</strong>] Using third-party Python packages:<ul>
-<li>several options out there</li>
-<li>we will see <code>pandas</code> later on</li>
-</ul>
-</li>
-</ol>
-</div>
-</div>
-</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8509,91 +8088,11 @@ grey07	2070	Laura	Grey
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="JSON-file-format">JSON file format<a class="anchor-link" href="#JSON-file-format">¶</a></h2><p><em>JavaScript Object Notation</em> (<strong>JSON</strong>):</p>
+<h2 id="numpy-array:-nonzero()"><code>numpy</code> array: <code>nonzero()</code><a class="anchor-link" href="#numpy-array:-nonzero()">¶</a></h2><p>A convenient function is <code>nonzero()</code> that:</p>
 <ul>
-<li>is an open standard file format</li>
-<li>often used for data interchange over the network or across different programming languages</li>
-<li>its syntax derives from JavaScript, the programming language supported by browser</li>
-<li>luckily its syntax is quite similar to what your would see when printing Python data</li>
-<li>is like a Python dictionary, recursively containing:<ul>
-<li>scalar types: <code>int</code>s, <code>float</code>s, <code>bool</code>s, <code>str</code>s, <code>None</code></li>
-<li>non-scalar types: list, tuple, dictionary</li>
+<li>takes an array</li>
+<li>returns one array for each dimension containing the index of elements that are different than zero</li>
 </ul>
-</li>
-<li>to convert other Python types to JSON we will have to battle a bit</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="JSON-file-format:-example">JSON file format: example<a class="anchor-link" href="#JSON-file-format:-example">¶</a></h2><p>Example:</p>
-<pre><code>{
-  "users": [
-    {
-      "Username":"booker12",
-      "Identifier":9012,
-      "First name":"Rachel",
-      "Last name": "Booker"
-    },
-    {
-      "Username":"grey07",
-      "Identifier":2070,
-      "First name":"Laura",
-      "Last name": "Grey"
-    }
-  ]
-}
-</code></pre>
-<p>Remarks:</p>
-<ul>
-<li>In our example, we have a dictionary containing a key <code>users</code>, whose associated value is a list of users, where each user is a dictionary with the key-value pairs representing the different user attributes.</li>
-<li>Notice that key <code>Identifier</code> has a value that is an integer (not a string as the other attributes!). Hence, we can preserve (at least some) data types.</li>
-<li>Differently from TXT and CSV, we can have a quite complex nested structure.</li>
-<li>Most programming languages have the data types supported by JSON, making it a convenient format to pass data over the nework (different machines) or across programs (same machine with programs written in different ways)</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="JSON-file-format:-example-(cont'd)">JSON file format: example (cont'd)<a class="anchor-link" href="#JSON-file-format:-example-(cont'd)">¶</a></h2><p>Notice that spacing is not important for the format. Indeed, this would be equivalent:</p>
-<pre><code>{"users": [{"Username":"booker12","Identifier":9012,"First name":"Rachel","Last name": "Booker"},{"Username":"grey07","Identifier":2070,"First name":"Laura","Last name": "Grey"}]}
-</code></pre>
-<p>Nonetheless, it would be less readable for a human. If you get a poorly formatted JSON, you can use some tools to format it properly and make it human readable:</p>
-<ul>
-<li>editor extensions: e.g., "Format" in VSCode</li>
-<li>websites: e.g., <a href="https://jsonformatter.org/">https://jsonformatter.org/</a></li>
-</ul>
-<center>
-<img alt="No description has been provided for this image" src="img/json-format.png" width="200"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="JSON-file-format:-parsing">JSON file format: parsing<a class="anchor-link" href="#JSON-file-format:-parsing">¶</a></h2><ol>
-<li><p>Manually: <em>doable but do not even try... almost impossible!</em></p>
-</li>
-<li><p>Python <code>json</code> package (pre-installed):</p>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -8602,15 +8101,13 @@ grey07	2070	Laura	Grey
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># let suppose you get this from a network request</span>
-<span class="n">jsondata</span> <span class="o">=</span> <span class="s1">'{"users": [{"Username":"booker12","Identifier":9012,"First name":"Rachel","Last name": "Booker"},{"Username":"grey07","Identifier":2070,"First name":"Laura","Last name": "Grey"}]}'</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsondata</span><span class="p">)</span> <span class="c1"># we get a Python dictionary</span>
-<span class="c1"># let us print the username of the first user</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'users'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'Username'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="n">nonzero_a_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># default condition: a != 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Indexes of non-zero elements:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Non-zero elements:"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">nonzero_a_idx</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -8623,7 +8120,8 @@ grey07	2070	Laura	Grey
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>booker12
+<pre>Indexes of non-zero elements: (array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]), array([0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]))
+Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </pre>
 </div>
 </div>
@@ -8636,10 +8134,37 @@ grey07	2070	Laura	Grey
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>To navigate the dictionary obtained from a JSON, you need to know its structure. The data provider should give you this information. Otherwise, you can guess it by looking at a first few bits of its textual representation.</p>
-<ol start="3">
-<li>Most third-party Python packages support JSON. We have already seen that <code>requests</code> can automatically parse the JSON data using <code>response.json()</code>. Later on, we will introduce <code>pandas</code> that supports it as well.</li>
-</ol>
+<p>However, instead of checking for the nonzero condition, we can pass an arbitrary condition:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">g10_a_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># condition: a &gt; 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Indexes of condition &gt; 10:"</span><span class="p">,</span> <span class="n">g10_a_idx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"&gt; 10 elements:"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">g10_a_idx</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Indexes of condition &gt; 10: (array([2, 2]), array([2, 3]))
+&gt; 10 elements: [11 12]
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -8650,51 +8175,12 @@ grey07	2070	Laura	Grey
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="JSON-file-format:-cons">JSON file format: cons<a class="anchor-link" href="#JSON-file-format:-cons">¶</a></h2><p>JSON is nowadays standard way of exchange data. Since in the end, it can be stored as a textual file, it is quite convenient for most use cases. For instance, a Jupyter notebook (file <code>.ipynb</code>) is a JSON file.</p>
-<p>However, it comes with some downsides:</p>
-<ol>
-<li>If we build it by hand, we need to escape <code>"</code> if we use it inside our strings.</li>
-<li>It is not efficient: it does not have by design compression</li>
-<li>It is not <em>secure</em>: it does not have by design encryption</li>
-<li>It cannot store raw data: e.g., to store an image into a JSON we have to use a special encoding (e.g., Base64)</li>
-<li>It cannot be easily inspected when the dataset is large: when having millions of values, we cannot just open it with a text editor and inspect it since it would fill our memory. We must inspect programmatically (which is fine!).</li>
-<li>A JSON does not necessarily represent tabular data: spreadsheet programs, such as Excel, do not have a clue on how to deal with a JSON.</li>
-</ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="XSLX-file-format-(.xlsx)">XSLX file format (<code>.xlsx</code>)<a class="anchor-link" href="#XSLX-file-format-(.xlsx)">¶</a></h2><p>XLSX is a file format that:</p>
+<h2 id="numpy:-documentaion"><code>numpy</code>: documentaion<a class="anchor-link" href="#numpy:-documentaion">¶</a></h2><p>There is <em><strong>way more</strong></em> to say about <code>numpy</code>. Check its documentation:</p>
 <ul>
-<li>was designed by Microsoft for the spreadsheet application Excel</li>
-<li>went through a standardization process and thus should be fully documented. However, it is not.</li>
-<li>is partially supported even by some third-party spreadsheet applications, such as LibreOffice Calc.</li>
-<li>is not human-readable.</li>
-<li>does not scale: it struggles in the presence of millions of values.</li>
+<li><a href="https://numpy.org/doc/stable/user/index.html#user">Getting started</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/index.html#reference">API reference</a></li>
 </ul>
-<center>
-<h1>AVOID IT IF YOU CAN</h1>
-<h2>OTHERWISE...RUN... RUN AWAY!</h2>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="XSLX-file-format-(.xlsx):-parsing">XSLX file format (<code>.xlsx</code>): parsing<a class="anchor-link" href="#XSLX-file-format-(.xlsx):-parsing">¶</a></h2><p><strong>It is a <del>pain-in-the-ass</del> mess to parse it</strong>.</p>
-<p>Some third-party Python packages provide some basic support to such file format.<br/>
-One of these is <code>pandas</code> that will be introduced later on.</p>
+<p>We will cover other bits of it when needed.</p>
 </div>
 </div>
 </div>
