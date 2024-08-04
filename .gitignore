@@ -7,3 +7,5 @@ book/_build/.doctrees
 oldbook
 _build
 *.bkp
+*.log
+book/reports
