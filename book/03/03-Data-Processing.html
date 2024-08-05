@@ -204,6 +204,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></a></li>
 
 
+
 </ul>
 
     </div>
@@ -386,6 +387,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentaion"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-and-tidy-data">Tabular Data and Tidy Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular Data?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-make-tabular-data-actionable"><strong>Tidy Data</strong>: make tabular data actionable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-variables-observations-and-values">Tidy Data: variables, observations, and values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-still-a-mess">Tidy Data: still a mess…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-but-a-processable-mess">Tidy Data: …but a processable mess!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-long-form">Tidy Data: long form</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-pandas">Package <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-pandas">Why do we need <code class="docutils literal notranslate"><span class="pre">pandas</span></code>?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pandas">What is <code class="docutils literal notranslate"><span class="pre">pandas</span></code>?</a></li>
@@ -407,6 +417,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-sampling"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sampling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select rows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-columns"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-filtering-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: filtering rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-update-an-element"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: update an element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-update-a-column"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: update a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-append-row-s"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: append row(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-append-columns"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: append columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-sorting-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sorting rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-dropping-invalid-rows">Data cleaning: dropping <em>invalid</em> rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-using-default-value">Data cleaning: using <em>default</em> value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-cumulative-statistics"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative statistics</a></li>
 </ul>
 </li>
 </ul>
@@ -428,6 +447,8 @@ document.write(`
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Data Science</h3>
 <img src="https://ercoppa.github.io/labds/dist/img/cliente-luiss.png">
 <br><br><br>
+</center><center>
+<a class="reference internal image-reference" href="../_images/tweet-ds.png"><img alt="../_images/tweet-ds.png" src="../_images/tweet-ds.png" style="width: 750px;" /></a>
 </center></section>
 <section id="package-numpy">
 <h1>Package <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#package-numpy" title="Link to this heading">#</a></h1>
@@ -542,10 +563,10 @@ document.write(`
  [0. 0. 0.]]
 Ones: [[1. 1. 1.]
  [1. 1. 1.]]
-Random: [[0.27637429 0.88095389 0.10092623]
- [0.68347393 0.62206335 0.28338739]]
-Garbage: [[0.27637429 0.88095389 0.10092623]
- [0.68347393 0.62206335 0.28338739]]
+Random: [[0.19182009 0.38081437 0.77285647]
+ [0.49888175 0.75733216 0.60780772]]
+Garbage: [[0.19182009 0.38081437 0.77285647]
+ [0.49888175 0.75733216 0.60780772]]
 </pre></div>
 </div>
 </div>
@@ -893,6 +914,51 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 <p>We will cover other bits of it when needed.</p>
 </section>
 </section>
+<section id="tabular-data-and-tidy-data">
+<h1>Tabular Data and Tidy Data<a class="headerlink" href="#tabular-data-and-tidy-data" title="Link to this heading">#</a></h1>
+<section id="tabular-data">
+<h2>Tabular Data?<a class="headerlink" href="#tabular-data" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/tabular-data-mess.png"><img alt="../_images/tabular-data-mess.png" src="../_images/tabular-data-mess.png" style="width: 850px;" /></a>
+</center>
+<p>Same data, 3 different ways of arranging it in a table!</p>
+<p>We have <strong>three</strong> <em>variables</em>, <strong>six</strong> <em>observations</em>, and <strong>18</strong> (17 non null) values (<em>measurements</em>)</p>
+</section>
+<section id="tidy-data-make-tabular-data-actionable">
+<h2><strong>Tidy Data</strong>: make tabular data actionable<a class="headerlink" href="#tidy-data-make-tabular-data-actionable" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/tidydata.png"><img alt="../_images/tidydata.png" src="../_images/tidydata.png" style="width: 850px;" /></a>
+</center></section>
+<section id="tidy-data-variables-observations-and-values">
+<h2>Tidy Data: variables, observations, and values<a class="headerlink" href="#tidy-data-variables-observations-and-values" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/tidydata-2.png"><img alt="../_images/tidydata-2.png" src="../_images/tidydata-2.png" style="width: 850px;" /></a>
+</center></section>
+<section id="tidy-data-still-a-mess">
+<h2>Tidy Data: still a mess…<a class="headerlink" href="#tidy-data-still-a-mess" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/tidydata-3.png"><img alt="../_images/tidydata-3.png" src="../_images/tidydata-3.png" style="width: 850px;" /></a>
+</center>
+<center>
+<a src="https://openscapes.org/blog/2020-10-12-tidy-data">Image credits</a>
+</center></section>
+<section id="tidy-data-but-a-processable-mess">
+<h2>Tidy Data: …but a processable mess!<a class="headerlink" href="#tidy-data-but-a-processable-mess" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/tidydata-4.png"><img alt="../_images/tidydata-4.png" src="../_images/tidydata-4.png" style="width: 850px;" /></a>
+</center>
+<center>
+<a src="https://openscapes.org/blog/2020-10-12-tidy-data">Image credits</a>
+</center></section>
+<section id="tidy-data-long-form">
+<h2>Tidy Data: long form<a class="headerlink" href="#tidy-data-long-form" title="Link to this heading">#</a></h2>
+<p>Tidy Data favors the long form (left) instead of the wide form (right):</p>
+<center>
+<a class="reference internal image-reference" href="../_images/tidydata-5.png"><img alt="../_images/tidydata-5.png" src="../_images/tidydata-5.png" style="width: 850px;" /></a>
+</center>
+<p>However, the long form is often more convenient when processing data, while the wide form could be more convenient when visualizing the data in plots. We will have to reshape our data when needed.</p>
+</section>
+</section>
 <section id="package-pandas">
 <h1>Package <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#package-pandas" title="Link to this heading">#</a></h1>
 <section id="why-do-we-need-pandas">
@@ -936,10 +1002,10 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/ercoppa/.local/lib/python3.10/site-packages (2.2.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.9.0.post0)
-Requirement already satisfied: numpy&gt;=1.22.4 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (1.26.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.22.4 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (1.26.4)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (2024.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.9.0.post0)
 Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
@@ -1824,6 +1890,793 @@ result type: &lt;class &#39;pandas.core.series.Series&#39;&gt;
 </div></div></div>
 </div>
 </section>
+<section id="pandas-dataframe-filtering-rows">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: filtering rows<a class="headerlink" href="#pandas-dataframe-filtering-rows" title="Link to this heading">#</a></h2>
+<p>When selecting columns, we can also apply filtering criteria over the rows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">]</span> <span class="c1"># df filtered by the condition &#39;Age&#39; &gt; 25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="c1"># we ask for the &#39;Name&#39; column of the rows where &#39;Age&#39; &gt; 25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1     Bob
+2    Carl
+Name: Name, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;US&#39;</span><span class="p">),</span> <span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="c1"># two filtering conditions then select col</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2    Carl
+Name: Name, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pandas-dataframe-update-an-element">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: update an element<a class="headerlink" href="#pandas-dataframe-update-an-element" title="Link to this heading">#</a></h2>
+<p>We can update a specific element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;David&#39;</span> <span class="c1"># change the value of the first row and &#39;Name&#39; column</span>
+<span class="c1"># df.at[0, &#39;Name&#39;] = &#39;Alice&#39; # same as above</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>David</td>
+      <td>25</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-update-a-column">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: update a column<a class="headerlink" href="#pandas-dataframe-update-a-column" title="Link to this heading">#</a></h2>
+<p>We can even update an entire column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>-1</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>-1</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>-1</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can perform functional updates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">20</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;USA&#39;</span><span class="p">)</span>  
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>19</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>19</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>19</td>
+      <td>USA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-append-row-s">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: append row(s)<a class="headerlink" href="#pandas-dataframe-append-row-s" title="Link to this heading">#</a></h2>
+<p>Incrementally appending rows is <strong>inefficient</strong> since the underlying <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> has a fixed size, making expensive the update. However, it can be done:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;David&#39;</span><span class="p">,</span> <span class="s1">&#39;Eve&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span> <span class="s1">&#39;AU&#39;</span><span class="p">]})],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>David</td>
+      <td>40</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Eve</td>
+      <td>45</td>
+      <td>AU</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-append-columns">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: append columns<a class="headerlink" href="#pandas-dataframe-append-columns" title="Link to this heading">#</a></h2>
+<p>We can add columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+      <th>Gender</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>US</td>
+      <td>F</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+      <td>M</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+      <td>M</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-sorting-rows">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sorting rows<a class="headerlink" href="#pandas-dataframe-sorting-rows" title="Link to this heading">#</a></h2>
+<p>Sorting:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bob</td>
+      <td>35</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>US</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="data-cleaning-dropping-invalid-rows">
+<h2>Data cleaning: dropping <em>invalid</em> rows<a class="headerlink" href="#data-cleaning-dropping-invalid-rows" title="Link to this heading">#</a></h2>
+<p>Suppose we get this <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>US</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>To clean our <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, we may want to <strong>drop rows with invalid values</strong>, i.e., <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>. Indeed, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> would likely invalidate most computations (e.g., computing the average). Hence, we can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span> <span class="c1"># drop rows with NaN values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>US</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Dropping rows will make use lose (potentially valuable) information.</p>
+</section>
+<section id="data-cleaning-using-default-value">
+<h2>Data cleaning: using <em>default</em> value<a class="headerlink" href="#data-cleaning-using-default-value" title="Link to this heading">#</a></h2>
+<p>Again, assume we get this <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>US</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>As an alternative strategy for data cleaning, we opt to define a default value in place of invalid values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># fill NaN values with a specific value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>25</td>
+      <td>US</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bob</td>
+      <td>30</td>
+      <td>CA</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carl</td>
+      <td>35</td>
+      <td>US</td>
+      <td>300.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-dataframe-cumulative-statistics">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative statistics<a class="headerlink" href="#pandas-dataframe-cumulative-statistics" title="Link to this heading">#</a></h2>
+<p>We can quickly compute some raw statistics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sepal_Length&#39;</span><span class="p">,</span><span class="s1">&#39;Sepal_Width&#39;</span><span class="p">,</span><span class="s1">&#39;Petal_Length&#39;</span><span class="p">,</span><span class="s1">&#39;Petal_Width&#39;</span><span class="p">,</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">col_names</span><span class="p">)</span> <span class="c1"># the CSV does not have a header, we provide it.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sepal_Length</th>
+      <th>Sepal_Width</th>
+      <th>Petal_Length</th>
+      <th>Petal_Width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.843333</td>
+      <td>3.054000</td>
+      <td>3.758667</td>
+      <td>1.198667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.828066</td>
+      <td>0.433594</td>
+      <td>1.764420</td>
+      <td>0.763161</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.100000</td>
+      <td>2.800000</td>
+      <td>1.600000</td>
+      <td>0.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.400000</td>
+      <td>3.300000</td>
+      <td>5.100000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1901,6 +2754,15 @@ result type: &lt;class &#39;pandas.core.series.Series&#39;&gt;
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentaion"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-and-tidy-data">Tabular Data and Tidy Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular Data?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-make-tabular-data-actionable"><strong>Tidy Data</strong>: make tabular data actionable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-variables-observations-and-values">Tidy Data: variables, observations, and values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-still-a-mess">Tidy Data: still a mess…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-but-a-processable-mess">Tidy Data: …but a processable mess!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-long-form">Tidy Data: long form</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-pandas">Package <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-pandas">Why do we need <code class="docutils literal notranslate"><span class="pre">pandas</span></code>?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pandas">What is <code class="docutils literal notranslate"><span class="pre">pandas</span></code>?</a></li>
@@ -1922,6 +2784,15 @@ result type: &lt;class &#39;pandas.core.series.Series&#39;&gt;
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-sampling"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sampling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select rows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-select-columns"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: select columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-filtering-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: filtering rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-update-an-element"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: update an element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-update-a-column"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: update a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-append-row-s"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: append row(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-append-columns"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: append columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-sorting-rows"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: sorting rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-dropping-invalid-rows">Data cleaning: dropping <em>invalid</em> rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-using-default-value">Data cleaning: using <em>default</em> value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-cumulative-statistics"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative statistics</a></li>
 </ul>
 </li>
 </ul>
