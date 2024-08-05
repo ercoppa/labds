@@ -426,6 +426,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-dropping-invalid-rows">Data cleaning: dropping <em>invalid</em> rows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-using-default-value">Data cleaning: using <em>default</em> value</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-cumulative-statistics"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-can-do-way-more"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> can do way more…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-reshaping"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: reshaping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-summary-functions"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: summary functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-group-data"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: group data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-merge"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: merge</a></li>
 </ul>
 </li>
 </ul>
@@ -2403,7 +2408,7 @@ Name: Name, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>To clean our <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, we may want to <strong>drop rows with invalid values</strong>, i.e., <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>. Indeed, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> would likely invalidate most computations (e.g., computing the average). Hence, we can do:</p>
+<p>To clean our <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, we may want to <strong>drop rows with invalid values</strong>, i.e., <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>. Indeed, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> would likely invalidate most computations (e.g., computing the average). <strong>Notice that dropping rows will make us lose (potentially valuable) information</strong>. If you want to still do it, we can do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span> <span class="c1"># drop rows with NaN values</span>
@@ -2454,7 +2459,6 @@ Name: Name, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>Dropping rows will make use lose (potentially valuable) information.</p>
 </section>
 <section id="data-cleaning-using-default-value">
 <h2>Data cleaning: using <em>default</em> value<a class="headerlink" href="#data-cleaning-using-default-value" title="Link to this heading">#</a></h2>
@@ -2677,6 +2681,39 @@ Name: Name, dtype: object
 </div></div></div>
 </div>
 </section>
+<section id="pandas-can-do-way-more">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas</span></code> can do way more…<a class="headerlink" href="#pandas-can-do-way-more" title="Link to this heading">#</a></h2>
+<p>Besides the official documentation:</p>
+<center>
+<a href="https://pandas.pydata.org/docs/index.html">https://pandas.pydata.org/docs/index.html</a>
+</center>
+<p>There is a nice <em>cheatsheet</em> from the community that compactly summarize the functionalities:</p>
+<center>
+<a class="reference internal image-reference" href="../_images/pandas-cheatsheet-0.png"><img alt="../_images/pandas-cheatsheet-0.png" src="../_images/pandas-cheatsheet-0.png" style="width: 400px;" /></a>
+</center>
+<center>
+<b>Available at <a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></b>
+</center></section>
+<section id="pandas-cheatsheet-reshaping">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: reshaping<a class="headerlink" href="#pandas-cheatsheet-reshaping" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/pandas-cheatsheet-1.png"><img alt="../_images/pandas-cheatsheet-1.png" src="../_images/pandas-cheatsheet-1.png" style="width: 950px;" /></a>
+</center></section>
+<section id="pandas-cheatsheet-summary-functions">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: summary functions<a class="headerlink" href="#pandas-cheatsheet-summary-functions" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/pandas-cheatsheet-2.png"><img alt="../_images/pandas-cheatsheet-2.png" src="../_images/pandas-cheatsheet-2.png" style="width: 400px;" /></a>
+</center></section>
+<section id="pandas-cheatsheet-group-data">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: group data<a class="headerlink" href="#pandas-cheatsheet-group-data" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/pandas-cheatsheet-3.png"><img alt="../_images/pandas-cheatsheet-3.png" src="../_images/pandas-cheatsheet-3.png" style="width: 900px;" /></a>
+</center></section>
+<section id="pandas-cheatsheet-merge">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: merge<a class="headerlink" href="#pandas-cheatsheet-merge" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../_images/pandas-cheatsheet-4.png"><img alt="../_images/pandas-cheatsheet-4.png" src="../_images/pandas-cheatsheet-4.png" style="width: 360px;" /></a>
+</center></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2793,6 +2830,11 @@ Name: Name, dtype: object
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-dropping-invalid-rows">Data cleaning: dropping <em>invalid</em> rows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-using-default-value">Data cleaning: using <em>default</em> value</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe-cumulative-statistics"><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: cumulative statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-can-do-way-more"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> can do way more…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-reshaping"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: reshaping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-summary-functions"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: summary functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-group-data"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: group data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-cheatsheet-merge"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> cheatsheet: merge</a></li>
 </ul>
 </li>
 </ul>

@@ -10841,7 +10841,7 @@ Name: Name, dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>To clean our <code>DataFrame</code>, we may want to <strong>drop rows with invalid values</strong>, i.e., <code>np.nan</code>. Indeed, <code>np.nan</code> would likely invalidate most computations (e.g., computing the average). Hence, we can do:</p>
+<p>To clean our <code>DataFrame</code>, we may want to <strong>drop rows with invalid values</strong>, i.e., <code>np.nan</code>. Indeed, <code>np.nan</code> would likely invalidate most computations (e.g., computing the average). <strong>Notice that dropping rows will make us lose (potentially valuable) information</strong>. If you want to still do it, we can do:</p>
 </div>
 </div>
 </div>
@@ -10909,17 +10909,6 @@ Name: Name, dtype: object</pre>
 </table>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Dropping rows will make use lose (potentially valuable) information.</p>
 </div>
 </div>
 </div>
@@ -11216,6 +11205,79 @@ Name: Name, dtype: object</pre>
 </table>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="pandas-can-do-way-more..."><code>pandas</code> can do way more...<a class="anchor-link" href="#pandas-can-do-way-more...">¶</a></h2><p>Besides the official documentation:</p>
+<center>
+<a href="https://pandas.pydata.org/docs/index.html">https://pandas.pydata.org/docs/index.html</a>
+</center>
+<p>There is a nice <em>cheatsheet</em> from the community that compactly summarize the functionalities:</p>
+<center>
+<img alt="No description has been provided for this image" src="img/pandas-cheatsheet-0.png" width="400"/>
+</center>
+<center>
+<b>Available at <a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></b>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="pandas-cheatsheet:-reshaping"><code>pandas</code> cheatsheet: reshaping<a class="anchor-link" href="#pandas-cheatsheet:-reshaping">¶</a></h2><center>
+<img alt="No description has been provided for this image" src="img/pandas-cheatsheet-1.png" width="950"/>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="pandas-cheatsheet:-summary-functions"><code>pandas</code> cheatsheet: summary functions<a class="anchor-link" href="#pandas-cheatsheet:-summary-functions">¶</a></h2><center>
+<img alt="No description has been provided for this image" src="img/pandas-cheatsheet-2.png" width="400"/>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="pandas-cheatsheet:-group-data"><code>pandas</code> cheatsheet: group data<a class="anchor-link" href="#pandas-cheatsheet:-group-data">¶</a></h2><center>
+<img alt="No description has been provided for this image" src="img/pandas-cheatsheet-3.png" width="900"/>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="pandas-cheatsheet:-merge"><code>pandas</code> cheatsheet: merge<a class="anchor-link" href="#pandas-cheatsheet:-merge">¶</a></h2><center>
+<img alt="No description has been provided for this image" src="img/pandas-cheatsheet-4.png" width="360"/>
+</center>
 </div>
 </div>
 </div>
