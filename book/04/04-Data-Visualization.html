@@ -371,7 +371,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Visualization</b></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-matplotlib">Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-matplotlib">Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-installation-and-import"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation and import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-matplolib-figure">Anatomy of a <code class="docutils literal notranslate"><span class="pre">matplolib</span></code> figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplolib-style"><code class="docutils literal notranslate"><span class="pre">matplolib</span></code>: style</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-seaborn">Package <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
 </ul>
 
@@ -395,6 +400,90 @@ document.write(`
 </center></section>
 <section id="package-matplotlib">
 <h1>Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#package-matplotlib" title="Link to this heading">#</a></h1>
+<section id="matplotlib-installation-and-import">
+<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation and import<a class="headerlink" href="#matplotlib-installation-and-import" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>matplotlib<span class="w"> </span>pandas<span class="w"> </span>numpy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /usr/lib/python3/dist-packages (3.5.1)
+Requirement already satisfied: pandas in /home/ercoppa/.local/lib/python3.10/site-packages (2.2.2)
+Requirement already satisfied: numpy in /home/ercoppa/.local/lib/python3.10/site-packages (1.26.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tzdata&gt;=2022.7 in /home/ercoppa/.local/lib/python3.10/site-packages (from pandas) (2024.1)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3/dist-packages (from pandas) (2022.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="anatomy-of-a-matplolib-figure">
+<h2>Anatomy of a <code class="docutils literal notranslate"><span class="pre">matplolib</span></code> figure<a class="headerlink" href="#anatomy-of-a-matplolib-figure" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Example</p></th>
+<th class="head text-left"><p>Key elements</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference download internal" download="" href="../_downloads/ddbe7d118fdef8d9381735e13c5fe009/anatomy.webp"><span class="xref download myst"><a class="reference internal" href="../_images/anatomy.webp"><img alt="../_images/anatomy.webp" src="../_images/anatomy.webp" style="width: 650px;" /></a></span></a></p></td>
+<td class="text-left"><p><ul><li>Figure</li><li>Axes</li><li>Plot type: e.g., line</li><li>Plot title</li><li>Markers</li><li>Grid</li><li>Spine</li><li>Legend</li><li>Axes, {major,minor} ticks</li><li>{x,y}label, {major,minor} tick label</li></ul></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="matplolib-style">
+<h2><code class="docutils literal notranslate"><span class="pre">matplolib</span></code>: style<a class="headerlink" href="#matplolib-style" title="Link to this heading">#</a></h2>
+<p>Plots can be theme</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solarize_Light2 _classic_test_patch _mpl-gallery _mpl-gallery-nogrid bmh classic dark_background fast fivethirtyeight ggplot grayscale seaborn seaborn-bright seaborn-colorblind seaborn-dark seaborn-dark-palette seaborn-darkgrid seaborn-deep seaborn-muted seaborn-notebook seaborn-paper seaborn-pastel seaborn-poster seaborn-talk seaborn-ticks seaborn-white seaborn-whitegrid tableau-colorblind10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;classic&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span> <span class="c1"># create an array of 101 points from 0 to 10</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>            <span class="c1"># create a plot figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MY PLOT&#39;</span><span class="p">)</span> <span class="c1"># add a title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># plot the sine of x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7c3569900910&gt;]
+</pre></div>
+</div>
+<img alt="../_images/ead22ab5bde3a559e3dc2522049186001e8f24f416dfe06ca3c427e593fd4332.png" src="../_images/ead22ab5bde3a559e3dc2522049186001e8f24f416dfe06ca3c427e593fd4332.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="package-seaborn">
 <h1>Package <code class="docutils literal notranslate"><span class="pre">seaborn</span></code><a class="headerlink" href="#package-seaborn" title="Link to this heading">#</a></h1>
@@ -456,7 +545,12 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Visualization</b></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-matplotlib">Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-matplotlib">Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-installation-and-import"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation and import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-matplolib-figure">Anatomy of a <code class="docutils literal notranslate"><span class="pre">matplolib</span></code> figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplolib-style"><code class="docutils literal notranslate"><span class="pre">matplolib</span></code>: style</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-seaborn">Package <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a></li>
 </ul>
 

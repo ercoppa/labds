@@ -13,7 +13,7 @@ jupyter nbconvert ${1} --to slides \
     --SlidesExporter.reveal_number="c/t" \
     --SlidesExporter.reveal_transition="none" \
     --SlidesExporter.reveal_width=1280 \
-    --SlidesExporter.reveal_height=700 
+    --SlidesExporter.reveal_height=800 
 
 # --no-input # --post serve # ?print-pdf
 
