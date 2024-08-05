@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Data Processing" href="../03/03-Data-Processing.html" />
-    <link rel="prev" title="Python Basics" href="../01/01-Python-basics.html" />
+    <link rel="prev" title="Python Basics" href="../01/01-Python-Basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,7 +180,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-basics.html"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Basics.html"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></a></li>
 
 
 
@@ -203,6 +203,9 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../03/03-Data-Processing.html"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></a></li>
+
+
+
 </ul>
 
     </div>
@@ -608,10 +611,10 @@ These are the temperature measurements!</section>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /home/ercoppa/.local/lib/python3.10/site-packages (2.31.0)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/lib/python3/dist-packages (from requests) (1.26.5)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packages (from requests) (3.3)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/ercoppa/.local/lib/python3.10/site-packages (from requests) (3.1.0)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/lib/python3/dist-packages (from requests) (2020.6.20)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/lib/python3/dist-packages (from requests) (3.3)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/lib/python3/dist-packages (from requests) (1.26.5)
 </pre></div>
 </div>
 </div>
@@ -718,7 +721,7 @@ Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/lib/python3/dist
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature: [28.1, 27.4, 27.0, 26.8, 26.8, 26.7, 27.5, 29.2, 29.9, 31.5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature: [28.2, 28.5, 28.3, 28.0, 27.3, 27.3, 27.3, 28.0, 30.4, 32.5]
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1118,7 @@ One of these is <code class="docutils literal notranslate"><span class="pre">pan
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../01/01-Python-basics.html"
+       href="../01/01-Python-Basics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">

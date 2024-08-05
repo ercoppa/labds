@@ -25,8 +25,9 @@ Given a `.ipynb` file:
 This repository has a GitHub action publishing everything online at [https://ercoppa.github.io/labds/](https://ercoppa.github.io/labds/):
 - 00: [myFirstNotebook](https://ercoppa.github.io/labds//book/00/00-myFirstNotebook.slides.html)
 - 01: [Python Basics](https://ercoppa.github.io/labds/book/01/01-Python-Basics.slides.html)
-- 02: [Data Loading](https://ercoppa.github.io/labds//book/02/02-Data-Laoding.slides.html)
-- 03: [Data Processing](https://ercoppa.github.io/labds//book/03/03-Data-Processing.slides.html)
+- 02: [Data Loading](https://ercoppa.github.io/labds/book/02/02-Data-Laoding.slides.html)
+- 03: [Data Processing](https://ercoppa.github.io/labds/book/03/03-Data-Processing.slides.html)
+- 03: [Data Visualization](https://ercoppa.github.io/labds/book/04/04-Data-Visualization.slides.html)
 
 ## Issues
 
