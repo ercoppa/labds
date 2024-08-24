@@ -23,16 +23,16 @@ Given a `.ipynb` file:
 ## Online version
 
 This repository has a GitHub action publishing everything online at [https://ercoppa.github.io/labds/](https://ercoppa.github.io/labds/):
-- 00: [myFirstNotebook](https://ercoppa.github.io/labds//book/00/00-myFirstNotebook.slides.html)
-- 01: [Python Basics](https://ercoppa.github.io/labds/book/01/01-Python-Basics.slides.html)
-- 02: [Data Loading](https://ercoppa.github.io/labds/book/02/02-Data-Laoding.slides.html)
-- 03: [Data Processing](https://ercoppa.github.io/labds/book/03/03-Data-Processing.slides.html)
-- 03: [Data Visualization](https://ercoppa.github.io/labds/book/04/04-Data-Visualization.slides.html)
+- 00: [myFirstNotebook](https://ercoppa.github.io/labds/00/00-myFirstNotebook.slides.html)
+- 01: [Python Basics](https://ercoppa.github.io/labds/01/01-Python-Basics.slides.html)
+- 02: [Data Loading](https://ercoppa.github.io/labds/02/02-Data-Laoding.slides.html)
+- 03: [Data Processing](https://ercoppa.github.io/labds/03/03-Data-Processing.slides.html)
+- 03: [Data Visualization](https://ercoppa.github.io/labds/04/04-Data-Visualization.slides.html)
 
 ## Issues
 
 - The slides are not compliant with LUISS guidelines wrt branding, e.g., using the suggested slide template, font, etc. I have made a hack to use the LUISS font but then disable it since the LUISS font is kind of inconsistent with respect to other fonts that we use (e.g., for code). 
 
-## JypyterBook [WIP]
+## JypyterBook
 
-The notebooks are available as a JypyterBook: [https://ercoppa.github.io/labds/book](https://ercoppa.github.io/labds/book)
+The notebooks are available as a JypyterBook: [https://ercoppa.github.io/labds/](https://ercoppa.github.io/labds)

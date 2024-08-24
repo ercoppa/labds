@@ -1,0 +1,4 @@
+theme: jekyll-theme-primer
+title: Python and R for Data Science
+description: Python and R for Data Science - LUISS
+include: ['_static', '_images', '_sources']
