@@ -3,7 +3,7 @@
 
 title: Python and R for Data Science
 author: Emilio Coppa
-logo: dist/logo.png
+logo: dist/img/logo.png
 copyright: "2024"
 
 exclude_patterns: [ docs, book, old, scripts, README.md, oldbook, dist, plugin, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
