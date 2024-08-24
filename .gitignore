@@ -1,11 +1,12 @@
 .ipynb_checkpoints
 .sass-cache
 __pycache__
-book/_build/jupyter_execute
-book/_build/.jupyter_cache
-book/_build/.doctrees
+docs/_build/jupyter_execute
+docs/_build/.jupyter_cache
+docs/_build/.doctrees
 oldbook
 _build
 *.bkp
 *.log
 book/reports
+

@@ -1,13 +1,18 @@
 all:
-	@echo "Available targets: build-book"
+	@echo "Available targets: build-book clean-book"
 
 build-book:
 	jupyter-book build --config _config.jupyterbook.yml .
 	python3 scripts/convert-all-to-slides.py
-	rm -rf book ; mkdir book && cp -r _build/html/* book
-	python3 scripts/add-slide-button.py book
-	python3 scripts/copy-slides-to-book.py book
+	rm -rf docs ; mkdir docs && cp -r _build/html/* docs
+	python3 scripts/add-slide-button.py docs
+	python3 scripts/copy-slides-to-book.py docs
 	python3 scripts/fix-absolute-img-url.py
-	rm -rf book/dist; cp -a dist book/
-	rm -rf book/plugin; cp -a plugin book/
-	git add book
+	rm -rf docs/dist; cp -a dist docs/
+	cp -a dist/plugin docs/
+	rm -rf docs/docs
+	cp _config.jekyll.yml docs/_config.yml
+	git add docs
+
+clean-book:
+	rm -rf _build || echo "nothing to clean"
