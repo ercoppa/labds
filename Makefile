@@ -2,6 +2,7 @@ all:
 	@echo "Available targets: build-book clean-book"
 
 build-book:
+	rm -rf _build/html || echo "nothing to clean"
 	jupyter-book build --config _config.jupyterbook.yml .
 	python3 scripts/convert-all-to-slides.py
 	rm -rf docs ; mkdir docs && cp -r _build/html/* docs
