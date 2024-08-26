@@ -9,4 +9,4 @@ _build
 *.bkp
 *.log
 book/reports
-
+venv

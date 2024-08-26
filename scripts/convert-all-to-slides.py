@@ -7,81 +7,81 @@ import os
 import tempfile
 
 from subprocess import PIPE, Popen
-from pyppeteer import launch
+# from pyppeteer import launch
 
 import concurrent.futures
 
-async def html_to_pdf(html_file, pdf_file, pyppeteer_args=None):
-    """Convert a HTML file to a PDF"""
+# async def html_to_pdf(html_file, pdf_file, pyppeteer_args=None):
+#     """Convert a HTML file to a PDF"""
 
-    print(f"Generating PDF for {html_file}")
+#     print(f"Generating PDF for {html_file}")
 
-    browser = await launch(
-        handleSIGINT=False,
-        handleSIGTERM=False,
-        handleSIGHUP=False,
-        headless=True,
-        args=["--no-sandbox"],
-    )
+#     browser = await launch(
+#         handleSIGINT=False,
+#         handleSIGTERM=False,
+#         handleSIGHUP=False,
+#         headless=True,
+#         args=["--no-sandbox"],
+#     )
 
-    page = await browser.newPage()
-    await page.setViewport(dict(width=994, height=768))
-    await page.emulateMedia("screen")
+#     page = await browser.newPage()
+#     await page.setViewport(dict(width=994, height=768))
+#     await page.emulateMedia("screen")
 
-    await page.goto(f"file://{html_file}", {"waitUntil": ["networkidle2"]})
+#     await page.goto(f"file://{html_file}", {"waitUntil": ["networkidle2"]})
 
-    page_margins = {
-        # "left": "20px",
-        # "right": "20px",
-        # "top": "30px",
-        # "bottom": "30px",
-    }
+#     page_margins = {
+#         # "left": "20px",
+#         # "right": "20px",
+#         # "top": "30px",
+#         # "bottom": "30px",
+#     }
 
-    page_margins = {
-        "left": "0px",
-        "right": "0px",
-        "top": "0px",
-        "bottom": "0px",
-    }
+#     page_margins = {
+#         "left": "0px",
+#         "right": "0px",
+#         "top": "0px",
+#         "bottom": "0px",
+#     }
 
-    dimensions = await page.evaluate(
-        """() => {
-        return {
-            width: document.body.scrollWidth,
-            height: document.body.scrollHeight,
-            offsetWidth: document.body.offsetWidth,
-            offsetHeight: document.body.offsetHeight,
-            deviceScaleFactor: window.devicePixelRatio,
-        }
-    }"""
-    )
-    dimensions = await page.evaluate(
-        """() => {
-        return {
-            width: 1200,
-            height: 700,
-            offsetWidth: 1100,
-            offsetHeight: 600,
-            deviceScaleFactor: 2,
-        }
-    }"""
-    )
-    width = dimensions["width"]
-    height = dimensions["height"]
+#     dimensions = await page.evaluate(
+#         """() => {
+#         return {
+#             width: document.body.scrollWidth,
+#             height: document.body.scrollHeight,
+#             offsetWidth: document.body.offsetWidth,
+#             offsetHeight: document.body.offsetHeight,
+#             deviceScaleFactor: window.devicePixelRatio,
+#         }
+#     }"""
+#     )
+#     dimensions = await page.evaluate(
+#         """() => {
+#         return {
+#             width: 1200,
+#             height: 700,
+#             offsetWidth: 1100,
+#             offsetHeight: 600,
+#             deviceScaleFactor: 2,
+#         }
+#     }"""
+#     )
+#     width = dimensions["width"]
+#     height = dimensions["height"]
 
-    await page.pdf(
-        {
-            "path": pdf_file,
-            # "format": "A4",
-            "printBackground": True,
-            "margin": page_margins,
-            "height": height,
-            "width": width,
-            #"scale": 2.0
-        }
-    )
+#     await page.pdf(
+#         {
+#             "path": pdf_file,
+#             # "format": "A4",
+#             "printBackground": True,
+#             "margin": page_margins,
+#             "height": height,
+#             "width": width,
+#             #"scale": 2.0
+#         }
+#     )
 
-    await browser.close()
+#     await browser.close()
 
 for filename in glob.glob('*/*.ipynb'):
     print("Processing", filename)

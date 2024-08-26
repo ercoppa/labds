@@ -14215,15 +14215,7 @@ print(my_math.custom_add(10, 20))
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Install-third-party-packages">Install third-party packages<a class="anchor-link" href="#Install-third-party-packages">¶</a></h2><p>We can easily install third-party packages from the community using <code>pip</code> from the terminal:</p>
-<ul>
-<li>On Windows:</li>
-</ul>
-<pre><code>python -m pip install &lt;package&gt;
-</code></pre>
-<ul>
-<li>On other systems:</li>
-</ul>
-<pre><code>python3 -m pip install &lt;package&gt;
+<pre><code>pip install &lt;package&gt;
 </code></pre>
 </div>
 </div>
@@ -14270,7 +14262,7 @@ require(
         function setScrollingSlide() {
             var scroll = true
             if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
+              var h = $('.reveal').height() * 0.755;
               $('section.present').find('section')
                 .filter(function() {
                   return $(this).height() > h;

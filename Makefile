@@ -17,3 +17,7 @@ build-book:
 
 clean-book:
 	rm -rf _build || echo "nothing to clean"
+
+install:
+	python3 -m venv venv
+	bash -c "source venv/bin/activate && pip install -r requirements.txt"
