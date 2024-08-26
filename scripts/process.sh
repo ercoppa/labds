@@ -13,6 +13,8 @@ else
     SCROLLABLE="True"
 fi
 
+echo ${SCROLLABLE}
+
 jupyter nbconvert ${1} --to slides \
     --SlidesExporter.reveal_url_prefix=".." \
     --SlidesExporter.reveal_theme="luiss" \
@@ -37,6 +39,7 @@ sed -i -e 's/controls: true/controls: true, center: false/g' ${1%%.*}.slides.htm
 
 # fix scrolling view
 sed -i -e "s/.css('height', 'calc(95vh)')/.css('height', 'calc(75vh)')/g" ${1%%.*}.slides.html
+sed -i -e "s/.height() \* 0.9/.height() \* 0.75/g" ${1%%.*}.slides.html
 
 # fix scrollbar visibility
 sed -i -e "s/.css('margin-top', '20px')/.css('margin-top', '0px').css('scrollbar-width', 'none')/g" ${1%%.*}.slides.html
