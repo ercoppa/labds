@@ -11,10 +11,9 @@ parts:
     - file: 02/02-Data-Loading.ipynb
     - file: 03/03-Data-Processing.ipynb
     - file: 04/04-Data-Visualization.ipynb
-parts:
   - caption: Exercises
     chapters:
-    - file: 01/01-Python-Exercises.ipynb
+    - file: 01/01-Python-Exercises-AUTOGEN.ipynb
     - file: 01/01-Python-Exercises-Solutions.ipynb
 # parts:
 #   - caption: Case Studies

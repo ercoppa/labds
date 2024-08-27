@@ -17,10 +17,12 @@ for ipath in notebooks:
     to_remove = []
     for cell in ntbk.cells:
         cell_tags = cell.get('metadata', {}).get('tags', [])
+        if " [solutions]" in cell['source']:
+            cell['source'] = cell['source'].replace(" [solutions]", "")
         if 'solution' in cell_tags:
             to_remove.append(cell)
 
     for cell in to_remove:
         ntbk.cells.remove(cell)
 
-    nbf.write(ntbk, ipath.replace("-Solutions", ""))
+    nbf.write(ntbk, ipath.replace("-Solutions", "-AUTOGEN"))
