@@ -62,8 +62,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Processing" href="../03/03-Data-Processing.html" />
-    <link rel="prev" title="Python Basics" href="../01/01-Python-Basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,44 +181,10 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00/00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Introduction</b></a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Basics.html"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../03/03-Data-Processing.html"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../04/04-Data-Visualization.html"><b style="font-family: 'LUISS', 'Lato'">Data Visualization</b></a></li>
-
-
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises-Solutions.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises</b></a></li>
 </ul>
 
     </div>
@@ -486,14 +452,14 @@ document.write(`
                 <article class="bd-article">
                   
   <center>
-<section id="data-loading">
+<section class="tex2jax_ignore mathjax_ignore" id="data-loading">
 <h1><b style="font-family: 'LUISS', 'Lato'">Data Loading</b><a class="headerlink" href="#data-loading" title="Link to this heading">#</a></h1>
 <h2 style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Data Science and Management</h3>
 <img src="https://ercoppa.github.io/labds/dist/img/cliente-luiss.png">
 <br><br><br>
 </center></section>
-<section id="preliminaries">
+<section class="tex2jax_ignore mathjax_ignore" id="preliminaries">
 <h1>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h1>
 <section id="data-science">
 <h2>Data Science<a class="headerlink" href="#data-science" title="Link to this heading">#</a></h2>
@@ -522,7 +488,7 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="data-collection">
+<section class="tex2jax_ignore mathjax_ignore" id="data-collection">
 <h1>Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h1>
 <section id="keep-everything-local">
 <h2>Keep everything local?<a class="headerlink" href="#keep-everything-local" title="Link to this heading">#</a></h2>
@@ -576,7 +542,7 @@ Most likely, there will be for you <strong>no direct access</strong> to the data
 </ul>
 </section>
 <section id="example-open-meteo-com">
-<h2>Example: open-meteo.com<a class="headerlink" href="#example-open-meteo-com" title="Link to this heading">#</a></h2>
+<h2>Example: <a class="reference external" href="http://open-meteo.com">open-meteo.com</a><a class="headerlink" href="#example-open-meteo-com" title="Link to this heading">#</a></h2>
 <center>
 <img src="img/open-meteo.png" />
 </center>
@@ -584,24 +550,24 @@ Most likely, there will be for you <strong>no direct access</strong> to the data
 <strong>Data has a huge money value</strong> and most of the time you will have to pay for it!</p>
 </section>
 <section id="example-open-meteo-com-cont-d">
-<h2>Example: open-meteo.com (cont’d)<a class="headerlink" href="#example-open-meteo-com-cont-d" title="Link to this heading">#</a></h2>
+<h2>Example: <a class="reference external" href="http://open-meteo.com">open-meteo.com</a> (cont’d)<a class="headerlink" href="#example-open-meteo-com-cont-d" title="Link to this heading">#</a></h2>
 <center>
 <img src="img/open-meteo-api.png" width="600" />
 </center>
-<p>Full documentation: <strong>https://open-meteo.com/en/docs</strong></p>
+<p>Full documentation: <strong><a class="reference external" href="https://open-meteo.com/en/docs">https://open-meteo.com/en/docs</a></strong></p>
 </section>
 <section id="id1">
-<h2>Example: open-meteo.com (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Data can be accessed on the web via the endpoint: https://api.open-meteo.com/v1/forecast</p>
+<h2>Example: <a class="reference external" href="http://open-meteo.com">open-meteo.com</a> (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Data can be accessed on the web via the endpoint: <a class="reference external" href="https://api.open-meteo.com/v1/forecast">https://api.open-meteo.com/v1/forecast</a></p>
 <p>For instance, after checking the documentation, we can build the following request:</p>
-<p>https://api.open-meteo.com/v1/forecast?latitude=41.8967&amp;longitude=12.4822&amp;hourly=temperature_2m</p>
+<p><a class="reference external" href="https://api.open-meteo.com/v1/forecast?latitude=41.8967&amp;amp;longitude=12.4822&amp;amp;hourly=temperature_2m">https://api.open-meteo.com/v1/forecast?latitude=41.8967&amp;longitude=12.4822&amp;hourly=temperature_2m</a></p>
 <p>which returns the last temperature measurements in Rome. You can open this URL with your browser:</p>
 <center>
 <img src="img/open-meteo-data-1.png" width="700" />
 </center>
 </section>
 <section id="id2">
-<h2>Example: open-meteo.com (cont’d)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>Example: <a class="reference external" href="http://open-meteo.com">open-meteo.com</a> (cont’d)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>If we look closely at the response, we can see the data that we care for:</p>
 <center>
 <img src="img/open-meteo-data-2.png" width="900" />
@@ -657,7 +623,7 @@ These are the temperature measurements!</section>
 <section id="how-to-automatically-perform-rest-api-requests">
 <h2>How to automatically perform REST API requests?<a class="headerlink" href="#how-to-automatically-perform-rest-api-requests" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Data provider API Python package: some services, or the community, may offer a dedicated Python package. For instance, for the Open Meteo API, we could install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> this package: https://pypi.org/project/open-meteo/</p></li>
+<li><p>Data provider API Python package: some services, or the community, may offer a dedicated Python package. For instance, for the Open Meteo API, we could install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> this package: <a class="reference external" href="https://pypi.org/project/open-meteo/">https://pypi.org/project/open-meteo/</a></p></li>
 <li><p>We can use a popular and well-known Python package: <code class="docutils literal notranslate"><span class="pre">requests</span></code><br>It will work for any REST API. We can install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p></li>
 </ul>
 <div class="cell docutils container">
@@ -825,11 +791,11 @@ Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/ercoppa/Desktop
 </li>
 </ul>
 <p>Look at its documentation for more details:</p>
-<p>https://requests.readthedocs.io/en/latest/user/quickstart/</p>
+<p><a class="reference external" href="https://requests.readthedocs.io/en/latest/user/quickstart/">https://requests.readthedocs.io/en/latest/user/quickstart/</a></p>
 <p>In future lectures, we may come back to <code class="docutils literal notranslate"><span class="pre">requests</span></code>.</p>
 </section>
 </section>
-<section id="data-formats">
+<section class="tex2jax_ignore mathjax_ignore" id="data-formats">
 <h1>Data Formats<a class="headerlink" href="#data-formats" title="Link to this heading">#</a></h1>
 <section id="popular-data-formats">
 <h2>Popular data formats<a class="headerlink" href="#popular-data-formats" title="Link to this heading">#</a></h2>
@@ -1076,7 +1042,7 @@ Line #1: Hello, World!
 <p>Nonetheless, it would be less readable for a human. If you get a poorly formatted JSON, you can use some tools to format it properly and make it human readable:</p>
 <ul class="simple">
 <li><p>editor extensions: e.g., “Format” in VSCode</p></li>
-<li><p>websites: e.g., https://jsonformatter.org/</p></li>
+<li><p>websites: e.g., <a class="reference external" href="https://jsonformatter.org/">https://jsonformatter.org/</a></p></li>
 </ul>
 <center>
 <img src="img/json-format.png" width=200 />
@@ -1174,24 +1140,6 @@ One of these is <code class="docutils literal notranslate"><span class="pre">pan
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../01/01-Python-Basics.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../03/03-Data-Processing.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
