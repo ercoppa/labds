@@ -2,7 +2,7 @@ import nbformat as nbf
 from glob import glob
 
 # Collect a list of all notebooks in the content folder
-notebooks = glob("./**/*Exercise*-Solutions*.ipynb", recursive=True)
+notebooks = glob("./**/*-Solutions*.ipynb", recursive=True)
 
 # Search through each notebook and look for the text, add a tag if necessary
 for ipath in notebooks:

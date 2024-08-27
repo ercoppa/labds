@@ -62,9 +62,8 @@ Given a `.ipynb` file:
 ## Notebook containing exercises: generate a copy without solutions
 
 1. Create a notebook with:
-    - `Exercise` in the name
     - `-Solutions` in the name
-    - ` [solutions]` in the first cell/slide (e.g., `Python Exercises [solutions]`).
+    - (optional) ` [solutions]` in some slides (e.g., `Python Exercises [solutions]`).
 2. Add the tag `solution` for each cell that contains/describes a piece of a solution. To easily add a cell tag, install in VSCode the extension "Jupyer Cell Tags" and then select a cell > Add Cell Tag.
 3. When running `make build-book`, for each file matching conditions in (1):
     - a new file file will be created, replacing `-Solutions` with `-AUTOGEN` in the filename
