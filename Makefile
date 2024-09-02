@@ -16,7 +16,7 @@ build-book:
 	cp -a dist/plugin docs/
 	rm -rf docs/docs
 	cp _config.jekyll.yml docs/_config.yml
-	
+
 publish:
 	git add docs
 
@@ -27,3 +27,19 @@ install:
 	python3 -m venv venv
 	. venv/bin/activate; pip install -r requirements.txt
 	. venv/bin/activate; playwright install
+
+docker-setup:
+	@rm -rf venv || echo "nothing to clean"
+	@rm -rf .cache ; mkdir .cache
+	docker build -t labds/python:3.12.5 - < Dockerfile
+	docker run --rm -ti -u `id -u`:`id -g` -v $(PWD):/home/user/labds -v $(PWD)/.cache:/home/user/.cache -w /home/user/labds labds/python:3.12.5 bash -c "make install"
+
+docker:
+	docker run --rm -ti \
+		-u `id -u`:`id -g` \
+		-v $(PWD):/home/user/labds \
+		-v $(PWD)/.cache:/home/user/.cache \
+		-w /home/user/labds \
+		--name labds \
+		labds/python:3.12.5 \
+		bash
