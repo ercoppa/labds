@@ -12,3 +12,4 @@ book/reports
 venv
 venv2
 .cache
+.vscode
