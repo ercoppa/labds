@@ -1,5 +1,6 @@
 import nbformat as nbf
 from glob import glob
+import os
 
 # Collect a list of all notebooks in the content folder
 notebooks = glob("./**/*-Solutions*.ipynb", recursive=True)
@@ -8,6 +9,12 @@ notebooks = glob("./**/*-Solutions*.ipynb", recursive=True)
 for ipath in notebooks:
 
     if 'docs' in ipath or '_build' in ipath:
+        continue
+
+    opath = ipath.replace("-Solutions", "-AUTOGEN")
+
+    if 'ALL' not in os.environ and os.path.exists(opath) \
+        and os.path.getmtime(ipath) < os.path.getmtime(opath):
         continue
 
     print("Processing", ipath)
@@ -25,4 +32,4 @@ for ipath in notebooks:
     for cell in to_remove:
         ntbk.cells.remove(cell)
 
-    nbf.write(ntbk, ipath.replace("-Solutions", "-AUTOGEN"))
+    nbf.write(ntbk, opath)

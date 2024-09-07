@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
-
-killall jupyter
+#killall jupyter
 
 # see: 
 # https://nbconvert.readthedocs.io/en/latest/config_options.html
