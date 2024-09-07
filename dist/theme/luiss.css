@@ -337,4 +337,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .jp-RenderedHTMLCommon h4 {
   padding-bottom: 2px; }
 
+.reveal pre {
+  font-size: 0.65em; }
+
 /*# sourceMappingURL=luiss.css.map */
