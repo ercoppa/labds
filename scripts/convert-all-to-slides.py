@@ -104,17 +104,35 @@ for filename in glob.glob('*/*.ipynb'):
 
     from playwright.sync_api import sync_playwright, Playwright
 
-    def run(playwright: Playwright):
+    def run(playwright: Playwright, verbose=False):
+
+        if verbose: print("Launching the browser")
+
         chromium = playwright.chromium # or "firefox" or "webkit".
-        browser = chromium.launch()
-        page = browser.new_page()
+        browser = chromium.launch(
+            args = ["--disable-gpu"]
+        )
+        context = browser.new_context()
+
+        if verbose: print(browser)
+        if verbose: print("Opening a new page")
+
+        page = context.new_page()
+
+        if verbose: print("Setting the viewport")
+
         page.emulate_media(media="screen")
+
+        if verbose: print("Visiting the page")
+
         html_file = os.getcwd() + "/" + filename.replace('.ipynb', '.slides.html?print-pdf')
         page.goto(
             f"file://{html_file}",
             wait_until="load"
         )
         
+        if verbose: print("Waiting for 800ms")
+
         page.wait_for_timeout(800);
 
         page.pdf(
