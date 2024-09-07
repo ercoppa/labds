@@ -83,7 +83,7 @@ import concurrent.futures
 
 #     await browser.close()
 
-for filename in glob.glob('*/*.ipynb'):
+for filename in sorted(glob.glob('*/*.ipynb')):
     print("Processing", filename)
 
     if 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
@@ -133,7 +133,7 @@ for filename in glob.glob('*/*.ipynb'):
         
         if verbose: print("Waiting for 800ms")
 
-        page.wait_for_timeout(800);
+        page.wait_for_timeout(1000);
 
         page.pdf(
             path=os.getcwd() + "/" + filename.replace('.ipynb', '.pdf'),
