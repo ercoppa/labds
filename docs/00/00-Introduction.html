@@ -431,7 +431,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-where">How and Where</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code">How can we run Python code?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code-cont-d">How can we run Python code? (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">The code can be very cryptic… Can we add some notes around it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">The code can be very cryptic…<br/>Can we add some notes around it?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-run-our-code-notebooks">Where do we run our code/notebooks?</a></li>
 </ul>
@@ -439,11 +439,17 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-a-good-code-editor-visual-studio-code">Install a (good) code editor: <strong>Visual Studio Code</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code">Start <strong>Visual Studio Code</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-python-installation">Test your Python installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-other-python-packages">Installation of other Python packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-to-edit-run-jupyter-notebooks-in-vscode">Extension to edit/run Jupyter Notebooks in VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-windows">Start <strong>Visual Studio Code</strong> (Windows)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-mac-os-x">Start <strong>Visual Studio Code</strong> (Mac OS X)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-integration">VSCode extension: Python integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-environment-manager">VSCode extension: Python Environment Manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-jupyter">VSCode extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-install-python-packages-from-the-community">Where to install Python packages from the community</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
@@ -461,9 +467,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-need">What you need</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#each-page-is-a-notebook">Each page is a <em>Notebook</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-replay-and-extend-my-notebooks">You can replay and extend my notebooks!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-jupyerlab">When opening a notebook on JupyerLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-vscode">When opening a notebook on VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-colab">When opening a notebook on Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-vscode">When opening a notebook on <strong>VSCode</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-jupyerlab">When opening a notebook on <strong>JupyerLab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-colab">When opening a notebook on <strong>Colab</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replaying-or-updating-a-notebook">Replaying or updating a notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-what">Now, what?</a></li>
 </ul>
@@ -506,7 +512,7 @@ document.write(`
 </section>
 <section id="why-do-we-care-about-data-science">
 <h2>Why do we care about <em><strong>Data Science</strong></em>?<a class="headerlink" href="#why-do-we-care-about-data-science" title="Link to this heading">#</a></h2>
-<p>We can understant a lot of our everyday life  by <em><strong>analyzing</strong></em> the existing <em><strong>data</strong></em> from our world. <br>
+<p>We can understant a lot of our everyday life  by <em><strong>analyzing</strong></em> the existing <em><strong>data</strong></em> from our world.
 Such approach is called <strong>Data Science</strong>:</p>
 <center>
 <img src="img/ds.webp" width="200">
@@ -578,7 +584,7 @@ Such approach is called <strong>Data Science</strong>:</p>
 </center>
 <p>Benefits:</p>
 <ul class="simple">
-<li><p><strong>Easy to learn</strong>: designed to be readable, easy to learn</p></li>
+<li><p><strong>Easy to learn</strong>: designed to be readable, quick to learn</p></li>
 <li><p><strong>High-level language</strong>: abstracting away most low-level aspects of a computer</p></li>
 <li><p><strong>Large community and great support</strong>: several libraries allow to build complex projects with just a few lines of code</p></li>
 <li><p><strong>Adequate for most tasks</strong>: it shows its limits when performance is essential and low-level details play a role. You will hardly work on anything that cannot be implemented in Python</p></li>
@@ -604,8 +610,8 @@ Such approach is called <strong>Data Science</strong>:</p>
 <li><p>workflow:</p>
 <ul>
 <li><p>start the interactive Python shell</p></li>
-<li><p>write one line of code in the prompt after the symbols “&gt;&gt;&gt;“</p></li>
-<li><p>push enter to execute it and the results</p></li>
+<li><p>write one line of code in the prompt after the symbols <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code></p></li>
+<li><p>push enter to execute it and get the results</p></li>
 <li><p>repeat as musch as needed</p></li>
 </ul>
 </li>
@@ -627,7 +633,7 @@ Such approach is called <strong>Data Science</strong>:</p>
 <ul class="simple">
 <li><p>workflow:</p>
 <ul>
-<li><p>write the code into a textual file with extension .py</p></li>
+<li><p>write the code into a textual file with extension <code class="docutils literal notranslate"><span class="pre">.py</span></code></p></li>
 <li><p>execute the file with the Python VM</p></li>
 </ul>
 </li>
@@ -638,7 +644,7 @@ Such approach is called <strong>Data Science</strong>:</p>
 </ol>
 </section>
 <section id="the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">
-<h2>The code can be very cryptic… Can we add some notes around it?<a class="headerlink" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it" title="Link to this heading">#</a></h2>
+<h2>The code can be very cryptic…<br>Can we add some notes around it?<a class="headerlink" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it" title="Link to this heading">#</a></h2>
 <p>It could be hard to remember why we have written a piece of code, what are its effects and downsides.</p>
 <p>It is often convenient to organize our code into “sections” and then add some text to describe what the code is expected to do. This is called:</p>
 <center>
@@ -687,7 +693,13 @@ Such approach is called <strong>Data Science</strong>:</p>
 <li><p>Click <em><strong>Install now</strong></em></p></li>
 </ol>
 <center>
-<img src="img/python-installer-win.png">
+<img src="img/python-installer-win.png" width="500">
+</center></section>
+<section id="launch-the-installer-cont-d">
+<h2>Launch the installer (cont’d)<a class="headerlink" href="#launch-the-installer-cont-d" title="Link to this heading">#</a></h2>
+<p>Similarly on Mac OS X:</p>
+<center>
+<img src="img/python-installer-mac.png" width="500">
 </center></section>
 <section id="install-a-good-code-editor-visual-studio-code">
 <h2>Install a (good) code editor: <strong>Visual Studio Code</strong><a class="headerlink" href="#install-a-good-code-editor-visual-studio-code" title="Link to this heading">#</a></h2>
@@ -698,34 +710,38 @@ Such approach is called <strong>Data Science</strong>:</p>
 <center>
 <img src="img/download-vscode.png">
 </center></section>
-<section id="start-visual-studio-code">
-<h2>Start <strong>Visual Studio Code</strong><a class="headerlink" href="#start-visual-studio-code" title="Link to this heading">#</a></h2>
+<section id="start-visual-studio-code-windows">
+<h2>Start <strong>Visual Studio Code</strong> (Windows)<a class="headerlink" href="#start-visual-studio-code-windows" title="Link to this heading">#</a></h2>
 <center>
 <img src="img/vscode.png" width="650">
 </center></section>
-<section id="test-your-python-installation">
-<h2>Test your Python installation<a class="headerlink" href="#test-your-python-installation" title="Link to this heading">#</a></h2>
+<section id="start-visual-studio-code-mac-os-x">
+<h2>Start <strong>Visual Studio Code</strong> (Mac OS X)<a class="headerlink" href="#start-visual-studio-code-mac-os-x" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/vscode-mac.png" width="650">
+</center></section>
+<section id="vscode-extension-python-integration">
+<h2>VSCode extension: Python integration<a class="headerlink" href="#vscode-extension-python-integration" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Start the terminal: <em><strong>View &gt; Terminal</strong></em></p></li>
-<li><p>Type in the terminal: <code class="docutils literal notranslate"><span class="pre">python</span></code> (or <code class="docutils literal notranslate"><span class="pre">python3</span></code>)</p></li>
+<li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
+<li><p>Search for <em><strong>Python</strong></em></p></li>
+<li><p>Install the extension</p></li>
 </ol>
 <center>
-<img src="img/vscode-python-check.png" width="750">
-</center>
-<p>If you get <strong>Python 3.X.Y […]</strong> then the installation was successful :)</p>
-</section>
-<section id="installation-of-other-python-packages">
-<h2>Installation of other Python packages<a class="headerlink" href="#installation-of-other-python-packages" title="Link to this heading">#</a></h2>
-<p>We will use some extra Python bits from the community, including:<br>
-<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, and <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>.</p>
-<p>From the VSCode terminal run:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy,</span> <span class="pre">matplotlib,</span> <span class="pre">seaborn,</span> <span class="pre">scikit-learn,</span> <span class="pre">jupyterlab</span></code></p>
+<img src="img/vscode-extension-python.png" width="500">
+</center></section>
+<section id="vscode-extension-python-environment-manager">
+<h2>VSCode extension: Python Environment Manager<a class="headerlink" href="#vscode-extension-python-environment-manager" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
+<li><p>Search for <em><strong>Python Environment Manager</strong></em></p></li>
+<li><p>Install the extension</p></li>
+</ol>
 <center>
-<img src="img/pip-install.png">
-</center>
-</section>
-<section id="extension-to-edit-run-jupyter-notebooks-in-vscode">
-<h2>Extension to edit/run Jupyter Notebooks in VSCode<a class="headerlink" href="#extension-to-edit-run-jupyter-notebooks-in-vscode" title="Link to this heading">#</a></h2>
+<img src="img/vscode-extension-python-venv-manager.png" width="500">
+</center></section>
+<section id="vscode-extension-jupyter">
+<h2>VSCode extension: Jupyter<a class="headerlink" href="#vscode-extension-jupyter" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
 <li><p>Search for <em><strong>Jupyter</strong></em></p></li>
@@ -733,6 +749,69 @@ Such approach is called <strong>Data Science</strong>:</p>
 </ol>
 <center>
 <img src="img/vscode-jupyter.png">
+</center>
+</section>
+<section id="where-to-install-python-packages-from-the-community">
+<h2>Where to install Python packages from the community<a class="headerlink" href="#where-to-install-python-packages-from-the-community" title="Link to this heading">#</a></h2>
+<p>We can install Python packages from the community following two strategies:</p>
+<ul>
+<li><p><em><strong>System-wide</strong></em>: this may create conflicts between different projects using Python.</p>
+<ul class="simple">
+<li><p>pros: you need to install a package only once for all projects</p></li>
+<li><p>cons: one project may break due to a package installed/updated for another project</p></li>
+</ul>
+<p><em><strong>It is now the deprecated approach.</strong></em></p>
+</li>
+<li><p><em><strong>Project-wide</strong></em>: each project has its own <em><strong>Virtual Environment</strong></em>.</p>
+<ul class="simple">
+<li><p>pros: no conflicts across packages of different projects</p></li>
+<li><p>cons: a package must be installed again for each project</p></li>
+</ul>
+<p>This is nowadays the suggested approach and <strong>we will follow it</strong>.</p>
+</li>
+</ul>
+</section>
+<section id="create-a-new-virtual-environment">
+<h2>Create a new virtual environment<a class="headerlink" href="#create-a-new-virtual-environment" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a new folder (e.g., <code class="docutils literal notranslate"><span class="pre">labds</span></code> within <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder)</p></li>
+<li><p>Open the folder from VSCode:</p></li>
+</ol>
+<center>
+<img src="img/vscode-open-folder.png" width="250">
+</center>
+<ol class="arabic simple" start="3">
+<li><p>Start the terminal: <em><strong>View &gt; Terminal</strong></em></p></li>
+<li><p>Type in the terminal:<br>
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code>
+<br>or:<br>
+<code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code></p></li>
+</ol>
+</section>
+<section id="pick-the-default-virtual-environment">
+<h2>Pick the default virtual environment<a class="headerlink" href="#pick-the-default-virtual-environment" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the side bar, open the Python logo</p></li>
+<li><p>Click on the <em>star</em> to select the virtual environment</p></li>
+</ol>
+<center>
+<img src="img/vscode-pick-venv.png" width="250">
+</center>
+<ol class="arabic simple" start="3">
+<li><p>Close VSCode and then re-open your project folder in VSCode</p></li>
+</ol>
+</section>
+<section id="installation-of-python-packages-in-the-virtual-environment">
+<h2>Installation of Python packages in the virtual environment<a class="headerlink" href="#installation-of-python-packages-in-the-virtual-environment" title="Link to this heading">#</a></h2>
+<p>We will use some extra Python bits from the community, including:<br>
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, and <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>.</p>
+<p>From VSCode:</p>
+<ol class="arabic simple">
+<li><p>Start a new terminal using the menu: <em><strong>Terminal &gt; New Terminal</strong></em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span> <span class="pre">matplotlib</span> <span class="pre">seaborn</span> <span class="pre">scikit-learn</span> <span class="pre">jupyterlab</span></code></p></li>
+</ol>
+<center>
+<img src="img/vscode-install-with-pip.png">
 </center>
 </section>
 </section>
@@ -837,24 +916,24 @@ Such approach is called <strong>Data Science</strong>:</p>
 <img src="img/notebook-colab.drawio.png" width="500">
 </center>
 </section>
-<section id="when-opening-a-notebook-on-jupyerlab">
-<h2>When opening a notebook on JupyerLab<a class="headerlink" href="#when-opening-a-notebook-on-jupyerlab" title="Link to this heading">#</a></h2>
-<p>We get the same structure as before:</p>
-<center>
-<img src="img/jupterlab.drawio.png" width="600">
-</center>
-<p>However, now you can interact with the notebook in several ways.</p>
-</section>
 <section id="when-opening-a-notebook-on-vscode">
-<h2>When opening a notebook on VSCode<a class="headerlink" href="#when-opening-a-notebook-on-vscode" title="Link to this heading">#</a></h2>
+<h2>When opening a notebook on <strong>VSCode</strong><a class="headerlink" href="#when-opening-a-notebook-on-vscode" title="Link to this heading">#</a></h2>
 <p>We get the same structure as before:</p>
 <center>
 <img src="img/vscode-notebook.drawio.png" width="600">
 </center>
 <p>However, now you can interact with the notebook in several ways.</p>
 </section>
+<section id="when-opening-a-notebook-on-jupyerlab">
+<h2>When opening a notebook on <strong>JupyerLab</strong><a class="headerlink" href="#when-opening-a-notebook-on-jupyerlab" title="Link to this heading">#</a></h2>
+<p>We get the same structure as before:</p>
+<center>
+<img src="img/jupterlab.drawio.png" width="600">
+</center>
+<p>However, now you can interact with the notebook in several ways.</p>
+</section>
 <section id="when-opening-a-notebook-on-colab">
-<h2>When opening a notebook on Colab<a class="headerlink" href="#when-opening-a-notebook-on-colab" title="Link to this heading">#</a></h2>
+<h2>When opening a notebook on <strong>Colab</strong><a class="headerlink" href="#when-opening-a-notebook-on-colab" title="Link to this heading">#</a></h2>
 <p>We get the same structure as before:</p>
 <center>
 <img src="img/colab.drawio.png">
@@ -961,7 +1040,7 @@ If we push it, we can run the code and (re)<strong>generate</strong> the <strong
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-where">How and Where</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code">How can we run Python code?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code-cont-d">How can we run Python code? (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">The code can be very cryptic… Can we add some notes around it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">The code can be very cryptic…<br/>Can we add some notes around it?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-run-our-code-notebooks">Where do we run our code/notebooks?</a></li>
 </ul>
@@ -969,11 +1048,17 @@ If we push it, we can run the code and (re)<strong>generate</strong> the <strong
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-a-good-code-editor-visual-studio-code">Install a (good) code editor: <strong>Visual Studio Code</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code">Start <strong>Visual Studio Code</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-python-installation">Test your Python installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-other-python-packages">Installation of other Python packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-to-edit-run-jupyter-notebooks-in-vscode">Extension to edit/run Jupyter Notebooks in VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-windows">Start <strong>Visual Studio Code</strong> (Windows)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-mac-os-x">Start <strong>Visual Studio Code</strong> (Mac OS X)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-integration">VSCode extension: Python integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-environment-manager">VSCode extension: Python Environment Manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-jupyter">VSCode extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-install-python-packages-from-the-community">Where to install Python packages from the community</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
@@ -991,9 +1076,9 @@ If we push it, we can run the code and (re)<strong>generate</strong> the <strong
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-need">What you need</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#each-page-is-a-notebook">Each page is a <em>Notebook</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-replay-and-extend-my-notebooks">You can replay and extend my notebooks!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-jupyerlab">When opening a notebook on JupyerLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-vscode">When opening a notebook on VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-colab">When opening a notebook on Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-vscode">When opening a notebook on <strong>VSCode</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-jupyerlab">When opening a notebook on <strong>JupyerLab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-colab">When opening a notebook on <strong>Colab</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replaying-or-updating-a-notebook">Replaying or updating a notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-what">Now, what?</a></li>
 </ul>

@@ -25,8 +25,8 @@ clean-book:
 
 install:
 	python3 -m venv .venv
-	pip install -r requirements.txt
-	playwright install
+	. .venv/bin/activate; pip install -r requirements.txt
+	. .venv/bin/activate; playwright install
 
 docker-setup:
 	@rm -rf venv || echo "nothing to clean"
@@ -40,7 +40,7 @@ docker:
 		-v $(PWD):/home/user/labds \
 		-v $(PWD)/.cache:/home/user/.cache \
 		-w /home/user/labds \
-		--ipc=host --cap-add=SYS_ADMIN \
+		--ipc=host --cap-add=SYS_ADMIN --init \
 		--name labds \
 		labds/python:3.12.5 \
 		bash
@@ -51,7 +51,7 @@ docker-build-book:
 		-v $(PWD):/home/user/labds \
 		-v $(PWD)/.cache:/home/user/.cache \
 		-w /home/user/labds \
-		--ipc=host --cap-add=SYS_ADMIN \
+		--ipc=host --cap-add=SYS_ADMIN --init \
 		--name labds \
 		labds/python:3.12.5 \
 		bash -c "make build-book"
