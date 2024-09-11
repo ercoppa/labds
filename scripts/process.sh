@@ -18,7 +18,7 @@ jupyter nbconvert ${1} --to slides \
     --SlidesExporter.reveal_theme="luiss" \
     --SlidesExporter.reveal_number="c/t" \
     --SlidesExporter.reveal_scroll=${SCROLLABLE} \
-    --SlidesExporter.reveal_height=720  \
+    --SlidesExporter.reveal_height=780  \
     --SlidesExporter.reveal_transition="none" 
     # \
     # --SlidesExporter.reveal_width=1280 \
@@ -36,7 +36,7 @@ sed -i -e 's/controls: true/controls: true, center: false/g' ${1%%.*}.slides.htm
 # sed -i -e 's/jp-content-font-size1: 20px/jp-content-font-size1: 28px/g' ${1%%.*}.slides.html
 
 # fix scrolling view
-sed -i -e "s/.css('height', 'calc(95vh)')/.css('height', 'calc(75vh)')/g" ${1%%.*}.slides.html
+sed -i -e "s/.css('height', 'calc(95vh)')/.css('height', 'calc(90vh)')/g" ${1%%.*}.slides.html
 sed -i -e "s/.height() \* 0.9/.height() \* 0.75/g" ${1%%.*}.slides.html
 
 # fix scrollbar visibility

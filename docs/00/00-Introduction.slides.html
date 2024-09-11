@@ -7769,6 +7769,47 @@ Such approach is called <strong>Data Science</strong>:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</h2>
+<ol>
+<li>From the start menu, search and then open <em>Manage app execution aliases</em> (<em>Alias di esecuzione delle app</em>)</li>
+<li>Disables aleases for <em>python.exe</em> and <em>python3.exe</em>:</li>
+</ol>
+<center>
+<img alt="No description has been provided for this image" src="img/win11-disable-aliases.png" width="400"/>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</h2>
+<ol>
+<li>From the start menu, search <em>Windows Powershell</em>, then using the right-click select <em>Run as administrator</em>:</li>
+</ol>
+<center>
+<img alt="No description has been provided for this image" src="img/win11-launch-powershell.png" width="400"/>
+</center>
+<ol start="2">
+<li>Type <code>Set-ExecutionPolicy unrestricted</code>, then run it and reply <em>y</em> (or "s" if your Windows is in italian) :</li>
+</ol>
+<center>
+<img alt="No description has been provided for this image" src="img/win11-set-execution-policy.png" width="400"/>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Download-Python">Download Python<a class="anchor-link" href="#Download-Python">¶</a></h2><p>Visit: <strong><a href="https://www.python.org/">https://www.python.org/</a></strong></p>
 <center>
 <img alt="No description has been provided for this image" src="img/python-download-win.png" width="700"/>
@@ -7786,11 +7827,12 @@ Such approach is called <strong>Data Science</strong>:</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Launch-the-installer">Launch the installer<a class="anchor-link" href="#Launch-the-installer">¶</a></h2><p>Double click on the downloaded file, e.g., on Windows:</p>
 <ol>
-<li>Enable <em><strong>Add python.exe to PATH</strong></em></li>
+<li><h3>Enable <b><i>Add python.exe to PATH</i></b><!--3-->
+</h3></li>
 <li>Click <em><strong>Install now</strong></em></li>
 </ol>
 <center>
-<img alt="No description has been provided for this image" src="img/python-installer-win.png" width="500"/>
+<img alt="No description has been provided for this image" src="img/python-installer-win.drawio.png" width="500"/>
 </center>
 </div>
 </div>
@@ -7994,6 +8036,61 @@ Such approach is called <strong>Data Science</strong>:</p>
 <center>
 <img alt="No description has been provided for this image" src="img/vscode-install-with-pip.png"/>
 </center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code></h2>
+<p>If, when when running <code>python</code> in the terminal of VSCode, you get the following error:</p>
+<center>
+<img alt="No description has been provided for this image" src="img/win11-unrecognized-python.png"/>
+</center>
+<p>Then, you have to:</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd)</h2>
+<ol>
+<li>Uninstall Python: run again the installer of Python and select <em>Uninstall</em>:<center>
+<img alt="No description has been provided for this image" src="img/win11-uninstall-python.drawio.png" width="450"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd)</h2>
+<ol start="2">
+<li><p>Start the Python installer</p>
+</li>
+<li><p>Select <em><strong>Add to path</strong></em> at the bottom</p>
+<center>
+<img alt="No description has been provided for this image" src="img/python-installer-win.drawio.png" width="400"/>
+</center>
+</li>
+<li><p>Proceed with <em><strong>Install now</strong></em></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -8288,7 +8385,7 @@ require(
             slideNumber: "c/t",
             plugins: [RevealNotes],
             width: 960,
-			      height: 720,
+			      height: 780,
 
         });
 
@@ -8308,7 +8405,7 @@ require(
                 .filter(function() {
                   return $(this).height() > h;
                 })
-                .css('height', 'calc(75vh)')
+                .css('height', 'calc(90vh)')
                 .css('overflow-y', 'scroll')
                 .css('margin-top', '0px').css('scrollbar-width', 'none');
             }

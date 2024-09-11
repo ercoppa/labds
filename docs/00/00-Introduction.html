@@ -208,6 +208,7 @@
 
 
 
+
 </ul>
 
     </div>
@@ -437,6 +438,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-disable-windows-store-aliases">[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-enable-script-cmdlet">[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
@@ -450,6 +453,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
@@ -680,6 +686,29 @@ Such approach is called <strong>Data Science</strong>:</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="local-setup">
 <h1>Local Setup<a class="headerlink" href="#local-setup" title="Link to this heading">#</a></h1>
+<section id="only-on-windows-11-disable-windows-store-aliases">
+<h2>[<strong>Only on Windows 11</strong>]<br>Disable Windows Store Aliases<a class="headerlink" href="#only-on-windows-11-disable-windows-store-aliases" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the start menu, search and then open <em>Manage app execution aliases</em> (<em>Alias di esecuzione delle app</em>)</p></li>
+<li><p>Disables aleases for <em>python.exe</em> and <em>python3.exe</em>:</p></li>
+</ol>
+<center>
+<img src="img/win11-disable-aliases.png" width="400">
+</center></section>
+<section id="only-on-windows-11-enable-script-cmdlet">
+<h2>[<strong>Only on Windows 11</strong>]<br>Enable script cmdlet<a class="headerlink" href="#only-on-windows-11-enable-script-cmdlet" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the start menu, search <em>Windows Powershell</em>, then using the right-click select <em>Run as administrator</em>:</p></li>
+</ol>
+<center>
+<img src="img/win11-launch-powershell.png" width="400">
+</center>
+<ol class="arabic simple" start="2">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Set-ExecutionPolicy</span> <span class="pre">unrestricted</span></code>, then run it and reply <em>y</em> (or “s” if your Windows is in italian) :</p></li>
+</ol>
+<center>
+<img src="img/win11-set-execution-policy.png" width="400">
+</center></section>
 <section id="download-python">
 <h2>Download Python<a class="headerlink" href="#download-python" title="Link to this heading">#</a></h2>
 <p>Visit: <strong><a class="reference external" href="https://www.python.org/">https://www.python.org/</a></strong></p>
@@ -690,12 +719,13 @@ Such approach is called <strong>Data Science</strong>:</p>
 <section id="launch-the-installer">
 <h2>Launch the installer<a class="headerlink" href="#launch-the-installer" title="Link to this heading">#</a></h2>
 <p>Double click on the downloaded file, e.g., on Windows:</p>
-<ol class="arabic simple">
-<li><p>Enable <em><strong>Add python.exe to PATH</strong></em></p></li>
+<ol class="arabic">
+<li><h3>Enable <b><i>Add python.exe to PATH</i></b></3>
+</li>
 <li><p>Click <em><strong>Install now</strong></em></p></li>
 </ol>
 <center>
-<img src="img/python-installer-win.png" width="500">
+<img src="img/python-installer-win.drawio.png" width="500">
 </center></section>
 <section id="launch-the-installer-cont-d">
 <h2>Launch the installer (cont’d)<a class="headerlink" href="#launch-the-installer-cont-d" title="Link to this heading">#</a></h2>
@@ -815,6 +845,36 @@ Such approach is called <strong>Data Science</strong>:</p>
 <center>
 <img src="img/vscode-install-with-pip.png">
 </center>
+</section>
+<section id="troubleshooting-on-windows-python-is-not-recognized">
+<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code><a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized" title="Link to this heading">#</a></h2>
+<p>If, when when running <code class="docutils literal notranslate"><span class="pre">python</span></code> in the terminal of VSCode, you get the following error:</p>
+<center>
+<img src="img/win11-unrecognized-python.png">
+</center>
+<p>Then, you have to:</p>
+</section>
+<section id="troubleshooting-on-windows-python-is-not-recognized-cont-d">
+<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)<a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Uninstall Python: run again the installer of Python and select <em>Uninstall</em>:</p></li>
+</ol>
+<center>
+<img src="img/win11-uninstall-python.drawio.png" width="450">
+</center>
+</section>
+<section id="id1">
+<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="2">
+<li><p>Start the Python installer</p></li>
+<li><p>Select <em><strong>Add to path</strong></em> at the bottom</p></li>
+</ol>
+<center>
+<img src="img/python-installer-win.drawio.png" width="400">
+</center>
+<ol class="arabic simple" start="4">
+<li><p>Proceed with <em><strong>Install now</strong></em></p></li>
+</ol>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="cloud-setup">
@@ -1048,6 +1108,8 @@ If we push it, we can run the code and (re)<strong>generate</strong> the <strong
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-disable-windows-store-aliases">[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-enable-script-cmdlet">[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
@@ -1061,6 +1123,9 @@ If we push it, we can run the code and (re)<strong>generate</strong> the <strong
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
