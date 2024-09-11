@@ -7,7 +7,8 @@ build-book:
 	rm -rf _build/html || echo "nothing to clean"
 	. .venv/bin/activate; python scripts/gen-notebook-no-solution.py
 	. .venv/bin/activate; jupyter-book build --config _config.jupyterbook.yml .
-	. .venv/bin/activate; DEBUG="pw:browser" python3 scripts/convert-all-to-slides.py
+	# DEBUG="pw:browser"
+	. .venv/bin/activate; python3 scripts/convert-all-to-slides.py
 	rm -rf docs ; mkdir docs && cp -r _build/html/* docs
 	. .venv/bin/activate; python3 scripts/add-slide-button.py docs
 	. .venv/bin/activate; python3 scripts/copy-slides-to-book.py docs
@@ -26,7 +27,7 @@ clean-book:
 install:
 	python3 -m venv .venv
 	. .venv/bin/activate; pip install -r requirements.txt
-	. .venv/bin/activate; playwright install
+	. .venv/bin/activate; playwright install chromium # --with-deps
 
 docker-setup:
 	@rm -rf venv || echo "nothing to clean"
