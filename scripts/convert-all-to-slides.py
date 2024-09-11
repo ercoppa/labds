@@ -110,7 +110,16 @@ for filename in sorted(glob.glob('*/*.ipynb')):
 
         chromium = playwright.chromium # or "firefox" or "webkit".
         browser = chromium.launch(
-            args = ["--disable-gpu"]
+            headless=True,
+            args = [
+                "--disable-gpu"
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-accelerated-2d-canvas',
+                '--no-zygote',
+                '--single-process'
+            ]
         )
         context = browser.new_context()
 
