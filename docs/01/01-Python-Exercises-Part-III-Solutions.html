@@ -443,6 +443,31 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Solution</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-factorial-of-a-number">Exercise 6: Factorial of a number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-count-vowels-in-a-string">Exercise 7: Count vowels in a string</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-find-missing-number-in-a-sequence">Exercise 8: Find missing number in a sequence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9-longest-substring-without-repeating-characters">Exercise 9: Longest Substring Without Repeating Characters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-find-the-majority-element">Exercise 10: Find the Majority Element</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Solution</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -799,6 +824,324 @@ document.write(`
 </div>
 </section>
 </section>
+<section id="exercise-6-factorial-of-a-number">
+<h2>Exercise 6: Factorial of a number<a class="headerlink" href="#exercise-6-factorial-of-a-number" title="Link to this heading">#</a></h2>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">factorial</span></code> that:</p>
+<ul class="simple">
+<li><p>takes as argument two integer numbers <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+<li><p>returns:</p>
+<ul>
+<li><p>the factorial of <code class="docutils literal notranslate"><span class="pre">a</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">n!</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">(n-1)</span> <span class="pre">*</span> <span class="pre">(n-2)</span> <span class="pre">*</span> <span class="pre">...</span> <span class="pre">*</span> <span class="pre">1</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id9">
+<h3>Test your code<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Run this code to test your solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">120</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test failed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test failed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h3>Solution<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">*=</span> <span class="n">x</span><span class="o">-</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># test</span>
+<span class="k">assert</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">120</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test passed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-7-count-vowels-in-a-string">
+<h2>Exercise 7: Count vowels in a string<a class="headerlink" href="#exercise-7-count-vowels-in-a-string" title="Link to this heading">#</a></h2>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">vowels_counter</span></code> that:</p>
+<ul class="simple">
+<li><p>takes as argument a string <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+<li><p>returns:</p>
+<ul>
+<li><p>a dictionary with as key each vowel and as values the occurrencies of each vowel</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id11">
+<h3>Test your code<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>Run this code to test your solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">vowels_counter</span><span class="p">(</span><span class="s2">&quot;ciao&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="ow">and</span> <span class="n">vowels_counter</span><span class="p">(</span><span class="s2">&quot;abbecedario&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="ow">and</span> <span class="n">vowels_counter</span><span class="p">(</span><span class="s2">&quot;aiuole&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;e&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;o&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;u&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test failed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test failed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id12">
+<h3>Solution<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vowels_counter</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># test</span>
+<span class="k">assert</span> <span class="n">vowels_counter</span><span class="p">(</span><span class="s2">&quot;ciao&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="ow">and</span> <span class="n">vowels_counter</span><span class="p">(</span><span class="s2">&quot;abbecedario&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="ow">and</span> <span class="n">vowels_counter</span><span class="p">(</span><span class="s2">&quot;aiuole&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;e&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;o&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;u&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test passed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-8-find-missing-number-in-a-sequence">
+<h2>Exercise 8: Find missing number in a sequence<a class="headerlink" href="#exercise-8-find-missing-number-in-a-sequence" title="Link to this heading">#</a></h2>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">find_missing</span></code> that:</p>
+<ul class="simple">
+<li><p>Takes a list of <code class="docutils literal notranslate"><span class="pre">n-1</span></code> integers, which represents a sequence of numbers from 1 to <code class="docutils literal notranslate"><span class="pre">n</span></code>, but one number is missing.</p></li>
+<li><p>Returns the missing number.</p></li>
+</ul>
+<p>Note: Suppose that there is always only one number missing</p>
+<p>Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">find_missing([1,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">5])</span></code> should return <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find_missing([2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">1])</span></code> should return <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id13">
+<h3>Test your code<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>Run this code to test your solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">find_missing</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">find_missing</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test failed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test failed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id14">
+<h3>Solution<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_missing</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">total_sum</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">actual_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">total_sum</span> <span class="o">-</span> <span class="n">actual_sum</span>
+
+<span class="c1"># test</span>
+<span class="k">assert</span> <span class="n">find_missing</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">find_missing</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test passed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-9-longest-substring-without-repeating-characters">
+<h2>Exercise 9: Longest Substring Without Repeating Characters<a class="headerlink" href="#exercise-9-longest-substring-without-repeating-characters" title="Link to this heading">#</a></h2>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">longest_unique_substring</span></code> that:</p>
+<ul class="simple">
+<li><p>Takes a string as input.</p></li>
+<li><p>Returns the length of the longest substring that contains only unique characters.</p></li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">longest_unique_substring(&quot;abcabcbb&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">3</span></code> (substring “abc”).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">longest_unique_substring(&quot;bbbbb&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id15">
+<h3>Test your code<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Run this code to test your solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">longest_unique_substring</span><span class="p">(</span><span class="s2">&quot;abcabcbb&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">longest_unique_substring</span><span class="p">(</span><span class="s2">&quot;bbbbb&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test failed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test failed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id16">
+<h3>Solution<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_unique_substring</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">max_length</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="n">seen_chars</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">in</span> <span class="n">seen_chars</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">seen_chars</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        
+        <span class="n">max_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">max_length</span>
+
+<span class="c1"># test</span>
+<span class="k">assert</span> <span class="n">longest_unique_substring</span><span class="p">(</span><span class="s2">&quot;abcabcbb&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">longest_unique_substring</span><span class="p">(</span><span class="s2">&quot;bbbbb&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test passed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-10-find-the-majority-element">
+<h2>Exercise 10: Find the Majority Element<a class="headerlink" href="#exercise-10-find-the-majority-element" title="Link to this heading">#</a></h2>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">majority_element</span></code> that:</p>
+<ul class="simple">
+<li><p>Takes a list of integers as input.</p></li>
+<li><p>Returns the element that appears more than half of the time in the list (if it exists). If no such element exists, return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">majority_element([3,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">3,</span> <span class="pre">5])</span></code> should return <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">majority_element([1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5])</span></code> should return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id17">
+<h3>Test your code<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>Run this code to test your solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">majority_element</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">majority_element</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test failed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test failed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id18">
+<h3>Solution<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">majority_element</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+            <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        
+        <span class="k">if</span> <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">num</span>
+    
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="c1"># test</span>
+<span class="k">assert</span> <span class="n">majority_element</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">majority_element</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test passed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -870,6 +1213,31 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-greatest-common-divisor-gcd">Exercise 5: Greatest Common Divisor (GCD)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Test your code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-factorial-of-a-number">Exercise 6: Factorial of a number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-count-vowels-in-a-string">Exercise 7: Count vowels in a string</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-find-missing-number-in-a-sequence">Exercise 8: Find missing number in a sequence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9-longest-substring-without-repeating-characters">Exercise 9: Longest Substring Without Repeating Characters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10-find-the-majority-element">Exercise 10: Find the Majority Element</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Test your code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Solution</a></li>
 </ul>
 </li>
 </ul>

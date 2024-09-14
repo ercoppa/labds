@@ -7745,7 +7745,7 @@ None
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Variables">Variables<a class="anchor-link" href="#Variables">¶</a></h2><ul>
-<li><p>a variable is defined by using the assignment operatore <code>=</code>:<br/>
+<li><p>a variable is defined by using the assignment operator <code>=</code>:<br/>
 <code>&lt;name&gt; = &lt;data value&gt;</code><br/></p>
 </li>
 <li><p><code>&lt;name&gt;</code> can be a mix of letters, numbers, and underscore (<code>_</code>)</p>
@@ -8137,8 +8137,8 @@ Integer: sequence of numbers with no periods nor commas.</p>
 <tr>
 <td><code>//</code></td>
 <td>Floor<br/>Division</td>
-<td style="text-align:center"><code>5 / -2</code></td>
-<td style="text-align:center"><code>-2.5</code></td>
+<td style="text-align:center"><code>5 // -2</code></td>
+<td style="text-align:center"><code>-3</code></td>
 <td style="text-align:center"><code>int</code></td>
 </tr>
 <tr>
@@ -8176,7 +8176,7 @@ Integer: sequence of numbers with no periods nor commas.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
@@ -8371,15 +8371,15 @@ Floating point: sequence of numbers containing one <code>.</code>.</p>
 <tr>
 <td><code>//</code></td>
 <td>Floor<br/>Division</td>
-<td style="text-align:center"><code>5.0 / -2.0</code></td>
-<td style="text-align:center"><code>-2.5</code></td>
+<td style="text-align:center"><code>5.0 // 2.0</code></td>
+<td style="text-align:center"><code>2</code></td>
 <td style="text-align:center"><code>float</code></td>
 </tr>
 <tr>
 <td><code>%</code></td>
 <td>Remainder (modulo)</td>
-<td style="text-align:center"><code>5.0 % 2.0</code></td>
-<td style="text-align:center"><code>3.0</code></td>
+<td style="text-align:center"><code>5.0 % -2.0</code></td>
+<td style="text-align:center"><code>-1.0</code></td>
 <td style="text-align:center"><code>float</code></td>
 </tr>
 <tr>
@@ -8410,17 +8410,17 @@ Floating point: sequence of numbers containing one <code>.</code>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">+</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">-</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">*</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">/</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">//</span> <span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">%</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Negation:"</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Addition:"</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">+</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Subtraction:"</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">-</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplication:"</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">*</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Division:"</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Floor Division:"</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">//</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Reminder:"</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">%</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Exponentiation:"</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">)</span> <span class="c1"># same as the next one due to priority</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">((</span><span class="mf">5.0</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">)</span> <span class="c1"># force a specific operator order</span>
@@ -8436,14 +8436,14 @@ Floating point: sequence of numbers containing one <code>.</code>.</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>-5.0
-3.0
-7.0
--10.0
--2.5
-2.0
--1.0
-25.0
+<pre>Negation: -5.0
+Addition: 3.0
+Subtraction: 7.0
+Multiplication: -10.0
+Division: -2.5
+Floor Division: 2.0
+Reminder: -1.0
+Exponentiation: 25.0
 11.0
 11.0
 21.0

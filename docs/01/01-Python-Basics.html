@@ -797,7 +797,7 @@ None
 <section id="id1">
 <h2>Variables<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>a variable is defined by using the assignment operatore <code class="docutils literal notranslate"><span class="pre">=</span></code>:<br>
+<li><p>a variable is defined by using the assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>:<br>
 <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span> <span class="pre">=</span> <span class="pre">&lt;data</span> <span class="pre">value&gt;</span></code><br></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> can be a mix of letters, numbers, and underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> cannot start with a number</p></li>
@@ -1001,8 +1001,8 @@ Integer: sequence of numbers with no periods nor commas.</p>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
 <td><p>Floor<br>Division</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">/</span> <span class="pre">-2</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">-2.5</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">//</span> <span class="pre">-2</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">-3</span></code></p></td>
 <td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
@@ -1145,14 +1145,14 @@ Floating point: sequence of numbers containing one <code class="docutils literal
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
 <td><p>Floor<br>Division</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">5.0</span> <span class="pre">/</span> <span class="pre">-2.0</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">-2.5</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">5.0</span> <span class="pre">//</span> <span class="pre">2.0</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
 <td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
 <td><p>Remainder (modulo)</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">5.0</span> <span class="pre">%</span> <span class="pre">2.0</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">3.0</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">5.0</span> <span class="pre">%</span> <span class="pre">-2.0</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">-1.0</span></code></p></td>
 <td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
@@ -1169,14 +1169,14 @@ Floating point: sequence of numbers containing one <code class="docutils literal
 <h2>Floating point (<code class="docutils literal notranslate"><span class="pre">float</span></code>): try!<a class="headerlink" href="#floating-point-float-try" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">+</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">-</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">*</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">/</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">//</span> <span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">%</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Negation:&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Addition:&quot;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">+</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Subtraction:&quot;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">-</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplication:&quot;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">*</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division:&quot;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Floor Division:&quot;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">//</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reminder:&quot;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">%</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exponentiation:&quot;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">)</span> <span class="c1"># same as the next one due to priority</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">((</span><span class="mf">5.0</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">)</span> <span class="c1"># force a specific operator order</span>
@@ -1184,14 +1184,14 @@ Floating point: sequence of numbers containing one <code class="docutils literal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.0
-3.0
-7.0
--10.0
--2.5
-2.0
--1.0
-25.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Negation: -5.0
+Addition: 3.0
+Subtraction: 7.0
+Multiplication: -10.0
+Division: -2.5
+Floor Division: 2.0
+Reminder: -1.0
+Exponentiation: 25.0
 11.0
 11.0
 21.0
