@@ -18,7 +18,7 @@ jupyter nbconvert ${1} --to slides \
     --SlidesExporter.reveal_theme="luiss" \
     --SlidesExporter.reveal_number="c/t" \
     --SlidesExporter.reveal_scroll=${SCROLLABLE} \
-    --SlidesExporter.reveal_height=780  \
+    --SlidesExporter.reveal_height=700  \
     --SlidesExporter.reveal_transition="none" 
     # \
     # --SlidesExporter.reveal_width=1280 \
