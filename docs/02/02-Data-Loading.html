@@ -437,6 +437,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example: open-meteo.com (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-in-practice">REST API in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-request">REST API request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-request-cont-d">REST API request (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-automatically-perform-rest-api-requests">How to automatically perform REST API requests?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-make-a-get-request"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: make a GET request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-request-parameters"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: request parameters</a></li>
@@ -454,13 +455,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt-parsing">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>): parsing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv-cont-d">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>) (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv-parsing">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-tsv">TSV file (<code class="docutils literal notranslate"><span class="pre">.tsv</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-csv-parsing">TSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format">JSON file format</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example">JSON file format: example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example-cont-d">JSON file format: example (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">JSON file format: example (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">JSON file format: example (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-parsing">JSON file format: parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-parsing-cont-d">JSON file format: parsing (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-cons">JSON file format: cons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx-parsing">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>): parsing</a></li>
@@ -638,6 +643,12 @@ These are the temperature measurements!</section>
 <li><p><em><strong>request parameters</strong></em>: e.g., <code class="docutils literal notranslate"><span class="pre">?latitude=41.8967&amp;longitude=12.4822</span></code><br> The question mark <code class="docutils literal notranslate"><span class="pre">?</span></code> starts the paramters list, where each parameter is a key-value pair, such as <code class="docutils literal notranslate"><span class="pre">&lt;parameter_name&gt;=&lt;parameter_value&gt;</span></code>, or  <code class="docutils literal notranslate"><span class="pre">&lt;parameter_name&gt;=&lt;parameter_value1&gt;,&lt;parameter_value2&gt;</span></code>, where key-value pairs are separated by the symbol <code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="rest-api-request-cont-d">
+<h2>REST API request (cont’d)<a class="headerlink" href="#rest-api-request-cont-d" title="Link to this heading">#</a></h2>
+<p>In REST API, a request:</p>
+<ul class="simple">
 <li><p>can be performed using two HTTP methods:</p>
 <ul>
 <li><p><em><strong>GET method</strong></em>: the most common one (previous example). Any parameter will be embedded into the URL.</p></li>
@@ -650,21 +661,21 @@ These are the temperature measurements!</section>
 <section id="how-to-automatically-perform-rest-api-requests">
 <h2>How to automatically perform REST API requests?<a class="headerlink" href="#how-to-automatically-perform-rest-api-requests" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Data provider API Python package: some services, or the community, may offer a dedicated Python package. For instance, for the Open Meteo API, we could install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> this package: <a class="reference external" href="https://pypi.org/project/open-meteo/">https://pypi.org/project/open-meteo/</a></p></li>
-<li><p>We can use a popular and well-known Python package: <code class="docutils literal notranslate"><span class="pre">requests</span></code><br>It will work for any REST API. We can install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p></li>
+<li><p><strong>Dedicated Python package from the Data Provider API</strong>: some services, or the community, may offer a dedicated Python package. For instance, for the Open Meteo API, we could install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> this package: <a class="reference external" href="https://pypi.org/project/open-meteo/">https://pypi.org/project/open-meteo/</a></p></li>
+<li><p><strong>General-purtrpose Python package for HTTP requests</strong>: <code class="docutils literal notranslate"><span class="pre">requests</span></code><br>It will work for any REST API. We can install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /home/user/labds/venv/lib/python3.12/site-packages (2.32.3)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/user/labds/venv/lib/python3.12/site-packages (from requests) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/user/labds/venv/lib/python3.12/site-packages (from requests) (3.8)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/user/labds/venv/lib/python3.12/site-packages (from requests) (2.2.2)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /home/user/labds/venv/lib/python3.12/site-packages (from requests) (2024.8.30)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /home/user/labds/.venv/lib/python3.12/site-packages (2.32.3)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/user/labds/.venv/lib/python3.12/site-packages (from requests) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/user/labds/.venv/lib/python3.12/site-packages (from requests) (3.8)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from requests) (2.2.2)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/user/labds/.venv/lib/python3.12/site-packages (from requests) (2024.8.30)
 </pre></div>
 </div>
 </div>
@@ -771,7 +782,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /home/user/labds/venv/li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature: [24.7, 23.9, 23.3, 23.1, 22.8, 22.8, 23.3, 24.2, 26.0, 28.8]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature: [17.6, 17.2, 17.0, 16.5, 16.5, 16.3, 17.0, 18.6, 20.9, 23.1]
 </pre></div>
 </div>
 </div>
@@ -830,7 +841,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /home/user/labds/venv/li
 <ul class="simple">
 <li><p>Textual: <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file</p></li>
 <li><p>CSV: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file</p></li>
-<li><p>TSV: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file</p></li>
+<li><p>TSV: <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> file</p></li>
 <li><p>JSON: often retrieved via a REST API</p></li>
 <li><p>XSLX: <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> file, Microsoft Excel format</p></li>
 </ul>
@@ -907,6 +918,9 @@ Line #1: Hello, World!
 <li><p>the first line may contain the table headers, i.e., column names</p></li>
 <li><p>can be imported in Spreadsheet app (e.g., Excel)</p></li>
 </ul>
+</section>
+<section id="csv-file-csv-cont-d">
+<h2>CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>) (cont’d)<a class="headerlink" href="#csv-file-csv-cont-d" title="Link to this heading">#</a></h2>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">myfile.csv</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Username</span><span class="p">,</span><span class="n">Identifier</span><span class="p">,</span><span class="n">First</span> <span class="n">name</span><span class="p">,</span><span class="n">Last</span> <span class="n">name</span>
 <span class="n">booker12</span><span class="p">,</span><span class="mi">9012</span><span class="p">,</span><span class="n">Rachel</span><span class="p">,</span><span class="n">Booker</span>
@@ -1055,13 +1069,63 @@ Line #1: Hello, World!
 <p>Remarks:</p>
 <ul class="simple">
 <li><p>In our example, we have a dictionary containing a key <code class="docutils literal notranslate"><span class="pre">users</span></code>, whose associated value is a list of users, where each user is a dictionary with the key-value pairs representing the different user attributes.</p></li>
-<li><p>Notice that key <code class="docutils literal notranslate"><span class="pre">Identifier</span></code> has a value that is an integer (not a string as the other attributes!). Hence, we can preserve (at least some) data types.</p></li>
-<li><p>Differently from TXT and CSV, we can have a quite complex nested structure.</p></li>
-<li><p>Most programming languages have the data types supported by JSON, making it a convenient format to pass data over the nework (different machines) or across programs (same machine with programs written in different ways)</p></li>
 </ul>
 </section>
 <section id="json-file-format-example-cont-d">
 <h2>JSON file format: example (cont’d)<a class="headerlink" href="#json-file-format-example-cont-d" title="Link to this heading">#</a></h2>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;booker12&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">9012</span><span class="p">,</span>
+      <span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Rachel&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Booker&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;grey07&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">2070</span><span class="p">,</span>
+      <span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Laura&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Grey&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Remarks:</p>
+<ul class="simple">
+<li><p>Notice that key <code class="docutils literal notranslate"><span class="pre">Identifier</span></code> has a value that is an integer (not a string as the other attributes!). Hence, we can preserve (at least some) data types.</p></li>
+<li><p>Differently from TXT and CSV, we can have a quite complex nested structure.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>JSON file format: example (cont’d)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;booker12&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">9012</span><span class="p">,</span>
+      <span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Rachel&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Booker&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;grey07&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">2070</span><span class="p">,</span>
+      <span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Laura&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Grey&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Remarks:</p>
+<ul class="simple">
+<li><p>Most programming languages have the data types supported by JSON, making it a convenient format to pass data over the nework (different machines) or across programs (same machine with programs written in different ways)</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>JSON file format: example (cont’d)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>Notice that spacing is not important for the format. Indeed, this would be equivalent:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;booker12&quot;</span><span class="p">,</span><span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">9012</span><span class="p">,</span><span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Rachel&quot;</span><span class="p">,</span><span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Booker&quot;</span><span class="p">},{</span><span class="s2">&quot;Username&quot;</span><span class="p">:</span><span class="s2">&quot;grey07&quot;</span><span class="p">,</span><span class="s2">&quot;Identifier&quot;</span><span class="p">:</span><span class="mi">2070</span><span class="p">,</span><span class="s2">&quot;First name&quot;</span><span class="p">:</span><span class="s2">&quot;Laura&quot;</span><span class="p">,</span><span class="s2">&quot;Last name&quot;</span><span class="p">:</span> <span class="s2">&quot;Grey&quot;</span><span class="p">}]}</span>
 </pre></div>
@@ -1098,6 +1162,9 @@ Line #1: Hello, World!
 </div>
 </div>
 <p>To navigate the dictionary obtained from a JSON, you need to know its structure. The data provider should give you this information. Otherwise, you can guess it by looking at a first few bits of its textual representation.</p>
+</section>
+<section id="json-file-format-parsing-cont-d">
+<h2>JSON file format: parsing (cont’d)<a class="headerlink" href="#json-file-format-parsing-cont-d" title="Link to this heading">#</a></h2>
 <ol class="arabic simple" start="3">
 <li><p>Most third-party Python packages support JSON. We have already seen that <code class="docutils literal notranslate"><span class="pre">requests</span></code> can automatically parse the JSON data using <code class="docutils literal notranslate"><span class="pre">response.json()</span></code>. Later on, we will introduce <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that supports it as well.</p></li>
 </ol>
@@ -1199,6 +1266,7 @@ One of these is <code class="docutils literal notranslate"><span class="pre">pan
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example: open-meteo.com (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-in-practice">REST API in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-request">REST API request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api-request-cont-d">REST API request (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-automatically-perform-rest-api-requests">How to automatically perform REST API requests?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-make-a-get-request"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: make a GET request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests-request-parameters"><code class="docutils literal notranslate"><span class="pre">requests</span></code>: request parameters</a></li>
@@ -1216,13 +1284,17 @@ One of these is <code class="docutils literal notranslate"><span class="pre">pan
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textual-file-txt-parsing">Textual file (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>): parsing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv-cont-d">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>) (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-file-csv-parsing">CSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-tsv">TSV file (<code class="docutils literal notranslate"><span class="pre">.tsv</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-file-csv-parsing">TSV file (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>): parsing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format">JSON file format</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example">JSON file format: example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-example-cont-d">JSON file format: example (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">JSON file format: example (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">JSON file format: example (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-parsing">JSON file format: parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-parsing-cont-d">JSON file format: parsing (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-file-format-cons">JSON file format: cons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xslx-file-format-xlsx-parsing">XSLX file format (<code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>): parsing</a></li>
