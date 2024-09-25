@@ -9,7 +9,7 @@ parts:
     - file: 00/00-Introduction.ipynb
     - file: 01/01-Python-Basics.ipynb
     - file: 02/02-Data-Loading.ipynb
-    # - file: 03/03-Data-Processing.ipynb
+    - file: 03/03-Data-Processing.ipynb
     # - file: 04/04-Data-Visualization.ipynb
   - caption: Exercises
     chapters:
