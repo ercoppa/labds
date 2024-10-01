@@ -7525,7 +7525,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>However, lists are not very efficient. Hence, we we have thousands of data values they can be quite slow and memory hungry. This why we may want to use <code>numpy</code>.</p>
+<p>However, lists are not very efficient. Hence, when we have thousands of data values they can be quite slow and memory hungry. This why we may want to use <code>numpy</code>.</p>
 </div>
 </div>
 </div>
@@ -7539,7 +7539,7 @@ main {
 <h2 id="What-is-numpy?">What is <code>numpy</code>?<a class="anchor-link" href="#What-is-numpy?">¶</a></h2><center>
 <img alt="No description has been provided for this image" src="img/numpylogo.svg"/>
 </center>
-<p><code>numpy</code> (Numerical Python) contains <strong>multidimensional array data structures</strong>, such as the homogeneous, N-dimensional nd-array, and a large library of <strong>functions that operate efficiently</strong> on them.</p>
+<p><code>numpy</code> (Numerical Python) contains <strong>multidimensional array data structures</strong>, such as homogeneous N-dimensional nd-array and a large library of <strong>functions that operate efficiently</strong> on them.</p>
 <p>Main difference with Python lists:</p>
 <ul>
 <li>a <code>numpy</code> nd-array must contain values of the same numerical type</li>
@@ -8260,6 +8260,17 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="numpy-array:-nonzero()-(cont'd)"><code>numpy</code> array: <code>nonzero()</code> (cont'd)<a class="anchor-link" href="#numpy-array:-nonzero()-(cont'd)">¶</a></h2>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8301,14 +8312,14 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="numpy:-nan-value"><code>numpy</code>: <code>nan</code> value<a class="anchor-link" href="#numpy:-nan-value">¶</a></h2><p><code>numpy</code> devises a constant for a represeting <em>invalid</em> (*****ot <strong>A</strong> <strong>N</strong>umber<em>) or *missing</em> value:</p>
+<h2 id="numpy:-nan-value"><code>numpy</code>: <code>nan</code> value<a class="anchor-link" href="#numpy:-nan-value">¶</a></h2><p><code>numpy</code> devises a constant for a represeting <em>invalid</em> (<strong>N</strong>ot <strong>A</strong> <strong>N</strong>umber) or <em>missing</em> value:</p>
 </div>
 </div>
 </div>
@@ -8357,7 +8368,7 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="numpy:-documentaion"><code>numpy</code>: documentaion<a class="anchor-link" href="#numpy:-documentaion">¶</a></h2><p>There is <em><strong>way more</strong></em> to say about <code>numpy</code>. Check its documentation:</p>
+<h2 id="numpy:-documentation"><code>numpy</code>: documentation<a class="anchor-link" href="#numpy:-documentation">¶</a></h2><p>There is <em><strong>way more</strong></em> to say about <code>numpy</code>. Check its documentation:</p>
 <ul>
 <li><a href="https://numpy.org/doc/stable/user/index.html#user">Getting started</a></li>
 <li><a href="https://numpy.org/doc/stable/reference/index.html#reference">API reference</a></li>
@@ -8875,7 +8886,7 @@ dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>while <strong>dictionaries cannot containt the same key twice</strong>!</p>
+<p>while <strong>dictionaries cannot contain the same key twice</strong>!</p>
 </div>
 </div>
 </div>
@@ -9199,7 +9210,7 @@ Length: 3, dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em><strong>The positive consequence is that anything supported by <code>numpy.ndarray</code> workd also over <code>numpy.Series</code>. For instance, all element-wise operations or aggregate functions (e.g., min, max, sum) works as expected.</strong></em></p>
+<p><em><strong>The positive consequence is that anything supported by <code>numpy.ndarray</code> workd also over <code>pandas.Series</code>. For instance, all element-wise operations or aggregate functions (e.g., min, max, sum) works as expected.</strong></em></p>
 </div>
 </div>
 </div>

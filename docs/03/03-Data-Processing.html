@@ -445,8 +445,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-concatenation-and-sorting"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: concatenation and sorting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-filtering"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: filtering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-nonzero"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-nonzero-cont-d"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code> (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-nan-value"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: <code class="docutils literal notranslate"><span class="pre">nan</span></code> value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentaion"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentation"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentation</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-and-tidy-data">Tabular Data and Tidy Data</a><ul class="visible nav section-nav flex-column">
@@ -542,14 +543,14 @@ document.write(`
 </div>
 </div>
 </div>
-<p>However, lists are not very efficient. Hence, we we have thousands of data values they can be quite slow and memory hungry. This why we may want to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<p>However, lists are not very efficient. Hence, when we have thousands of data values they can be quite slow and memory hungry. This why we may want to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
 </section>
 <section id="what-is-numpy">
 <h2>What is <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?<a class="headerlink" href="#what-is-numpy" title="Link to this heading">#</a></h2>
 <center>
 <img alt="../_images/numpylogo.svg" src="../_images/numpylogo.svg" />
 </center>
-<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> (Numerical Python) contains <strong>multidimensional array data structures</strong>, such as the homogeneous, N-dimensional nd-array, and a large library of <strong>functions that operate efficiently</strong> on them.</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> (Numerical Python) contains <strong>multidimensional array data structures</strong>, such as homogeneous N-dimensional nd-array and a large library of <strong>functions that operate efficiently</strong> on them.</p>
 <p>Main difference with Python lists:</p>
 <ul class="simple">
 <li><p>a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nd-array must contain values of the same numerical type</p></li>
@@ -934,6 +935,9 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </div>
 </div>
 </div>
+</section>
+<section id="numpy-array-nonzero-cont-d">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code> (cont’d)<a class="headerlink" href="#numpy-array-nonzero-cont-d" title="Link to this heading">#</a></h2>
 <p>However, instead of checking for the nonzero condition, we can pass an arbitrary condition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -953,7 +957,7 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </section>
 <section id="numpy-nan-value">
 <h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: <code class="docutils literal notranslate"><span class="pre">nan</span></code> value<a class="headerlink" href="#numpy-nan-value" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> devises a constant for a represeting <em>invalid</em> (****<em>ot <strong>A</strong> <strong>N</strong>umber</em>) or <em>missing</em> value:</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> devises a constant for a represeting <em>invalid</em> (<strong>N</strong>ot <strong>A</strong> <strong>N</strong>umber) or <em>missing</em> value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaN:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="c1"># Not a Number</span>
@@ -968,8 +972,8 @@ Non-zero elements: [-1 -2 -3 -4  5  6  7  8  9 10 11 12]
 </div>
 <p>We will meet it quite often in the real world…</p>
 </section>
-<section id="numpy-documentaion">
-<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion<a class="headerlink" href="#numpy-documentaion" title="Link to this heading">#</a></h2>
+<section id="numpy-documentation">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentation<a class="headerlink" href="#numpy-documentation" title="Link to this heading">#</a></h2>
 <p>There is <em><strong>way more</strong></em> to say about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Check its documentation:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpy.org/doc/stable/user/index.html#user">Getting started</a></p></li>
@@ -1191,7 +1195,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>while <strong>dictionaries cannot containt the same key twice</strong>!</p>
+<p>while <strong>dictionaries cannot contain the same key twice</strong>!</p>
 </section>
 <section id="pandas-series-indexing">
 <h2><code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code>: indexing<a class="headerlink" href="#pandas-series-indexing" title="Link to this heading">#</a></h2>
@@ -1343,7 +1347,7 @@ Length: 3, dtype: int64
 </div>
 </div>
 </div>
-<p><em><strong>The positive consequence is that anything supported by <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> workd also over <code class="docutils literal notranslate"><span class="pre">numpy.Series</span></code>. For instance, all element-wise operations or aggregate functions (e.g., min, max, sum) works as expected.</strong></em></p>
+<p><em><strong>The positive consequence is that anything supported by <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> workd also over <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code>. For instance, all element-wise operations or aggregate functions (e.g., min, max, sum) works as expected.</strong></em></p>
 </section>
 <section id="pandas-dataframe-informal-definition">
 <h2><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>: informal definition<a class="headerlink" href="#pandas-dataframe-informal-definition" title="Link to this heading">#</a></h2>
@@ -2850,8 +2854,9 @@ Name: Name, dtype: object
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-concatenation-and-sorting"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: concatenation and sorting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-filtering"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: filtering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-nonzero"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-nonzero-cont-d"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> array: <code class="docutils literal notranslate"><span class="pre">nonzero()</span></code> (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-nan-value"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: <code class="docutils literal notranslate"><span class="pre">nan</span></code> value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentaion"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentaion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-documentation"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: documentation</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-and-tidy-data">Tabular Data and Tidy Data</a><ul class="visible nav section-nav flex-column">
