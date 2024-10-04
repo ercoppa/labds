@@ -431,7 +431,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Visualization</b></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-matplotlib">Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-installation-and-import"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation and import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-installation"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-import"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: import</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-visualize-some-data-we-need-the-data">To visualize some data… we need the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-matplolib-figure">Anatomy of a <code class="docutils literal notranslate"><span class="pre">matplolib</span></code> figure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-subplots-and-axes">Figure, subplots, and Axes</a><ul class="nav section-nav flex-column">
@@ -521,8 +522,8 @@ document.write(`
 </center></section>
 <section class="tex2jax_ignore mathjax_ignore" id="package-matplotlib">
 <h1>Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#package-matplotlib" title="Link to this heading">#</a></h1>
-<section id="matplotlib-installation-and-import">
-<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation and import<a class="headerlink" href="#matplotlib-installation-and-import" title="Link to this heading">#</a></h2>
+<section id="matplotlib-installation">
+<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation<a class="headerlink" href="#matplotlib-installation" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib<span class="w"> </span>pandas<span class="w"> </span>numpy
@@ -530,26 +531,29 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /home/user/labds/venv/lib/python3.12/site-packages (3.9.2)
-Requirement already satisfied: pandas in /home/user/labds/venv/lib/python3.12/site-packages (2.2.2)
-Requirement already satisfied: numpy in /home/user/labds/venv/lib/python3.12/site-packages (2.1.0)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (1.3.0)
-Requirement already satisfied: cycler&gt;=0.10 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (4.53.1)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (1.4.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /home/user/labds/.venv/lib/python3.12/site-packages (3.9.2)
+Requirement already satisfied: pandas in /home/user/labds/.venv/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy in /home/user/labds/.venv/lib/python3.12/site-packages (2.1.1)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (1.3.0)
+Requirement already satisfied: cycler&gt;=0.10 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (4.54.1)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (1.4.7)
+Requirement already satisfied: packaging&gt;=20.0 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (24.1)
+Requirement already satisfied: pillow&gt;=8 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (10.4.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (3.1.4)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from pandas) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/user/labds/.venv/lib/python3.12/site-packages (from pandas) (2024.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging&gt;=20.0 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (24.1)
-Requirement already satisfied: pillow&gt;=8 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (10.4.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (3.1.4)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/user/labds/venv/lib/python3.12/site-packages (from pandas) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/user/labds/venv/lib/python3.12/site-packages (from pandas) (2024.1)
-Requirement already satisfied: six&gt;=1.5 in /home/user/labds/venv/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/user/labds/.venv/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="matplotlib-import">
+<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: import<a class="headerlink" href="#matplotlib-import" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -989,7 +993,7 @@ Axes(0.125,0.11;0.775x0.77)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/33a2efaca56a0f823608749322f603d878a77b436ba89716d607bec2e4c2a5a7.png" src="../_images/33a2efaca56a0f823608749322f603d878a77b436ba89716d607bec2e4c2a5a7.png" />
+<img alt="../_images/9ec7f4398af6e9f2e2c5b1708f80b0c801a256144c1b484d4ca9adc1c9c9034b.png" src="../_images/9ec7f4398af6e9f2e2c5b1708f80b0c801a256144c1b484d4ca9adc1c9c9034b.png" />
 </div>
 </div>
 <p>Mere details at: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html"><code class="docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.hist</span></code></a></p>
@@ -1348,21 +1352,21 @@ Pick your favorite style from: <a class="reference external" href="https://matpl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn in /home/user/labds/venv/lib/python3.12/site-packages (0.13.2)
-Requirement already satisfied: numpy!=1.24.0,&gt;=1.20 in /home/user/labds/venv/lib/python3.12/site-packages (from seaborn) (2.1.0)
-Requirement already satisfied: pandas&gt;=1.2 in /home/user/labds/venv/lib/python3.12/site-packages (from seaborn) (2.2.2)
-Requirement already satisfied: matplotlib!=3.6.1,&gt;=3.4 in /home/user/labds/venv/lib/python3.12/site-packages (from seaborn) (3.9.2)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.3.0)
-Requirement already satisfied: cycler&gt;=0.10 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (4.53.1)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.4.5)
-Requirement already satisfied: packaging&gt;=20.0 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (24.1)
-Requirement already satisfied: pillow&gt;=8 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (10.4.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (3.1.4)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /home/user/labds/venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/user/labds/venv/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/user/labds/venv/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2024.1)
-Requirement already satisfied: six&gt;=1.5 in /home/user/labds/venv/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn in /home/user/labds/.venv/lib/python3.12/site-packages (0.13.2)
+Requirement already satisfied: numpy!=1.24.0,&gt;=1.20 in /home/user/labds/.venv/lib/python3.12/site-packages (from seaborn) (2.1.1)
+Requirement already satisfied: pandas&gt;=1.2 in /home/user/labds/.venv/lib/python3.12/site-packages (from seaborn) (2.2.3)
+Requirement already satisfied: matplotlib!=3.6.1,&gt;=3.4 in /home/user/labds/.venv/lib/python3.12/site-packages (from seaborn) (3.9.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.3.0)
+Requirement already satisfied: cycler&gt;=0.10 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (4.54.1)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.4.7)
+Requirement already satisfied: packaging&gt;=20.0 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (24.1)
+Requirement already satisfied: pillow&gt;=8 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (10.4.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (3.1.4)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /home/user/labds/.venv/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/user/labds/.venv/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/user/labds/.venv/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2024.2)
+Requirement already satisfied: six&gt;=1.5 in /home/user/labds/.venv/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.16.0)
 </pre></div>
 </div>
 </div>
@@ -1569,7 +1573,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/user/labds/venv/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f041a8e1b24fea2d5ed6450eed6bdbf4cbc832349b1f9de7b3066778f416872c.png" src="../_images/f041a8e1b24fea2d5ed6450eed6bdbf4cbc832349b1f9de7b3066778f416872c.png" />
+<img alt="../_images/8d532b84425d0f9e7b1034e7a76023321a22f5577cedf54fff336531eb2471cd.png" src="../_images/8d532b84425d0f9e7b1034e7a76023321a22f5577cedf54fff336531eb2471cd.png" />
 </div>
 </div>
 <p>See: <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.lmplot.html"><code class="docutils literal notranslate"><span class="pre">seaborn.lmplot</span></code></a></p>
@@ -1583,7 +1587,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/user/labds/venv/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5cd8cb5d85b46cc594f05566ced7be63f46455762840e267ed73ab6658b459c2.png" src="../_images/5cd8cb5d85b46cc594f05566ced7be63f46455762840e267ed73ab6658b459c2.png" />
+<img alt="../_images/30162d8e15178557f9e26d77ccad272414acae41f567c2b2deb78b96224d52be.png" src="../_images/30162d8e15178557f9e26d77ccad272414acae41f567c2b2deb78b96224d52be.png" />
 </div>
 </div>
 <p>See: <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.lineplot.html"><code class="docutils literal notranslate"><span class="pre">seaborn.lineplot</span></code></a></p>
@@ -1638,7 +1642,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/user/labds/venv/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c0d65dbe3c9158700be037860f3e78fe1f114bff7f0f61296f46604cdad9bb31.png" src="../_images/c0d65dbe3c9158700be037860f3e78fe1f114bff7f0f61296f46604cdad9bb31.png" />
+<img alt="../_images/c82be3bc5d2bec5b310c88534f51d0269d9edc74495a0d159af067293fc9066c.png" src="../_images/c82be3bc5d2bec5b310c88534f51d0269d9edc74495a0d159af067293fc9066c.png" />
 </div>
 </div>
 </section>
@@ -1669,12 +1673,12 @@ Requirement already satisfied: six&gt;=1.5 in /home/user/labds/venv/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/user/labds/venv/lib/python3.12/site-packages/seaborn/categorical.py:2761: UserWarning: catplot is a figure-level function and does not accept target axes. You may wish to try stripplot
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/user/labds/.venv/lib/python3.12/site-packages/seaborn/categorical.py:2761: UserWarning: catplot is a figure-level function and does not accept target axes. You may wish to try stripplot
   warnings.warn(msg, UserWarning)
 </pre></div>
 </div>
 <img alt="../_images/b82efbbebfdcfa6dd8cb0a360976b639679cf0e246fa883a0aa79369d77f3553.png" src="../_images/b82efbbebfdcfa6dd8cb0a360976b639679cf0e246fa883a0aa79369d77f3553.png" />
-<img alt="../_images/fa26b5a84448538e06563c964e65b9b68711a0730db35b7784f99e2dfd50db04.png" src="../_images/fa26b5a84448538e06563c964e65b9b68711a0730db35b7784f99e2dfd50db04.png" />
+<img alt="../_images/b94682f911ff5925be32cce4b21e9e95b4e52f7a69c280efb42f4a521cf37d54.png" src="../_images/b94682f911ff5925be32cce4b21e9e95b4e52f7a69c280efb42f4a521cf37d54.png" />
 </div>
 </div>
 </section>
@@ -1735,7 +1739,8 @@ Requirement already satisfied: six&gt;=1.5 in /home/user/labds/venv/lib/python3.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Data Visualization</b></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#package-matplotlib">Package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-installation-and-import"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation and import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-installation"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-import"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: import</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-visualize-some-data-we-need-the-data">To visualize some data… we need the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-matplolib-figure">Anatomy of a <code class="docutils literal notranslate"><span class="pre">matplolib</span></code> figure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-subplots-and-axes">Figure, subplots, and Axes</a><ul class="nav section-nav flex-column">
