@@ -220,6 +220,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-I-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-II-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II</b></a></li>
 </ul>
 
     </div>
@@ -504,6 +505,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Test your code</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16-check-palindrome">Exercise 16: Check Palindrome</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Test your code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17-implement-rot13-cipher">Exercise 17: Implement ROT13 Cipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Test your code</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -636,7 +647,7 @@ document.write(`
 </li>
 <li><p>returns:</p>
 <ul>
-<li><p>a list containing all common elements between <code class="docutils literal notranslate"><span class="pre">s</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code></p></li>
+<li><p>a set containing all common elements between <code class="docutils literal notranslate"><span class="pre">s</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -689,11 +700,15 @@ document.write(`
 </li>
 <li><p>returns:</p>
 <ul>
-<li><p>a dictionary containing as key each word in <code class="docutils literal notranslate"><span class="pre">s</span></code> and as value the count of that word in <code class="docutils literal notranslate"><span class="pre">s</span></code></p></li>
+<li><p>a dictionary containing the frequency (value) within <code class="docutils literal notranslate"><span class="pre">s</span></code> of each word (key) contained in <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
 </ul>
 </li>
 </ul>
-<p>Count the word case-insensitive.</p>
+<p><strong>NOTE</strong>:</p>
+<ul class="simple">
+<li><p>count the word case-insensitive.</p></li>
+<li><p>split <code class="docutils literal notranslate"><span class="pre">s</span></code> by space to obtain the words.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
@@ -875,7 +890,7 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>Note: The Fibonacci sequence is a series of numbers where each number is the sum of the two previous ones, starting with 0 and 1. To calculate it, you begin with 0 and 1, then add these to get the next number. Continue this process to generate the sequence. It goes 0, 1, 1, 2, 3, 5, 8, and so on.</p>
+<p><strong>NOTE</strong>: The Fibonacci sequence is a series of numbers where each number is the sum of the two previous ones, starting with 0 and 1. To calculate it, you begin with 0 and 1, then add these to get the next number. Continue this process to generate the sequence. It goes 0, 1, 1, 2, 3, 5, 8, and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
@@ -998,7 +1013,7 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>Note: The Collatz Conjecture is a mathematical problem that starts with any positive integer. The process involves two steps: if the number is even, divide it by 2; if it’s odd, multiply it by 3 and add 1. Repeat this process with the resulting number. The conjecture suggests that, no matter what number you start with, you’ll eventually reach the number 1.</p>
+<p><strong>NOTE</strong>: The Collatz Conjecture is a mathematical problem that starts with any positive integer. The process involves two steps: if the number is even, divide it by 2; if it’s odd, multiply it by 3 and add 1. Repeat this process with the resulting number. The conjecture suggests that, no matter what number you start with, you’ll eventually reach the number 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
@@ -1205,7 +1220,7 @@ document.write(`
 <li><p>Takes a list of <code class="docutils literal notranslate"><span class="pre">n-1</span></code> integers, which represents a sequence of numbers from 1 to <code class="docutils literal notranslate"><span class="pre">n</span></code>, but one number is missing.</p></li>
 <li><p>Returns the missing number.</p></li>
 </ul>
-<p>Note: Suppose that there is always only one number missing</p>
+<p><strong>NOTE</strong>: Suppose that there is always only one number missing</p>
 <p>Example:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">find_missing([1,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">5])</span></code> should return <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
@@ -1371,6 +1386,129 @@ document.write(`
 </div>
 </section>
 </section>
+<section id="exercise-16-check-palindrome">
+<h2>Exercise 16: Check Palindrome<a class="headerlink" href="#exercise-16-check-palindrome" title="Link to this heading">#</a></h2>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">is_palindrome</span></code> that:</p>
+<ul class="simple">
+<li><p>Takes a string as input.</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the string is a palindrome, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+</ul>
+<p><strong>NOTE</strong>: A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward (<strong>ignoring spaces, punctuation, and capitalization</strong>).</p>
+<p>Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is_palindrome(&quot;racecar&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_palindrome(&quot;hello&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_palindrome(&quot;A</span> <span class="pre">man,</span> <span class="pre">a</span> <span class="pre">plan,</span> <span class="pre">a</span> <span class="pre">canal,</span> <span class="pre">Panama&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id29">
+<h3>Solution<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="n">s2</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">s2</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id30">
+<h3>Test your code<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+<p>Run this code to test your solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;racecar&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;A man, a plan, a canal, Panama&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test failed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test passed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-17-implement-rot13-cipher">
+<h2>Exercise 17: Implement ROT13 Cipher<a class="headerlink" href="#exercise-17-implement-rot13-cipher" title="Link to this heading">#</a></h2>
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">rot13</span></code> that:</p>
+<ul class="simple">
+<li><p>Takes a string as input.</p></li>
+<li><p>Returns a new string where each letter is replaced by the letter 13 positions after it in the alphabet. If the shift passes the end of the alphabet, it wraps around to the beginning. Non-alphabetic characters should remain unchanged.</p></li>
+</ul>
+<p><strong>NOTE</strong>:</p>
+<ul class="simple">
+<li><p>ROT13 is a special case of the Caesar cipher, which is a simple substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet. In the case of ROT13, the shift is 13 places.</p></li>
+<li><p>Consider an alphabet of 26 letters: <code class="docutils literal notranslate"><span class="pre">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ord(c)</span></code> returns an integer representing <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chr(x)</span></code> returns the character associated with integer <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rot13(&quot;hello&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">&quot;uryyb&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rot13(&quot;uryyb&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rot13(&quot;hello,</span> <span class="pre">world!&quot;)</span></code> should return <code class="docutils literal notranslate"><span class="pre">&quot;uryyb,</span> <span class="pre">jbeyq!&quot;</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id31">
+<h3>Solution<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rot13</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="o">&lt;=</span> <span class="n">char</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">13</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="s1">&#39;A&#39;</span> <span class="o">&lt;=</span> <span class="n">char</span> <span class="o">&lt;=</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">13</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id32">
+<h3>Test your code<a class="headerlink" href="#id32" title="Link to this heading">#</a></h3>
+<p>Run this code to test your solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">rot13</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;uryyb&quot;</span> <span class="ow">and</span> <span class="n">rot13</span><span class="p">(</span><span class="s2">&quot;uryyb&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;hello&quot;</span> <span class="ow">and</span> <span class="n">rot13</span><span class="p">(</span><span class="s2">&quot;hello, world!&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;uryyb, jbeyq!&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test passed&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test failed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test passed
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1492,6 +1630,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15-find-the-majority-element">Exercise 15: Find the Majority Element</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Solution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Test your code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16-check-palindrome">Exercise 16: Check Palindrome</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Test your code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17-implement-rot13-cipher">Exercise 17: Implement ROT13 Cipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Test your code</a></li>
 </ul>
 </li>
 </ul>
