@@ -670,7 +670,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">side</span> <span class="o">=</span> <span class="mf">8.0</span>
 <span class="n">volume</span> <span class="o">=</span> <span class="n">side</span> <span class="o">*</span> <span class="n">side</span> <span class="o">*</span> <span class="n">side</span>
-<span class="n">volume</span> <span class="o">=</span> <span class="n">side</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># alternative</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="n">side</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># this is an alternative using the power (exponent) operator</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The volume is&quot;</span><span class="p">,</span> <span class="n">volume</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -732,6 +732,8 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="c1"># like in math, we have to use parentheses to</span>
+<span class="c1"># force priority among operators</span>
 <span class="n">result</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span><span class="o">**</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The result is&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </pre></div>
@@ -781,6 +783,13 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Bazinga!&quot;</span>
+<span class="c1"># len is a function that returns</span>
+<span class="c1"># the number of characters from</span>
+<span class="c1"># from a string. It can be use</span>
+<span class="c1"># also on lists, sets, dicts, etc.</span>
+<span class="c1"># to obtain the number of elements </span>
+<span class="c1"># that are stored within these</span>
+<span class="c1"># data structures</span>
 <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The length is&quot;</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
 </pre></div>
@@ -834,6 +843,8 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Francesco&quot;</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
 <span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;Totti&quot;</span>
+<span class="c1"># the addition between strings</span>
+<span class="c1"># performs concatenation</span>
 <span class="n">s4</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">s3</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The concatenated string is:&quot;</span><span class="p">,</span> <span class="n">s4</span><span class="p">)</span>
 </pre></div>
@@ -883,6 +894,9 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Totti&quot;</span>
+<span class="c1"># check slides about</span>
+<span class="c1"># 1) negative indexes</span>
+<span class="c1"># 2) slicing</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is:&quot;</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
 </pre></div>
@@ -1127,6 +1141,9 @@ Is n2 a perfect square? False
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="mi">123450</span>
 <span class="n">ndigits</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="p">(</span><span class="n">n1</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">):</span>
+  <span class="c1"># by dividing by 10 we are</span>
+  <span class="c1"># reducing by one the number</span>
+  <span class="c1"># of digits</span>
   <span class="n">n1</span> <span class="o">/=</span> <span class="mi">10</span>
   <span class="n">ndigits</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of digits is:&quot;</span><span class="p">,</span> <span class="n">ndigits</span><span class="p">)</span>
@@ -1292,6 +1309,10 @@ Is n2 a perfect square? False
     <span class="n">prime</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">for</span> <span class="n">div</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+      <span class="c1"># we try to divided the number</span>
+      <span class="c1"># using each possible divisor</span>
+      <span class="c1"># smaller than the number</span>
+      <span class="c1"># and larger than one</span>
       <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">prime</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -1349,6 +1370,7 @@ Is n2 a perfect square? False
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;The Big Bang Theory&quot;</span>
 <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+  <span class="c1"># check slides on slicing</span>
   <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The list of prefixes is&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
@@ -1403,6 +1425,8 @@ Is n2 a perfect square? False
 <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;ry&quot;</span><span class="p">,</span> <span class="s2">&quot;ery&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
 <span class="n">to_be_removed</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">postfix</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+  <span class="c1"># endswith checks whether a string</span>
+  <span class="c1"># ends with a specific string</span>
   <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">postfix</span><span class="p">):</span>
     <span class="c1"># we cannot modify the list while iterating over it!</span>
     <span class="n">to_be_removed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">postfix</span><span class="p">)</span>
@@ -1514,7 +1538,10 @@ Is n2 a perfect square? False
 <h3>Solution<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime_number</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we define an auxiliary function</span>
+<span class="c1"># that we can use to test whether</span>
+<span class="c1"># a number is prime</span>
+<span class="k">def</span> <span class="nf">is_prime_number</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">return</span> <span class="kc">False</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
@@ -1524,6 +1551,8 @@ Is n2 a perfect square? False
 
 <span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
   <span class="n">L2</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="c1"># we just call our auxiliary function</span>
+  <span class="c1"># for each number in our list</span>
   <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
     <span class="n">L2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">is_prime_number</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
   <span class="k">return</span> <span class="n">L2</span>
