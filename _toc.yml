@@ -14,7 +14,7 @@ parts:
   - caption: Exercises
     chapters:
     - file: 01/01-Python-Exercises-Part-I-AUTOGEN.ipynb
+    - file: 01/01-Python-Exercises-Part-I-Solutions.ipynb
     - file: 01/01-Python-Exercises-Part-II-AUTOGEN.ipynb
-  #   - file: 01/01-Python-Exercises-Solutions.ipynb
   # - caption: Case Studies
   #   chapters:
