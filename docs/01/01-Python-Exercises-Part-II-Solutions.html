@@ -62,6 +62,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Exercises - Part III" href="01-Python-Exercises-Part-III-AUTOGEN.html" />
+    <link rel="prev" title="Python Exercises - Part II" href="01-Python-Exercises-Part-II-AUTOGEN.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -218,10 +218,12 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-I-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-I-Solutions.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I [solutions]</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-II-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II</b></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II [solutions]</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-III-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part III</b></a></li>
 </ul>
 
     </div>
@@ -722,10 +724,19 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">word_freq</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="c1"># Convert the input string &#39;s&#39; to lowercase and split it into individual words</span>
     <span class="n">words</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="c1"># Create an empty dictionary to store the frequency of each word</span>
     <span class="n">word_count</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Iterate over each word in the list of words</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="c1"># Increment the word&#39;s count in the dictionary by 1</span>
+        <span class="c1"># If the word is not already in the dictionary, set its count to 1</span>
         <span class="n">word_count</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">word_count</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Return the dictionary containing word frequencies</span>
     <span class="k">return</span> <span class="n">word_count</span>
 </pre></div>
 </div>
@@ -778,8 +789,14 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_votes</span><span class="p">(</span><span class="n">votes</span><span class="p">,</span> <span class="n">new_votes</span><span class="p">):</span>
+    <span class="c1"># Iterate over each &#39;vote&#39; in the list of &#39;new_votes&#39;</span>
     <span class="k">for</span> <span class="n">vote</span> <span class="ow">in</span> <span class="n">new_votes</span><span class="p">:</span>
+        <span class="c1"># Update the count of each &#39;vote&#39; in the &#39;votes&#39; dictionary</span>
+        <span class="c1"># If the &#39;vote&#39; already exists in the dictionary, increment its count by 1</span>
+        <span class="c1"># If the &#39;vote&#39; does not exist, set its count to 1</span>
         <span class="n">votes</span><span class="p">[</span><span class="n">vote</span><span class="p">]</span> <span class="o">=</span> <span class="n">votes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">vote</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="c1"># Return the updated &#39;votes&#39; dictionary with the new vote counts</span>
     <span class="k">return</span> <span class="n">votes</span>
 </pre></div>
 </div>
@@ -841,17 +858,29 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_equals</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="c1"># Create a list &#39;numbers&#39; containing the four input values</span>
     <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">]</span>
+    
+    <span class="c1"># Initialize &#39;max_count&#39; to store the highest occurrence of any number</span>
     <span class="n">max_count</span> <span class="o">=</span> <span class="mi">0</span>
     
+    <span class="c1"># Iterate over each &#39;num&#39; in the &#39;numbers&#39; list</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="c1"># Initialize a &#39;count&#39; variable to track how many times &#39;num&#39; appears</span>
         <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1"># Iterate over each &#39;other&#39; number in &#39;numbers&#39; to compare with &#39;num&#39;</span>
         <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+            <span class="c1"># If &#39;num&#39; is equal to &#39;other&#39;, increment &#39;count&#39; by 1</span>
             <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">other</span><span class="p">:</span>
                 <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="c1"># If the current &#39;count&#39; is greater than &#39;max_count&#39;, update &#39;max_count&#39;</span>
         <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">max_count</span><span class="p">:</span>
             <span class="n">max_count</span> <span class="o">=</span> <span class="n">count</span>
     
+    <span class="c1"># Return &#39;max_count&#39; if it&#39;s greater than 1 (indicating duplicates exist)</span>
+    <span class="c1"># Otherwise, return 0 (no duplicates found)</span>
     <span class="k">return</span> <span class="n">max_count</span> <span class="k">if</span> <span class="n">max_count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
 </pre></div>
 </div>
@@ -904,15 +933,21 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Initialize a list &#39;fib_sequence&#39; with the first two Fibonacci numbers: 0 and 1</span>
     <span class="n">fib_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
     
+    <span class="c1"># If &#39;n&#39; is 1, return a list containing only the first Fibonacci number [0]</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     
+    <span class="c1"># Loop from 2 to &#39;n-1&#39; to generate the next Fibonacci numbers</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="c1"># Calculate the next Fibonacci number as the sum of the last two numbers in the sequence</span>
         <span class="n">next_fib</span> <span class="o">=</span> <span class="n">fib_sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib_sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="c1"># Append the new Fibonacci number to the &#39;fib_sequence&#39; list</span>
         <span class="n">fib_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_fib</span><span class="p">)</span>
     
+    <span class="c1"># Return the first &#39;n&#39; numbers of the Fibonacci sequence (in case &#39;n&#39; is less than 2)</span>
     <span class="k">return</span> <span class="n">fib_sequence</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -970,15 +1005,25 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zero_sum_triplets</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="c1"># Get the length of the input list &#39;numbers&#39;</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    
+    <span class="c1"># Initialize &#39;count&#39; to store the number of triplets that sum to zero</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
     
+    <span class="c1"># Use a triple nested loop to check all possible triplet combinations</span>
+    <span class="c1"># Outer loop iterates from the first element to the third-last element (i)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="c1"># Middle loop starts from the element after &#39;i&#39; (j) and goes to the second-last element</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="c1"># Inner loop starts from the element after &#39;j&#39; (k) and goes to the last element</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+                <span class="c1"># Check if the sum of the three numbers is equal to zero</span>
                 <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="c1"># If so, increment the &#39;count&#39; by 1</span>
                     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
     
+    <span class="c1"># Return the total count of zero-sum triplets found</span>
     <span class="k">return</span> <span class="n">count</span>
 </pre></div>
 </div>
@@ -1027,15 +1072,21 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Initialize an empty list &#39;sequence&#39; to store the numbers in the Collatz sequence</span>
     <span class="n">sequence</span> <span class="o">=</span> <span class="p">[]</span>
     
+    <span class="c1"># Continue looping until &#39;n&#39; becomes 1</span>
     <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># If &#39;n&#39; is even, divide it by 2</span>
         <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="c1"># If &#39;n&#39; is odd, update &#39;n&#39; to 3*n + 1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="c1"># Append the new value of &#39;n&#39; to the sequence</span>
         <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     
+    <span class="c1"># Return the generated Collatz sequence</span>
     <span class="k">return</span> <span class="n">sequence</span>
 </pre></div>
 </div>
@@ -1083,8 +1134,13 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="c1"># Continue looping until &#39;y&#39; becomes 0</span>
     <span class="k">while</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Update &#39;x&#39; to &#39;y&#39; and &#39;y&#39; to the remainder of &#39;x&#39; divided by &#39;y&#39;</span>
+        <span class="c1"># This is the core step of the Euclidean algorithm</span>
         <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">)</span>
+    
+    <span class="c1"># When &#39;y&#39; becomes 0, &#39;x&#39; will hold the greatest common divisor (GCD)</span>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
@@ -1132,9 +1188,14 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># Initialize &#39;result&#39; to 1, which will store the product of numbers</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">*=</span> <span class="n">x</span><span class="o">-</span><span class="n">i</span>
+    
+    <span class="c1"># Loop from 0 to &#39;x-1&#39;, multiplying &#39;result&#39; by &#39;x-i&#39; in each iteration</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">*=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">i</span>  <span class="c1"># Multiply &#39;result&#39; by the decreasing value &#39;x-i&#39;</span>
+    
+    <span class="c1"># Return the final computed factorial value</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
@@ -1182,14 +1243,24 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vowels_counter</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># Initialize an empty dictionary &#39;result&#39; to store the count of each vowel</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Create a list &#39;vowels&#39; containing the vowel characters to check against</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span><span class="p">]</span>
+    
+    <span class="c1"># Iterate over each character &#39;i&#39; in the input string &#39;x&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="c1"># Check if the character &#39;i&#39; is a vowel</span>
         <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+            <span class="c1"># If the vowel is already in &#39;result&#39;, increment its count by 1</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
-                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="c1"># If the vowel is not in &#39;result&#39;, add it with an initial count of 1</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="c1"># Return the dictionary &#39;result&#39;, which contains the counts of vowels in the string</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
@@ -1239,10 +1310,16 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_missing</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="c1"># Calculate the expected length of the complete list, which includes one missing number</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="c1"># Calculate the total sum of the first &#39;n&#39; natural numbers using the formula n(n + 1)/2</span>
     <span class="n">total_sum</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    
+    <span class="c1"># Calculate the actual sum of the numbers present in the input list &#39;nums&#39;</span>
     <span class="n">actual_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
     
+    <span class="c1"># The missing number is the difference between the total sum and the actual sum</span>
     <span class="k">return</span> <span class="n">total_sum</span> <span class="o">-</span> <span class="n">actual_sum</span>
 </pre></div>
 </div>
@@ -1291,16 +1368,23 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_unique_substring</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="c1"># Initialize &#39;max_length&#39; to store the length of the longest unique substring found</span>
     <span class="n">max_length</span> <span class="o">=</span> <span class="mi">0</span>
 
+    <span class="c1"># Outer loop iterates over each character in the string &#39;s&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="c1"># Initialize an empty set &#39;seen_chars&#39; to keep track of characters in the current substring</span>
         <span class="n">seen_chars</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         
+        <span class="c1"># Inner loop starts from index &#39;i&#39; and iterates through the string</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+            <span class="c1"># If the current character &#39;s[j]&#39; is already in &#39;seen_chars&#39;, break the loop</span>
             <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">in</span> <span class="n">seen_chars</span><span class="p">:</span>
                 <span class="k">break</span>
+            <span class="c1"># Add the current character &#39;s[j]&#39; to the set of seen characters</span>
             <span class="n">seen_chars</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         
+        <span class="c1"># Update &#39;max_length&#39; with the maximum value between the current &#39;max_length&#39; and the length of the substring found (j - i)</span>
         <span class="n">max_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">max_length</span>
@@ -1351,18 +1435,27 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">majority_element</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="c1"># Initialize an empty dictionary &#39;count&#39; to store the frequency of each number</span>
     <span class="n">count</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Get the length of the input list &#39;nums&#39;</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
     
+    <span class="c1"># Iterate over each number in the list &#39;nums&#39;</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="c1"># If the number &#39;num&#39; is already in the count dictionary, increment its count by 1</span>
         <span class="k">if</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
             <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="c1"># If the number &#39;num&#39; is not in the count dictionary, add it with a count of 1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         
+        <span class="c1"># Check if the count of the current number exceeds half of the list length</span>
         <span class="k">if</span> <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># If so, return the current number as the majority element</span>
             <span class="k">return</span> <span class="n">num</span>
     
+    <span class="c1"># If no majority element is found, return None</span>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
@@ -1413,15 +1506,23 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="c1"># Initialize an empty string &#39;s2&#39; to hold the filtered and normalized characters</span>
     <span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    
+    <span class="c1"># Iterate over each character in the input string &#39;s&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="c1"># Check if the character is an alphabetic character</span>
         <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="c1"># Convert the character to lowercase and add it to &#39;s2&#39;</span>
             <span class="n">s2</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">s2</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="c1"># Check if the filtered string is a palindrome by comparing characters</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)):</span>
+        <span class="c1"># If characters at symmetric positions do not match, it&#39;s not a palindrome</span>
+        <span class="k">if</span> <span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">s2</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
             <span class="k">return</span> <span class="kc">False</span>
         
+    <span class="c1"># If all symmetric characters match, return True indicating it&#39;s a palindrome</span>
     <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
 </div>
@@ -1478,14 +1579,24 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rot13</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="c1"># Initialize an empty list &#39;result&#39; to store the transformed characters</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Iterate over each character in the input string &#39;s&#39;</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="c1"># Check if the character is a lowercase letter</span>
         <span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="o">&lt;=</span> <span class="n">char</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span>
+            <span class="c1"># Apply ROT13 transformation: shift character by 13 positions within the lowercase alphabet</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">13</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)))</span>
+        <span class="c1"># Check if the character is an uppercase letter</span>
         <span class="k">elif</span> <span class="s1">&#39;A&#39;</span> <span class="o">&lt;=</span> <span class="n">char</span> <span class="o">&lt;=</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span>
+            <span class="c1"># Apply ROT13 transformation: shift character by 13 positions within the uppercase alphabet</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">13</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)))</span>
+        <span class="c1"># If the character is neither lowercase nor uppercase, keep it unchanged</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    
+    <span class="c1"># Join the list of transformed characters into a single string and return it</span>
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1542,6 +1653,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="01-Python-Exercises-Part-II-AUTOGEN.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II</b></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01-Python-Exercises-Part-III-AUTOGEN.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part III</b></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

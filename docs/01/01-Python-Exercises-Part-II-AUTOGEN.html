@@ -62,6 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Exercises - Part II [solutions]" href="01-Python-Exercises-Part-II-Solutions.html" />
     <link rel="prev" title="Python Exercises - Part I [solutions]" href="01-Python-Exercises-Part-I-Solutions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -221,6 +222,8 @@
 <li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-I-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-I-Solutions.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I [solutions]</b></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-II-Solutions.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II [solutions]</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-Python-Exercises-Part-III-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part III</b></a></li>
 </ul>
 
     </div>
@@ -1104,18 +1107,27 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">majority_element</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="c1"># Initialize an empty dictionary &#39;count&#39; to store the frequency of each number</span>
     <span class="n">count</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Get the length of the input list &#39;nums&#39;</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
     
+    <span class="c1"># Iterate over each number in the list &#39;nums&#39;</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="c1"># If the number &#39;num&#39; is already in the count dictionary, increment its count by 1</span>
         <span class="k">if</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
             <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="c1"># If the number &#39;num&#39; is not in the count dictionary, add it with a count of 1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         
+        <span class="c1"># Check if the count of the current number exceeds half of the list length</span>
         <span class="k">if</span> <span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># If so, return the current number as the majority element</span>
             <span class="k">return</span> <span class="n">num</span>
     
+    <span class="c1"># If no majority element is found, return None</span>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
@@ -1263,6 +1275,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I [solutions]</b></p>
       </div>
+    </a>
+    <a class="right-next"
+       href="01-Python-Exercises-Part-II-Solutions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II [solutions]</b></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
