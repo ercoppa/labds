@@ -832,7 +832,7 @@ Test #3 passed
 <li><p>Takes a list of strings as input.</p></li>
 <li><p>Returns a dictionary where:</p>
 <ul>
-<li><p>The keys are the strings received as input.</p></li>
+<li><p>The keys are the strings received as input where their characters are sorted alphabetically.</p></li>
 <li><p>The values are alphabetically sorted lists of words from the input list that are anagrams of each other.</p></li>
 </ul>
 </li>
@@ -939,13 +939,12 @@ Test #3 passed
 </li>
 </ul>
 <p>An ISBN is considered valid if it meets the following criteria:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>It consists of exactly 10 characters (excluding hyphens or spaces, which are ignored) where the first 9 are digits (0-9), and the last character can be a digit or an ‘X’ (which represents the number 10).</p></li>
-<li><p>The ISBN is valid if the weighted sum of the digits (where the weight decreases from 10 to 1) is divisible by 11. For example, for ISBN <code class="docutils literal notranslate"><span class="pre">0-306-40615-2</span></code>, the calculation would be:
-$<span class="math notranslate nohighlight">\(
-  (0 \times 10) + (3 \times 9) + (0 \times 8) + (6 \times 7) + (4 \times 6) + (0 \times 5) + (6 \times 4) + (1 \times 3) + (5 \times 2) + (2 \times 1) = 0 + 27 + 0 + 42 + 24 + 0 + 24 + 3 + 10 + 2 = 132
-\)</span><span class="math notranslate nohighlight">\(
-  Since \)</span>(132 \mod 11 = 0)$, it is valid.</p></li>
+<li><p>The ISBN is valid if the weighted sum of the digits (where the weight decreases from 10 to 1) is divisible by 11. For example, for ISBN <code class="docutils literal notranslate"><span class="pre">0-306-40615-2</span></code>, the calculation would be:<br>
+<span class="math notranslate nohighlight">\((0 \times 10) + (3 \times 9) + (0 \times 8) + (6 \times 7) + (4 \times 6) + (0 \times 5) + (6 \times 4) + (1 \times 3) + (5 \times 2) + (2 \times 1) = 0 + 27 + 0 + 42 + 24 + 0 + 24 + 3 + 10 + 2 = 132\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\((132 \mod 11 = 0)\)</span>, it is valid.</p>
+</li>
 </ol>
 <section id="id10">
 <h3>Example<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
@@ -1060,7 +1059,8 @@ Test #3 passed
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">result</span></code> should be:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s1">&#39;ASAP&#39;</span><span class="p">:</span> <span class="s1">&#39;As Soon As Possible&#39;</span>
+    <span class="s1">&#39;acronym&#39;</span><span class="p">:</span> <span class="s1">&#39;ASAP&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;phrase&#39;</span><span class="p">:</span> <span class="s1">&#39;As Soon As Possible&#39;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1076,19 +1076,28 @@ Test #3 passed
 <h3>Solution<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_acronym</span><span class="p">(</span><span class="n">phrase</span><span class="p">):</span>
-    <span class="c1"># Remove any leading/trailing spaces and split the phrase into words</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">phrase</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    
-    <span class="c1"># Check for empty input</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">words</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;acronym&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;phrase&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
-    
-    <span class="c1"># Create acronym and capitalized phrase</span>
-    <span class="n">acronym</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
-    <span class="n">capitalized_phrase</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_acronym</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;acronym&#39;</span><span class="p">:</span> <span class="n">acronym</span><span class="p">,</span> <span class="s1">&#39;phrase&#39;</span><span class="p">:</span> <span class="n">capitalized_phrase</span><span class="p">}</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">wordUpper</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        
+        
+        <span class="n">c</span> <span class="o">=</span> <span class="n">wordUpper</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">key</span> <span class="o">+=</span> <span class="n">c</span>
+        <span class="n">value</span> <span class="o">+=</span> <span class="n">word</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acronym&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;phrase&#39;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">r</span>
 </pre></div>
 </div>
 </div>
@@ -1400,7 +1409,7 @@ Test #3 passed
 <li><p>The keys are unique book titles (case insensitive).</p></li>
 <li><p>The values are dictionaries containing:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">total_copies</span></code> (key): as value, the total number of copies of the book available in the library (should not go below zero).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">total_copies</span></code> (key): as value, the maximum total number of copies of the book available in the library at any time (should not go below zero).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">available_copies</span></code> (key): as value, the number of copies currently available for borrowing (initially equal to <code class="docutils literal notranslate"><span class="pre">total_copies</span></code>).</p></li>
 </ul>
 </li>
@@ -1415,8 +1424,8 @@ Test #3 passed
     <span class="p">(</span><span class="s2">&quot;the great gatsby&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">manage_library</span><span class="p">(</span><span class="n">library_updates</span><span class="p">)</span>
 </pre></div>
@@ -1431,16 +1440,16 @@ Test #3 passed
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span>
     <span class="p">},</span>
     <span class="s1">&#39;1984&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="s1">&#39;,</span>
+        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">},</span>
     <span class="s1">&#39;to kill a mockingbird&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span>
     <span class="p">},</span>
     <span class="s1">&#39;moby dick&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">2</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1475,15 +1484,16 @@ Test #3 passed
                 <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
             <span class="p">}</span>
 
-        <span class="c1"># Update the total copies</span>
-        <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;total_copies&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">quantity</span>
+        <span class="c1"># Update available copies</span>
+        <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;available_copies&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">quantity</span>
 
-        <span class="c1"># Ensure total copies do not go below zero</span>
-        <span class="k">if</span> <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;total_copies&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;total_copies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># Ensure available copies do not go below zero</span>
+        <span class="k">if</span> <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;available_copies&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;available_copies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="c1"># Update available copies</span>
-        <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;available_copies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;total_copies&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;available_copies&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;total_copies&#39;</span><span class="p">]:</span>
+            <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;total_copies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">library_inventory</span><span class="p">[</span><span class="n">normalized_title</span><span class="p">][</span><span class="s1">&#39;available_copies&#39;</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">library_inventory</span>
 </pre></div>
@@ -1501,14 +1511,14 @@ Test #3 passed
     <span class="p">(</span><span class="s2">&quot;the great gatsby&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;the great gatsby&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span> <span class="p">},</span>
-    <span class="s1">&#39;1984&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="s1">&#39;1984&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
     <span class="s1">&#39;to kill a mockingbird&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span> <span class="p">},</span>
-    <span class="s1">&#39;moby dick&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="s1">&#39;moby dick&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">manage_library</span><span class="p">(</span><span class="n">library_updates</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected_result</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test #1 passed&quot;</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test #1 failed&#39;</span><span class="p">)</span>
@@ -1534,11 +1544,11 @@ Test #3 passed
 <span class="p">]</span>
 <span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;the catcher in the rye&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">},</span>
     <span class="s1">&#39;brave new world&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">}</span>
 <span class="p">}</span>

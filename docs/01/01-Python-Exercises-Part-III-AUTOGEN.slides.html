@@ -7817,7 +7817,7 @@ Test #3 passed
 <ul>
 <li>Takes a list of strings as input.</li>
 <li>Returns a dictionary where:<ul>
-<li>The keys are the strings received as input.</li>
+<li>The keys are the strings received as input where their characters are sorted alphabetically.</li>
 <li>The values are alphabetically sorted lists of words from the input list that are anagrams of each other.</li>
 </ul>
 </li>
@@ -7939,12 +7939,12 @@ Test #3 passed
 </ul>
 <p>An ISBN is considered valid if it meets the following criteria:</p>
 <ol>
-<li>It consists of exactly 10 characters (excluding hyphens or spaces, which are ignored) where the first 9 are digits (0-9), and the last character can be a digit or an 'X' (which represents the number 10).</li>
-<li>The ISBN is valid if the weighted sum of the digits (where the weight decreases from 10 to 1) is divisible by 11. For example, for ISBN <code>0-306-40615-2</code>, the calculation would be:
-$$
-  (0 \times 10) + (3 \times 9) + (0 \times 8) + (6 \times 7) + (4 \times 6) + (0 \times 5) + (6 \times 4) + (1 \times 3) + (5 \times 2) + (2 \times 1) = 0 + 27 + 0 + 42 + 24 + 0 + 24 + 3 + 10 + 2 = 132
-$$
-Since $(132 \mod 11 = 0)$, it is valid.</li>
+<li><p>It consists of exactly 10 characters (excluding hyphens or spaces, which are ignored) where the first 9 are digits (0-9), and the last character can be a digit or an 'X' (which represents the number 10).</p>
+</li>
+<li><p>The ISBN is valid if the weighted sum of the digits (where the weight decreases from 10 to 1) is divisible by 11. For example, for ISBN <code>0-306-40615-2</code>, the calculation would be:<br/>
+$(0 \times 10) + (3 \times 9) + (0 \times 8) + (6 \times 7) + (4 \times 6) + (0 \times 5) + (6 \times 4) + (1 \times 3) + (5 \times 2) + (2 \times 1) = 0 + 27 + 0 + 42 + 24 + 0 + 24 + 3 + 10 + 2 = 132$</p>
+<p>Since $(132 \mod 11 = 0)$, it is valid.</p>
+</li>
 </ol>
 </div>
 </div>
@@ -8071,7 +8071,8 @@ Test #3 passed
 </pre></div>
 <p>The <code>result</code> should be:</p>
 <div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s1">'ASAP'</span><span class="p">:</span> <span class="s1">'As Soon As Possible'</span>
+    <span class="s1">'acronym'</span><span class="p">:</span> <span class="s1">'ASAP'</span><span class="p">,</span> 
+    <span class="s1">'phrase'</span><span class="p">:</span> <span class="s1">'As Soon As Possible'</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -8512,7 +8513,7 @@ Test #3 passed
 <ul>
 <li>The keys are unique book titles (case insensitive).</li>
 <li>The values are dictionaries containing:<ul>
-<li><code>total_copies</code> (key): as value, the total number of copies of the book available in the library (should not go below zero).</li>
+<li><code>total_copies</code> (key): as value, the maximum total number of copies of the book available in the library at any time (should not go below zero).</li>
 <li><code>available_copies</code> (key): as value, the number of copies currently available for borrowing (initially equal to <code>total_copies</code>).</li>
 </ul>
 </li>
@@ -8535,8 +8536,8 @@ Test #3 passed
     <span class="p">(</span><span class="s2">"the great gatsby"</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">"1984"</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">"To Kill a Mockingbird"</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"1984"</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">(</span><span class="s2">"1984"</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">manage_library</span><span class="p">(</span><span class="n">library_updates</span><span class="p">)</span>
 </pre></div>
@@ -8557,16 +8558,16 @@ Test #3 passed
         <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">7</span>
     <span class="p">},</span>
     <span class="s1">'1984'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">0</span><span class="s1">',</span>
+        <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">},</span>
     <span class="s1">'to kill a mockingbird'</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
         <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">7</span>
     <span class="p">},</span>
     <span class="s1">'moby dick'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">2</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -8618,7 +8619,7 @@ Test #3 passed
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [742]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">library_updates</span> <span class="o">=</span> <span class="p">[</span>
@@ -8627,14 +8628,14 @@ Test #3 passed
     <span class="p">(</span><span class="s2">"the great gatsby"</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">"1984"</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">"To Kill a Mockingbird"</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"1984"</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">(</span><span class="s2">"1984"</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'the great gatsby'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">7</span> <span class="p">},</span>
-    <span class="s1">'1984'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="s1">'1984'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
     <span class="s1">'to kill a mockingbird'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">7</span> <span class="p">},</span>
-    <span class="s1">'moby dick'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="s1">'moby dick'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">manage_library</span><span class="p">(</span><span class="n">library_updates</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected_result</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"Test #1 passed"</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'Test #1 failed'</span><span class="p">)</span>
@@ -8672,7 +8673,7 @@ Test #3 passed
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [743]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">library_updates</span> <span class="o">=</span> <span class="p">[</span>
@@ -8683,11 +8684,11 @@ Test #3 passed
 <span class="p">]</span>
 <span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'the catcher in the rye'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">},</span>
     <span class="s1">'brave new world'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">'total_copies'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
         <span class="s1">'available_copies'</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">}</span>
 <span class="p">}</span>

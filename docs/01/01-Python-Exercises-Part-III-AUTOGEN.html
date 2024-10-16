@@ -736,7 +736,7 @@ Test #3 failed
 <li><p>Takes a list of strings as input.</p></li>
 <li><p>Returns a dictionary where:</p>
 <ul>
-<li><p>The keys are the strings received as input.</p></li>
+<li><p>The keys are the strings received as input where their characters are sorted alphabetically.</p></li>
 <li><p>The values are alphabetically sorted lists of words from the input list that are anagrams of each other.</p></li>
 </ul>
 </li>
@@ -817,13 +817,12 @@ Test #3 failed
 </li>
 </ul>
 <p>An ISBN is considered valid if it meets the following criteria:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>It consists of exactly 10 characters (excluding hyphens or spaces, which are ignored) where the first 9 are digits (0-9), and the last character can be a digit or an ‘X’ (which represents the number 10).</p></li>
-<li><p>The ISBN is valid if the weighted sum of the digits (where the weight decreases from 10 to 1) is divisible by 11. For example, for ISBN <code class="docutils literal notranslate"><span class="pre">0-306-40615-2</span></code>, the calculation would be:
-$<span class="math notranslate nohighlight">\(
-  (0 \times 10) + (3 \times 9) + (0 \times 8) + (6 \times 7) + (4 \times 6) + (0 \times 5) + (6 \times 4) + (1 \times 3) + (5 \times 2) + (2 \times 1) = 0 + 27 + 0 + 42 + 24 + 0 + 24 + 3 + 10 + 2 = 132
-\)</span><span class="math notranslate nohighlight">\(
-  Since \)</span>(132 \mod 11 = 0)$, it is valid.</p></li>
+<li><p>The ISBN is valid if the weighted sum of the digits (where the weight decreases from 10 to 1) is divisible by 11. For example, for ISBN <code class="docutils literal notranslate"><span class="pre">0-306-40615-2</span></code>, the calculation would be:<br>
+<span class="math notranslate nohighlight">\((0 \times 10) + (3 \times 9) + (0 \times 8) + (6 \times 7) + (4 \times 6) + (0 \times 5) + (6 \times 4) + (1 \times 3) + (5 \times 2) + (2 \times 1) = 0 + 27 + 0 + 42 + 24 + 0 + 24 + 3 + 10 + 2 = 132\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\((132 \mod 11 = 0)\)</span>, it is valid.</p>
+</li>
 </ol>
 <section id="id6">
 <h3>Example<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
@@ -903,7 +902,8 @@ Test #3 failed
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">result</span></code> should be:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s1">&#39;ASAP&#39;</span><span class="p">:</span> <span class="s1">&#39;As Soon As Possible&#39;</span>
+    <span class="s1">&#39;acronym&#39;</span><span class="p">:</span> <span class="s1">&#39;ASAP&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;phrase&#39;</span><span class="p">:</span> <span class="s1">&#39;As Soon As Possible&#39;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1186,7 +1186,7 @@ Test #3 failed
 <li><p>The keys are unique book titles (case insensitive).</p></li>
 <li><p>The values are dictionaries containing:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">total_copies</span></code> (key): as value, the total number of copies of the book available in the library (should not go below zero).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">total_copies</span></code> (key): as value, the maximum total number of copies of the book available in the library at any time (should not go below zero).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">available_copies</span></code> (key): as value, the number of copies currently available for borrowing (initially equal to <code class="docutils literal notranslate"><span class="pre">total_copies</span></code>).</p></li>
 </ul>
 </li>
@@ -1201,8 +1201,8 @@ Test #3 failed
     <span class="p">(</span><span class="s2">&quot;the great gatsby&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">manage_library</span><span class="p">(</span><span class="n">library_updates</span><span class="p">)</span>
 </pre></div>
@@ -1217,16 +1217,16 @@ Test #3 failed
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span>
     <span class="p">},</span>
     <span class="s1">&#39;1984&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="s1">&#39;,</span>
+        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">},</span>
     <span class="s1">&#39;to kill a mockingbird&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span>
     <span class="p">},</span>
     <span class="s1">&#39;moby dick&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">2</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1254,14 +1254,14 @@ Test #3 failed
     <span class="p">(</span><span class="s2">&quot;the great gatsby&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;the great gatsby&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span> <span class="p">},</span>
-    <span class="s1">&#39;1984&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="s1">&#39;1984&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
     <span class="s1">&#39;to kill a mockingbird&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">7</span> <span class="p">},</span>
-    <span class="s1">&#39;moby dick&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="s1">&#39;moby dick&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="k">try</span><span class="p">:</span> <span class="k">assert</span> <span class="n">manage_library</span><span class="p">(</span><span class="n">library_updates</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected_result</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test #1 passed&quot;</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test #1 failed&#39;</span><span class="p">)</span>
@@ -1287,11 +1287,11 @@ Test #3 failed
 <span class="p">]</span>
 <span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;the catcher in the rye&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">},</span>
     <span class="s1">&#39;brave new world&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;total_copies&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
         <span class="s1">&#39;available_copies&#39;</span><span class="p">:</span> <span class="mi">0</span>
     <span class="p">}</span>
 <span class="p">}</span>
