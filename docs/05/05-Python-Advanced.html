@@ -1,0 +1,1451 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Advanced &#8212; Python and R for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2445107f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05/05-Python-Advanced';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../00/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Python and R for Data Science - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Python and R for Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../00/index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00/00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Introduction</b></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Basics.html"><b style="font-family: 'LUISS', 'Lato'">Python Basics</b></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02/02-Data-Loading.html"><b style="font-family: 'LUISS', 'Lato'">Data Loading</b></a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../03/03-Data-Processing.html"><b style="font-family: 'LUISS', 'Lato'">Data Processing</b></a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04/04-Data-Visualization.html"><b style="font-family: 'LUISS', 'Lato'">Data Visualization</b></a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises-Part-I-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises-Part-I-Solutions.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part I [solutions]</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises-Part-II-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises-Part-II-Solutions.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part II [solutions]</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises-Part-III-AUTOGEN.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part III</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/01-Python-Exercises-Part-III-Solutions.html"><b style="font-family: 'LUISS', 'Lato'">Python Exercises - Part III [solutions]</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ercoppa/labds/blob/docs/05/05-Python-Advanced.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://ercoppa.github.io/labds/_sources/05/05-Python-Advanced.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05/05-Python-Advanced.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Python Advanced</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Python Advanced</b></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-data">Iterable data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-collections-of-data">Iterable collections of data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-extract-all-data-from-an-iterable">How to extract all data from an iterable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-piece-of-data-iterable">How to make a piece of data iterable?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generators">Generators</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-generating-values">The cost of generating values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generator">Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generators-are-lazy">Generators are <em>lazy</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#killing-the-spirit-of-generators">Killing the spirit of generators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-the-yield-keyword">More on the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">Lambda Functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-lamba-function">What is a lamba function?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-a-lambda-function">When do we use a lambda function?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-sorting">Use of a lambda function: sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-sorting-cont-d">Use of a lambda function: sorting (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Use of a lambda function: sorting (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Use of a lambda function: sorting (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-filtering">Use of a lambda function: filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-filtering-cont-d">Use of a lambda function: filtering (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Use of a lambda function: filtering (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-transformation">Use of a lambda function: transformation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-resources">Handling resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resource-management">Resource management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement-for-file-handling"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement for file handling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement-with-a-database-connection"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement with a database connection</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-classes">Objects and Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-is-an-object-oriented-language">Python is an object-oriented language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class">Defining a class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class-with-instance-variables">Defining a class with instance variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-instance-variables">Accessing instance variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class-with-methods">Defining a class with methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class-with-methods-cont-d">Defining a class with methods (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Defining a class with methods (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-attributes-can-be-updated">Object attributes can be updated</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-attributes-can-be-updated-cont-d">Object attributes can be updated (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation-cont-d">Encapsulation (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-attributes-class-attributes">Static attributes (class attributes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div align="center">
+<section class="tex2jax_ignore mathjax_ignore" id="python-advanced">
+<h1><b style="font-family: 'LUISS', 'Lato'">Python Advanced</b><a class="headerlink" href="#python-advanced" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Python and R for Data Science</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Data Science and Management</h3>
+<img src="https://ercoppa.github.io/labds/dist/img/cliente-luiss.png">
+<p><br><br><br></p>
+</div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="iterable-data">
+<h1>Iterable data<a class="headerlink" href="#iterable-data" title="Link to this heading">#</a></h1>
+<section id="iterable-collections-of-data">
+<h2>Iterable collections of data<a class="headerlink" href="#iterable-collections-of-data" title="Link to this heading">#</a></h2>
+<p>Most data structures in Python are <em>iterable</em>, meaning that we can <em>iterate</em> over their internal data using a for loop. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>                            <span class="c1"># a list</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list element:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># is iterable</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">}</span>                       <span class="c1"># a set</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">S</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;set element:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># is iterable</span>
+
+<span class="n">D</span> <span class="o">=</span> <span class="p">{</span><span class="mi">123</span><span class="p">:</span> <span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="mi">456</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">}</span>              <span class="c1"># a dictionary</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">D</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D contains the key&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># is iterable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list element: 0
+list element: 1
+set element: b
+set element: a
+D contains the key 123
+D contains the key 456
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-extract-all-data-from-an-iterable">
+<h2>How to extract all data from an iterable?<a class="headerlink" href="#how-to-extract-all-data-from-an-iterable" title="Link to this heading">#</a></h2>
+<p>When we do not know the actual data type but we know that it is iterable, besides using a for loop, we can extract <strong>all</strong> the data from anthe iterableusing, e.g., the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
+[&#39;b&#39;, &#39;a&#39;]
+[123, 456]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extracting all data from an iterable is expensive because we are creating a new list with all the data. This is not a problem for small data sets, but it can be a problem for large data sets.</p>
+<p>``</p>
+</section>
+<section id="how-to-make-a-piece-of-data-iterable">
+<h2>How to make a piece of data iterable?<a class="headerlink" href="#how-to-make-a-piece-of-data-iterable" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>If we use data types from Python or from popular packages, we may expect that any collection of data is iterable</p></li>
+<li><p>If we define our own data type, we can make it iterable by defining the <code class="docutils literal notranslate"><span class="pre">__iter__</span></code> method. We will return on this after introducing the concept of Python class and object</p></li>
+<li><p>We define a generator function (see next slides)</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="generators">
+<h1>Generators<a class="headerlink" href="#generators" title="Link to this heading">#</a></h1>
+<section id="the-cost-of-generating-values">
+<h2>The cost of generating values<a class="headerlink" href="#the-cost-of-generating-values" title="Link to this heading">#</a></h2>
+<p>Suppose we want to implement our own version of <code class="docutils literal notranslate"><span class="pre">range</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">L</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Such an implementation is correct but is quite inefficient when <code class="docutils literal notranslate"><span class="pre">n</span></code> is a large number e.g, <code class="docutils literal notranslate"><span class="pre">n=1000000</span></code>. Indeed <code class="docutils literal notranslate"><span class="pre">my_range(n)</span></code>:</p>
+<ul class="simple">
+<li><p>needs to iterate <code class="docutils literal notranslate"><span class="pre">n</span></code> times before emitting any kind of result</p></li>
+<li><p>needs to store <code class="docutils literal notranslate"><span class="pre">n</span></code> integers</p></li>
+</ul>
+<p>In many cases, we need to generate a series of values but consume them one at a time. This leads us to the concept of <em>generators</em>.</p>
+</section>
+<section id="generator">
+<h2>Generator<a class="headerlink" href="#generator" title="Link to this heading">#</a></h2>
+<p>A generator is a function that incrementally produces values and behaves like an iterator, i.e., at each iteration it generates a single distinct value.</p>
+<p>To make this possible, the generator function exploits the <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement to return a single value to its caller. When no other values can be generated, the generator <code class="docutils literal notranslate"><span class="pre">return</span></code>s the sentinel value <code class="docutils literal notranslate"><span class="pre">None</span></code> to notify the consumer.</p>
+<p>For instance, we can rewrite <code class="docutils literal notranslate"><span class="pre">my_range</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTE</strong>: the built-in <code class="docutils literal notranslate"><span class="pre">range</span></code> is extremelly flexible and thus its implementation is quite more involved than what we are seeing for <code class="docutils literal notranslate"><span class="pre">my_range</span></code>. Furhtermore, <code class="docutils literal notranslate"><span class="pre">range</span></code> is not technically a generator.</p>
+</section>
+<section id="generators-are-lazy">
+<h2>Generators are <em>lazy</em><a class="headerlink" href="#generators-are-lazy" title="Link to this heading">#</a></h2>
+<p>By design, generators are lazy: they do no eagerly generate the values but wait until we explitly ask for a value using <code class="docutils literal notranslate"><span class="pre">next()</span></code>. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">my_range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value #0:&quot;</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value #1:&quot;</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value #2:&quot;</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Value #0: 0
+Value #1: 1
+Value #2: 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, Python implicitly calls <code class="docutils literal notranslate"><span class="pre">next()</span></code> over a generator when we use the generator as the target of a for loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="killing-the-spirit-of-generators">
+<h2>Killing the spirit of generators<a class="headerlink" href="#killing-the-spirit-of-generators" title="Link to this heading">#</a></h2>
+<p>Since generators are iteratable, besides using them in a for loop, we can extract all the data from a generator using, e.g., the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">my_range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, this may create a performance bottleneck for large data sets. Avoid using <code class="docutils literal notranslate"><span class="pre">list()</span></code> on generators when possible. Use it only for debugging or for small data sets.</p>
+</section>
+<section id="more-on-the-yield-keyword">
+<h2>More on the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword<a class="headerlink" href="#more-on-the-yield-keyword" title="Link to this heading">#</a></h2>
+<p>As anticipated, the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword controls the flow of a generator function:</p>
+<ol class="arabic simple">
+<li><p>it suspends the execution of the generator function and returns a value to
+the caller</p></li>
+<li><p>it remembers the state of its local variables</p></li>
+<li><p>it does not quit the generator function (as return does)</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lambda-functions">
+<h1>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">#</a></h1>
+<section id="what-is-a-lamba-function">
+<h2>What is a lamba function?<a class="headerlink" href="#what-is-a-lamba-function" title="Link to this heading">#</a></h2>
+<p>In several cases, we want to quickly define a function that:</p>
+<ol class="arabic simple">
+<li><p>is extremely <strong>short</strong>, i.e., 1 line of code</p></li>
+<li><p>is <strong>used</strong> in our code only <strong>once</strong></p></li>
+<li><p>is <strong>passed as an argument</strong> to other functions (see examples later on!)</p></li>
+</ol>
+<p>A lambda function is thus a convenient way of defining a function. Since we plan to define and use it only once, we do not need to give to the function a name. Hence, a lamba function is said to an <strong>anonymous</strong> function.</p>
+<p><strong>NOTE</strong>: you can always use a normal function in the place of a lambda function.</p>
+</section>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>To <em><strong>define</strong></em> a lambda function, the syntax is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> (<em><strong>&lt;ARGS&gt;</strong></em>) <code class="docutils literal notranslate"><span class="pre">:</span></code> <em><strong>&lt;CODE&gt;</strong></em></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> is a Python keyword</p></li>
+<li><p><em><strong>&lt;ARGS&gt;</strong></em> is the sequence of arguments that your lambda function takes</p></li>
+<li><p><em><strong>&lt;CODE&gt;</strong></em> is the line of code processing the arguments (and generating a result)</p></li>
+</ul>
+<p>Let us see an example</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>This lambda function takes a single argument (<code class="docutils literal notranslate"><span class="pre">x</span></code>) which is incremented and returned:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(x)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that there is no explicit use of the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement: the return value of the lambda function is what is computed by <em><strong>&lt;CODE&gt;</strong></em> (<code class="docutils literal notranslate"><span class="pre">x+1</span></code> in this example).</p>
+<p>Our lambda function would be equivalent to the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The lambda variant is shorter. However, it does not have a name: since the name helps wrt readability, we use lambda functions only when their task is easy to understand from a quick look. Avoid to use lambda functions when the code logic is cryptic.</p>
+</section>
+<section id="when-do-we-use-a-lambda-function">
+<h2>When do we use a lambda function?<a class="headerlink" href="#when-do-we-use-a-lambda-function" title="Link to this heading">#</a></h2>
+<p>There are many situations where we call a function that takes another function as an argument. This is common when a function needs an <strong>auxiliary function</strong> to handle part of its task.</p>
+<p>Well-known examples include:</p>
+<ol class="arabic simple">
+<li><p><strong>Sorting</strong>: When a function sorts a collection of values, how do we define the sorting key?</p></li>
+<li><p><strong>Filtering</strong>: When a function filters out elements from a collection based on a certain condition, how do we define the filtering criteria?</p></li>
+<li><p><strong>Transformation</strong>: When a function transforms values within a collection, how do we specify the transformation to apply to each element?</p></li>
+</ol>
+<p>Python offers several complex functions whose behavior can be tuned by defining the related auxiliary function. Hence, as a programmer, we can solve complex tasks by providing a small and compact function for the auxiliary task.</p>
+</section>
+<section id="use-of-a-lambda-function-sorting">
+<h2>Use of a lambda function: sorting<a class="headerlink" href="#use-of-a-lambda-function-sorting" title="Link to this heading">#</a></h2>
+<p>For instance, <code class="docutils literal notranslate"><span class="pre">sorted</span></code> takes three arguments:</p>
+<ol class="arabic simple">
+<li><p>the iterable collection that we want to sort, e.g., a list</p></li>
+<li><p>[optional] <code class="docutils literal notranslate"><span class="pre">reverse</span></code>: a boolean flag indicating whether the sorting should be descending</p></li>
+<li><p>[optional] <code class="docutils literal notranslate"><span class="pre">key</span></code>: <strong>a function defining the key to consider when doing the sorting</strong></p></li>
+</ol>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">sorted</span></code> will sort collection by considering all the data within an element. This may not be what we want in several cases. Instead of re-implementing a sorting function from scratch, which is painful and error-prone, we can tune the sorting behavior of <code class="docutils literal notranslate"><span class="pre">sorted</span></code> by passing a function to define the sorting <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
+</section>
+<section id="use-of-a-lambda-function-sorting-cont-d">
+<h2>Use of a lambda function: sorting (cont’d)<a class="headerlink" href="#use-of-a-lambda-function-sorting-cont-d" title="Link to this heading">#</a></h2>
+<p>Suppose we have a list of tuples, where the first element in the tuple is the name of a student and the second element of the tuple is his/her matricola:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;5676&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we sort this list with <code class="docutils literal notranslate"><span class="pre">sorted</span></code> we get:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Amy&#39;, &#39;5676&#39;), (&#39;Sheldon&#39;, &#39;1234&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a bit strange since we may most likely want to sort by matricola (the second field in each tuple). However, by default, <code class="docutils literal notranslate"><span class="pre">sorted</span></code> performs the sorting considering all the data within an element, prioritizing <code class="docutils literal notranslate"><span class="pre">('Amy',</span> <span class="pre">'5676')</span></code> since it <em>starts</em> with a string <code class="docutils literal notranslate"><span class="pre">Amy</span></code> that is <em>smaller</em> than <code class="docutils literal notranslate"><span class="pre">Sheldon</span></code> from <code class="docutils literal notranslate"><span class="pre">('Sheldon',</span> <span class="pre">'1234')</span></code>.</p>
+</section>
+<section id="id1">
+<h2>Use of a lambda function: sorting (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>To make a sorting by matricola, we can pass the optional argument <code class="docutils literal notranslate"><span class="pre">key</span></code>: such an argument is a function! We have two options:</p>
+<ol class="arabic simple">
+<li><p>Define a <strong>normal function</strong> and then pass it to <code class="docutils literal notranslate"><span class="pre">sorted</span></code>:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_key</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># we return the matricola</span>
+
+<span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">extract_key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Sheldon&#39;, &#39;1234&#39;), (&#39;Amy&#39;, &#39;5676&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">sorted</span></code> and define inline a <strong>lambda function</strong>:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Sheldon&#39;, &#39;1234&#39;), (&#39;Amy&#39;, &#39;5676&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The second approach is more readable because, when looking at the call to <code class="docutils literal notranslate"><span class="pre">sorted</span></code>, we can immediately see what the function passed as <code class="docutils literal notranslate"><span class="pre">key</span></code> is doing.</p>
+</section>
+<section id="id2">
+<h2>Use of a lambda function: sorting (cont’d)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Suppose we want to sort a list of strings based on their lenght, we can easily do it with <code class="docutils literal notranslate"><span class="pre">sorted</span></code> and a lambda function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sparta&quot;</span><span class="p">,</span> <span class="s2">&quot;This&quot;</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="s2">&quot;not&quot;</span><span class="p">]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;is&#39;, &#39;not&#39;, &#39;This&#39;, &#39;Sparta&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-of-a-lambda-function-filtering">
+<h2>Use of a lambda function: filtering<a class="headerlink" href="#use-of-a-lambda-function-filtering" title="Link to this heading">#</a></h2>
+<p>Suppose we want to keep students with a name starting with <code class="docutils literal notranslate"><span class="pre">'A'</span></code>. We could</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">filter_by_a</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="n">new_L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
+            <span class="n">new_L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_L</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;5676&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)]</span>
+<span class="n">filter_by_a</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Amy&#39;, &#39;5676&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Filtering is a very common task and <code class="docutils literal notranslate"><span class="pre">filter_by_a</span></code> is more complex than what we would like to see :(</p>
+</section>
+<section id="use-of-a-lambda-function-filtering-cont-d">
+<h2>Use of a lambda function: filtering (cont’d)<a class="headerlink" href="#use-of-a-lambda-function-filtering-cont-d" title="Link to this heading">#</a></h2>
+<p>Python offers the function <code class="docutils literal notranslate"><span class="pre">filter</span></code> to filter values from an iterable collection. It takes two arguments:</p>
+<ol class="arabic simple">
+<li><p>A function to be run for each item in the iterable that return <code class="docutils literal notranslate"><span class="pre">True</span></code> when the element must be kept, or <code class="docutils literal notranslate"><span class="pre">False</span></code> when the element should be filtered</p></li>
+<li><p>The iterable collection</p></li>
+</ol>
+<p>For the first argument, we may pass a lambda function. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;5676&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Amy&#39;, &#39;5676&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTE</strong>: <code class="docutils literal notranslate"><span class="pre">filter()</span></code> returns an iterable object, hence, see the slides on <em>iterators</em> to understand why we need to use <code class="docutils literal notranslate"><span class="pre">list()</span></code> to obtain a printable result from <code class="docutils literal notranslate"><span class="pre">filter()</span></code>.</p>
+</section>
+<section id="id3">
+<h2>Use of a lambda function: filtering (cont’d)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>If you do not want to define a lambda function, you can still use <code class="docutils literal notranslate"><span class="pre">filter</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">filter_criteria</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;5676&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">filter_criteria</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Amy&#39;, &#39;5676&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This works as expected by is less readable: you have to look at the definition of <code class="docutils literal notranslate"><span class="pre">filter_criteria</span></code> (which may be in another file or way far from the place where you call <code class="docutils literal notranslate"><span class="pre">filter</span></code>).</p>
+</section>
+<section id="use-of-a-lambda-function-transformation">
+<h2>Use of a lambda function: transformation<a class="headerlink" href="#use-of-a-lambda-function-transformation" title="Link to this heading">#</a></h2>
+<p>The buit-in function <code class="docutils literal notranslate"><span class="pre">map</span></code> applies a function to each element of an iterable collection. It takes two arguments:</p>
+<ol class="arabic simple">
+<li><p>A function to be applied to each element of the iterable</p></li>
+<li><p>The iterable collection</p></li>
+</ol>
+<p>For instance, suppose we want to transform a list of strings into a list of string lenght, we can easily do it with <code class="docutils literal notranslate"><span class="pre">map</span></code> and a lambda function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bazinga&quot;</span><span class="p">,</span> <span class="s2">&quot;Amy&quot;</span><span class="p">,</span> <span class="s2">&quot;Sheldon&quot;</span><span class="p">,</span> <span class="s2">&quot;Penny&quot;</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">lst</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 3, 7, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This would be equivalent to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+    <span class="n">lst2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 3, 7, 5]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="with-statement">
+<h1><code class="docutils literal notranslate"><span class="pre">with</span></code> statement<a class="headerlink" href="#with-statement" title="Link to this heading">#</a></h1>
+<section id="handling-resources">
+<h2>Handling resources<a class="headerlink" href="#handling-resources" title="Link to this heading">#</a></h2>
+<p>When we work with resources that need to be properly managed, we need to ensure that the resource is properly released when we are done with it. For instance, when we open a file, we need to close it when we are done with it. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># open a file in write mode (&#39;w&#39;)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;LUISS&quot;</span><span class="p">)</span>            <span class="c1"># write to the file</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                   <span class="c1"># close the file</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happens if we do not close the file?</p>
+<ol class="arabic simple">
+<li><p>The data written to the file may not be saved</p></li>
+<li><p>We may run out of file descriptors: there is a limit of number of files that you can open at the same time</p></li>
+</ol>
+</section>
+<section id="resource-management">
+<h2>Resource management<a class="headerlink" href="#resource-management" title="Link to this heading">#</a></h2>
+<p>In general, several resource have to be properly managed, e.g.,:</p>
+<ol class="arabic simple">
+<li><p>Files</p></li>
+<li><p>Network connections</p></li>
+<li><p>Database connections</p></li>
+<li><p>Locks</p></li>
+<li><p>…</p></li>
+</ol>
+<p>To cope with these needs, Python offers the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement.</p>
+</section>
+<section id="with-statement-for-file-handling">
+<h2><code class="docutils literal notranslate"><span class="pre">with</span></code> statement for file handling<a class="headerlink" href="#with-statement-for-file-handling" title="Link to this heading">#</a></h2>
+<p>Most resources in Python can be convientienly managed using the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement. The <code class="docutils literal notranslate"><span class="pre">with</span></code> statement is used to wrap the execution of a block of code within methods defined by a <em><strong>context manager</strong></em>.</p>
+<p>For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># some code</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;LUISS&quot;</span><span class="p">)</span>
+    <span class="c1"># some other code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we write into a file within a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement, the file is automatically closed when the block of code is exited. This is true even if an exception is raised within the block of code.</p>
+</section>
+<section id="with-statement-with-a-database-connection">
+<h2><code class="docutils literal notranslate"><span class="pre">with</span></code> statement with a database connection<a class="headerlink" href="#with-statement-with-a-database-connection" title="Link to this heading">#</a></h2>
+<p>SQLite is a popular relational database that can be used in Python. To connect to a SQLite database, we can use the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> package. To keep it internally consistent, we need to close the connection when we are done with it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="c1"># Example of using context manager for database connection</span>
+<span class="k">with</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)&#39;</span><span class="p">)</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;INSERT INTO users (name) VALUES (?)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,))</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="c1"># The connection is automatically closed after the with block.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="objects-and-classes">
+<h1>Objects and Classes<a class="headerlink" href="#objects-and-classes" title="Link to this heading">#</a></h1>
+<section id="python-is-an-object-oriented-language">
+<h2>Python is an object-oriented language<a class="headerlink" href="#python-is-an-object-oriented-language" title="Link to this heading">#</a></h2>
+<p>Python is an <em>object-oriented programming (OOP) language</em>: the programmer can define its own data types, that are known as <em><strong>classes</strong></em>.</p>
+<p>If <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> is a <em>class</em>, a value of a <em>class</em> <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> is called an <em><strong>object</strong></em>.
+In other words, an object is an instance of the class <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> can be seen as a blueprint for that object.</p>
+<p>Each object contains:</p>
+<ul class="simple">
+<li><p><em>instance variables</em>: i.e., attributes reppresented through variables, used to represent a domain value</p></li>
+<li><p><em>methods</em>: i.e., functions through which domain elements can be manipulated</p></li>
+</ul>
+</section>
+<section id="defining-a-class">
+<h2>Defining a class<a class="headerlink" href="#defining-a-class" title="Link to this heading">#</a></h2>
+<p>To define a class, we use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword. For instance, we can define a class <code class="docutils literal notranslate"><span class="pre">Person</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="c1"># this is an empty class</span>
+    <span class="k">pass</span> <span class="c1"># this is a placeholder since Python requires at </span>
+         <span class="c1"># least one statement in the class. pass does nothing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This class is not very useful since it does not have any instance variables or methods. We can create an object of this class by calling the class as if it were a function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span> <span class="c1"># create an instance of the class</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>     <span class="c1"># print the instance</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="c1"># print the type of the instance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Person object at 0x7ffff2fea9f0&gt;
+&lt;class &#39;__main__.Person&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="defining-a-class-with-instance-variables">
+<h2>Defining a class with instance variables<a class="headerlink" href="#defining-a-class-with-instance-variables" title="Link to this heading">#</a></h2>
+<p>To define a class with instance variables, we need to define a special method called <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, often dubbed the <em>constructor</em>. This method is called when an object of the class is created. For instance, we can define a class <code class="docutils literal notranslate"><span class="pre">Person</span></code> with two instance variables <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now create an object of this class and pass the values for the instance variables <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-instance-variables">
+<h2>Accessing instance variables<a class="headerlink" href="#accessing-instance-variables" title="Link to this heading">#</a></h2>
+<p>We can access the instance variables of an object using the dot notation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">surname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amy
+Farrah Fowler
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="defining-a-class-with-methods">
+<h2>Defining a class with methods<a class="headerlink" href="#defining-a-class-with-methods" title="Link to this heading">#</a></h2>
+<p>We can add methods in a class by adding the function definition within the class definition. For instance, we can add a method <code class="docutils literal notranslate"><span class="pre">greet</span></code> to the class <code class="docutils literal notranslate"><span class="pre">Person</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">surname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the first argument of a class method is always <code class="docutils literal notranslate"><span class="pre">self</span></code>. This is a reference to the object itself. When we call a method of an object, we do not need to pass the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument: Python does it for us:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, my name is Amy Farrah Fowler
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="defining-a-class-with-methods-cont-d">
+<h2>Defining a class with methods (cont’d)<a class="headerlink" href="#defining-a-class-with-methods-cont-d" title="Link to this heading">#</a></h2>
+<p>The class methods can take any arbitrary number of arguments. For instance, we can add a method <code class="docutils literal notranslate"><span class="pre">greet</span></code> to the class <code class="docutils literal notranslate"><span class="pre">Person</span></code> that takes an argument <code class="docutils literal notranslate"><span class="pre">other</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">surname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that our <code class="docutils literal notranslate"><span class="pre">greet</span></code> function assumes that <code class="docutils literal notranslate"><span class="pre">other</span></code> has an attribute <code class="docutils literal notranslate"><span class="pre">name</span></code>. If <code class="docutils literal notranslate"><span class="pre">other</span></code> does not have an attribute <code class="docutils literal notranslate"><span class="pre">name</span></code>, the function will raise an exception. Python does not force us to declare the expected type for an argument, which can be quite confusing and error-prone. Nonetheless, this is a design choice of Python that allows for more flexibility.</p>
+</section>
+<section id="id4">
+<h2>Defining a class with methods (cont’d)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Methods, including the constructor <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, can have optional arguments. For instance, we can add an optional argument <code class="docutils literal notranslate"><span class="pre">greeting</span></code> to the <code class="docutils literal notranslate"><span class="pre">greet</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friends</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">surname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>               <span class="c1"># default greeting</span>
+<span class="n">p</span><span class="o">.</span><span class="n">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hi&quot;</span><span class="p">)</span>  <span class="c1"># custom greeting</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, my name is Amy Farrah Fowler
+Hi, my name is Amy Farrah Fowler
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="object-attributes-can-be-updated">
+<h2>Object attributes can be updated<a class="headerlink" href="#object-attributes-can-be-updated" title="Link to this heading">#</a></h2>
+<p>Object attributes can be updated by assigning a new value to them. For instance, we can update the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute of a <code class="docutils literal notranslate"><span class="pre">Person</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+    
+    <span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooper&#39;</span><span class="p">)</span> <span class="c1"># change the name and surname</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sheldon
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="object-attributes-can-be-updated-cont-d">
+<h2>Object attributes can be updated (cont’d)<a class="headerlink" href="#object-attributes-can-be-updated-cont-d" title="Link to this heading">#</a></h2>
+<p>In Python, you can update the object attributes even outside the class definition. For instance, we can update the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute of a <code class="docutils literal notranslate"><span class="pre">Person</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+    
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Sheldon&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="s1">&#39;Cooper&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sheldon
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="encapsulation">
+<h2>Encapsulation<a class="headerlink" href="#encapsulation" title="Link to this heading">#</a></h2>
+<p>As seen, in our example, we can update the attribute <code class="docutils literal notranslate"><span class="pre">name</span></code> via:</p>
+<ol class="arabic simple">
+<li><p>the object method <code class="docutils literal notranslate"><span class="pre">change</span></code></p></li>
+<li><p>directly accessing the attribute</p></li>
+</ol>
+<p>We should always prefer the first approach. This is because the first approach allows the class to control the update of the attribute. For instance, we can add a check to ensure that the new name is a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;name must be a string&quot;</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">surname</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;name must be a string&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="encapsulation-cont-d">
+<h2>Encapsulation (cont’d)<a class="headerlink" href="#encapsulation-cont-d" title="Link to this heading">#</a></h2>
+<p>Most of the time, it is the writer of the class that knows how the attributes should be updated. By using methods to update the attributes, we can ensure that the attributes are updated correctly.</p>
+<p>Indeed, we seek to separate:</p>
+<ul class="simple">
+<li><p>the public interface of the class, well described to the end-users via its methods by which we can manipulate objects;</p></li>
+<li><p>the inner working of the class, which is private to the class designer and should not be seen (or changed) from “outside of the box”.</p></li>
+</ul>
+<p>This principle is known as <strong>encapsulation</strong>.</p>
+</section>
+<section id="static-attributes-class-attributes">
+<h2>Static attributes (class attributes)<a class="headerlink" href="#static-attributes-class-attributes" title="Link to this heading">#</a></h2>
+<p>In Python, we can define inside a class, outside any method definition, one or more static attributes. Static attributes are shared among all objects of a class. For instance, we can define a static attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> for the class <code class="docutils literal notranslate"><span class="pre">Person</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="n">CITY</span> <span class="o">=</span> <span class="s1">&#39;Pasadena&#39;</span> <span class="c1"># class attribute, shared by all instances</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooper&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">Person</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>
+
+<span class="n">Person</span><span class="o">.</span><span class="n">CITY</span> <span class="o">=</span> <span class="s1">&#39;Rome&#39;</span> <span class="c1"># if we change the class attribute</span>
+                     <span class="c1"># we change it for all instances</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">Person</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pasadena Pasadena Pasadena
+Rome Rome Rome
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h2>
+<p>Inheritance is a mechanism that allows a class to inherit the attributes and methods of another class. The class that inherits is called a <em>subclass</em> (or <em>child class</em> or <em>derived class</em>) and the class that is inherited is called a <em>superclass</em> (or <em>parent class</em>). We can thus defined a hierarchy of classes.</p>
+<center>
+<img src="img/Multilevel_Inheritance.jpg">
+</center></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Python Advanced</b></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-data">Iterable data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-collections-of-data">Iterable collections of data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-extract-all-data-from-an-iterable">How to extract all data from an iterable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-piece-of-data-iterable">How to make a piece of data iterable?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generators">Generators</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-generating-values">The cost of generating values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generator">Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generators-are-lazy">Generators are <em>lazy</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#killing-the-spirit-of-generators">Killing the spirit of generators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-the-yield-keyword">More on the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">Lambda Functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-lamba-function">What is a lamba function?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-a-lambda-function">When do we use a lambda function?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-sorting">Use of a lambda function: sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-sorting-cont-d">Use of a lambda function: sorting (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Use of a lambda function: sorting (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Use of a lambda function: sorting (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-filtering">Use of a lambda function: filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-filtering-cont-d">Use of a lambda function: filtering (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Use of a lambda function: filtering (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-a-lambda-function-transformation">Use of a lambda function: transformation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-resources">Handling resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resource-management">Resource management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement-for-file-handling"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement for file handling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-statement-with-a-database-connection"><code class="docutils literal notranslate"><span class="pre">with</span></code> statement with a database connection</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-classes">Objects and Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-is-an-object-oriented-language">Python is an object-oriented language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class">Defining a class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class-with-instance-variables">Defining a class with instance variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-instance-variables">Accessing instance variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class-with-methods">Defining a class with methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class-with-methods-cont-d">Defining a class with methods (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Defining a class with methods (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-attributes-can-be-updated">Object attributes can be updated</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-attributes-can-be-updated-cont-d">Object attributes can be updated (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation-cont-d">Encapsulation (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-attributes-class-attributes">Static attributes (class attributes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

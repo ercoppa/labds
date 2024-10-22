@@ -10,7 +10,8 @@ parts:
     - file: 01/01-Python-Basics.ipynb
     - file: 02/02-Data-Loading.ipynb
     - file: 03/03-Data-Processing.ipynb
-    # - file: 04/04-Data-Visualization.ipynb
+    - file: 04/04-Data-Visualization.ipynb
+    - file: 05/05-Pyhon-Advanced.ipynb
   - caption: Exercises
     chapters:
     - file: 01/01-Python-Exercises-Part-I-AUTOGEN.ipynb
