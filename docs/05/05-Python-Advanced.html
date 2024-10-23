@@ -488,8 +488,44 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-attributes-can-be-updated-cont-d">Object attributes can be updated (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation-cont-d">Encapsulation (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-attributes-class-attributes">Static attributes (class attributes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-attributes-within-a-class">Static attributes within a class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-messy-situation-of-static-attributes-in-python">The messy situation of static attributes in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-messy-situation-of-static-attributes-in-python-cont-d">The messy situation of static attributes in Python (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-an-object-iterable">Making an object iterable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-an-object-iterable-cont-d">Making an object iterable (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-an-object-pritable">Make an object pritable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-an-object-pritable-cont-d">Make an object pritable (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity-and-equivalence">Object identity and equivalence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity-and-equivalence-cont-d">Object identity and equivalence (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Object identity and equivalence (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Object identity and equivalence (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-and-deep-copy-of-an-object">Copy and deep copy of an object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-and-deep-copy-of-an-object-cont-d">Copy and deep copy of an object (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-want-inheritance">Why do we want inheritance?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-a-relation"><em>is-a</em> relation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefit-of-inheritance-code-reuse">Benefit of inheritance: code reuse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-child-class-can-override-parent-methods">A child class can override parent methods</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators">Decorators</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-decorators">Function decorators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-need-to-be-aware-of-decorators">Why do need to be aware of decorators?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators-in-action-cache">Decorators in action: <code class="docutils literal notranslate"><span class="pre">@cache</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators-in-action-timeit">Decorators in action: <code class="docutils literal notranslate"><span class="pre">@timeit</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism">Parallelism</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-computer-execute-code">How does a computer execute code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-transistors-more-speed-20-years-ago">More transistors, more speed (20 years ago)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-lunch-is-over-more-transistors-more-cores">Free lunch is over: more transistors, more cores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-python-program-likely-uses-a-single-core">A Python program likely uses a single core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism-in-python">Parallelism in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-small-cpu-intensive-task">A small cpu-intensive task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-running-a-function-in-parallel"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: running a function in parallel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-work-assignment"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: work assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-issues-about-sharing-data"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: issues about sharing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-issues-about-sharing-data-cont-d"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: issues about sharing data (cont’d)</a></li>
 </ul>
 </li>
 </ul>
@@ -516,7 +552,7 @@ document.write(`
 <h1>Iterable data<a class="headerlink" href="#iterable-data" title="Link to this heading">#</a></h1>
 <section id="iterable-collections-of-data">
 <h2>Iterable collections of data<a class="headerlink" href="#iterable-collections-of-data" title="Link to this heading">#</a></h2>
-<p>Most data structures in Python are <em>iterable</em>, meaning that we can <em>iterate</em> over their internal data using a for loop. For instance:</p>
+<p>Most data structures in Python are <em>iterable</em>, meaning that we can <em>iterate</em> over their internal data using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. For instance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>                            <span class="c1"># a list</span>
@@ -533,8 +569,8 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list element: 0
 list element: 1
-set element: b
 set element: a
+set element: b
 D contains the key 123
 D contains the key 456
 </pre></div>
@@ -544,7 +580,7 @@ D contains the key 456
 </section>
 <section id="how-to-extract-all-data-from-an-iterable">
 <h2>How to extract all data from an iterable?<a class="headerlink" href="#how-to-extract-all-data-from-an-iterable" title="Link to this heading">#</a></h2>
-<p>When we do not know the actual data type but we know that it is iterable, besides using a for loop, we can extract <strong>all</strong> the data from anthe iterableusing, e.g., the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function:</p>
+<p>When we do not know the actual data type but we know that it is iterable, besides using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, we can extract <strong>all</strong> the data from an iterable using, e.g., the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
@@ -555,14 +591,13 @@ D contains the key 456
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
-[&#39;b&#39;, &#39;a&#39;]
+[&#39;a&#39;, &#39;b&#39;]
 [123, 456]
 </pre></div>
 </div>
 </div>
 </div>
 <p>Extracting all data from an iterable is expensive because we are creating a new list with all the data. This is not a problem for small data sets, but it can be a problem for large data sets.</p>
-<p>``</p>
 </section>
 <section id="how-to-make-a-piece-of-data-iterable">
 <h2>How to make a piece of data iterable?<a class="headerlink" href="#how-to-make-a-piece-of-data-iterable" title="Link to this heading">#</a></h2>
@@ -601,7 +636,7 @@ D contains the key 456
 <section id="generator">
 <h2>Generator<a class="headerlink" href="#generator" title="Link to this heading">#</a></h2>
 <p>A generator is a function that incrementally produces values and behaves like an iterator, i.e., at each iteration it generates a single distinct value.</p>
-<p>To make this possible, the generator function exploits the <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement to return a single value to its caller. When no other values can be generated, the generator <code class="docutils literal notranslate"><span class="pre">return</span></code>s the sentinel value <code class="docutils literal notranslate"><span class="pre">None</span></code> to notify the consumer.</p>
+<p>To make this possible, the generator function exploits the <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement to return a single value to its caller. When no other values can be generated, the generator uses a <code class="docutils literal notranslate"><span class="pre">return</span></code> to notify the consumer (NOTE: any function, without an explicit <code class="docutils literal notranslate"><span class="pre">return</span></code>, gets for free a <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code> at its end).</p>
 <p>For instance, we can rewrite <code class="docutils literal notranslate"><span class="pre">my_range</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -615,7 +650,7 @@ D contains the key 456
 </div>
 </div>
 </div>
-<p><strong>NOTE</strong>: the built-in <code class="docutils literal notranslate"><span class="pre">range</span></code> is extremelly flexible and thus its implementation is quite more involved than what we are seeing for <code class="docutils literal notranslate"><span class="pre">my_range</span></code>. Furhtermore, <code class="docutils literal notranslate"><span class="pre">range</span></code> is not technically a generator.</p>
+<p><strong>NOTE</strong>: the built-in <code class="docutils literal notranslate"><span class="pre">range</span></code> is extremelly flexible and thus its implementation is quite more involved than what we are seeing for <code class="docutils literal notranslate"><span class="pre">my_range</span></code>. Furthermore, <code class="docutils literal notranslate"><span class="pre">range</span></code> is not technically a generator.</p>
 </section>
 <section id="generators-are-lazy">
 <h2>Generators are <em>lazy</em><a class="headerlink" href="#generators-are-lazy" title="Link to this heading">#</a></h2>
@@ -637,7 +672,7 @@ Value #2: 2
 </div>
 </div>
 </div>
-<p>However, Python implicitly calls <code class="docutils literal notranslate"><span class="pre">next()</span></code> over a generator when we use the generator as the target of a for loop:</p>
+<p>However, Python implicitly calls <code class="docutils literal notranslate"><span class="pre">next()</span></code> over a generator when we use the generator as the target of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
@@ -675,10 +710,9 @@ Value #2: 2
 <h2>More on the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword<a class="headerlink" href="#more-on-the-yield-keyword" title="Link to this heading">#</a></h2>
 <p>As anticipated, the <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword controls the flow of a generator function:</p>
 <ol class="arabic simple">
-<li><p>it suspends the execution of the generator function and returns a value to
-the caller</p></li>
+<li><p>it suspends the execution of the generator function and returns a value to the caller</p></li>
 <li><p>it remembers the state of its local variables</p></li>
-<li><p>it does not quit the generator function (as return does)</p></li>
+<li><p>it does not quit the generator function (as <code class="docutils literal notranslate"><span class="pre">return</span></code> does)</p></li>
 </ol>
 </section>
 </section>
@@ -692,12 +726,12 @@ the caller</p></li>
 <li><p>is <strong>used</strong> in our code only <strong>once</strong></p></li>
 <li><p>is <strong>passed as an argument</strong> to other functions (see examples later on!)</p></li>
 </ol>
-<p>A lambda function is thus a convenient way of defining a function. Since we plan to define and use it only once, we do not need to give to the function a name. Hence, a lamba function is said to an <strong>anonymous</strong> function.</p>
+<p>A lambda function is a convenient way of defining such a function. Since we plan to define and use it only once, we do not need to give to the function a name. Hence, a lamba function is said to an <strong>anonymous</strong> function.</p>
 <p><strong>NOTE</strong>: you can always use a normal function in the place of a lambda function.</p>
 </section>
 <section id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
-<p>To <em><strong>define</strong></em> a lambda function, the syntax is:</p>
+<p>To <em>define</em> a lambda function, the syntax is:</p>
 <p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> (<em><strong>&lt;ARGS&gt;</strong></em>) <code class="docutils literal notranslate"><span class="pre">:</span></code> <em><strong>&lt;CODE&gt;</strong></em></p>
 <p>where:</p>
 <ul class="simple">
@@ -837,7 +871,7 @@ the caller</p></li>
 </section>
 <section id="use-of-a-lambda-function-filtering">
 <h2>Use of a lambda function: filtering<a class="headerlink" href="#use-of-a-lambda-function-filtering" title="Link to this heading">#</a></h2>
-<p>Suppose we want to keep students with a name starting with <code class="docutils literal notranslate"><span class="pre">'A'</span></code>. We could</p>
+<p>Suppose we want to keep students with a name starting with <code class="docutils literal notranslate"><span class="pre">'A'</span></code>. We could write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">filter_by_a</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
@@ -864,7 +898,7 @@ the caller</p></li>
 <h2>Use of a lambda function: filtering (cont’d)<a class="headerlink" href="#use-of-a-lambda-function-filtering-cont-d" title="Link to this heading">#</a></h2>
 <p>Python offers the function <code class="docutils literal notranslate"><span class="pre">filter</span></code> to filter values from an iterable collection. It takes two arguments:</p>
 <ol class="arabic simple">
-<li><p>A function to be run for each item in the iterable that return <code class="docutils literal notranslate"><span class="pre">True</span></code> when the element must be kept, or <code class="docutils literal notranslate"><span class="pre">False</span></code> when the element should be filtered</p></li>
+<li><p>A function to be run for each item in the iterable that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when the element must be kept, or <code class="docutils literal notranslate"><span class="pre">False</span></code> when the element should be filtered</p></li>
 <li><p>The iterable collection</p></li>
 </ol>
 <p>For the first argument, we may pass a lambda function. For instance:</p>
@@ -1048,7 +1082,7 @@ In other words, an object is an instance of the class <span class="math notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Person object at 0x7ffff2fea9f0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Person object at 0x7d618c3eaea0&gt;
 &lt;class &#39;__main__.Person&#39;&gt;
 </pre></div>
 </div>
@@ -1150,12 +1184,15 @@ Farrah Fowler
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="n">COUNT</span> <span class="o">=</span> <span class="mi">0</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">friends</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+        <span class="n">Person</span><span class="o">.</span><span class="n">COUNT</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">surname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
@@ -1254,33 +1291,319 @@ Hi, my name is Amy Farrah Fowler
 </ul>
 <p>This principle is known as <strong>encapsulation</strong>.</p>
 </section>
-<section id="static-attributes-class-attributes">
-<h2>Static attributes (class attributes)<a class="headerlink" href="#static-attributes-class-attributes" title="Link to this heading">#</a></h2>
+<section id="static-attributes-within-a-class">
+<h2>Static attributes within a class<a class="headerlink" href="#static-attributes-within-a-class" title="Link to this heading">#</a></h2>
 <p>In Python, we can define inside a class, outside any method definition, one or more static attributes. Static attributes are shared among all objects of a class. For instance, we can define a static attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> for the class <code class="docutils literal notranslate"><span class="pre">Person</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="n">CITY</span> <span class="o">=</span> <span class="s1">&#39;Pasadena&#39;</span> <span class="c1"># class attribute, shared by all instances</span>
+    <span class="n">CITY</span> <span class="o">=</span> <span class="s1">&#39;Pasadena&#39;</span> <span class="c1"># static class attribute, shared by all instances</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">city</span> <span class="o">=</span> <span class="n">city</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooper&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">,</span> <span class="s2">&quot;Pasadena&quot;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooper&#39;</span><span class="p">,</span> <span class="s2">&quot;Milan&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">Person</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">city</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">city</span><span class="p">)</span>
 
-<span class="n">Person</span><span class="o">.</span><span class="n">CITY</span> <span class="o">=</span> <span class="s1">&#39;Rome&#39;</span> <span class="c1"># if we change the class attribute</span>
+<span class="n">Person</span><span class="o">.</span><span class="n">city</span> <span class="o">=</span> <span class="s1">&#39;Rome&#39;</span> <span class="c1"># if we change the class attribute</span>
                      <span class="c1"># we change it for all instances</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="n">Person</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">city</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">city</span><span class="p">,</span> <span class="n">Person</span><span class="o">.</span><span class="n">city</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pasadena Pasadena Pasadena
-Rome Rome Rome
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pasadena Milan
+Pasadena Milan Rome
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-messy-situation-of-static-attributes-in-python">
+<h2>The messy situation of static attributes in Python<a class="headerlink" href="#the-messy-situation-of-static-attributes-in-python" title="Link to this heading">#</a></h2>
+<p>A static class attribute in Python behave like a <em>default</em> attribute for all the object instances: when they do not have a object attribute with a given name, Python check if there exists a class attribute with the given name. Hence, if we try to set/update the attribute for a specific object, we are actually creating a new instance attribute that shadows the static attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we access the class attribute using the class name</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>   <span class="c1"># get the class attribute</span>
+<span class="n">Person</span><span class="o">.</span><span class="n">CITY</span> <span class="o">=</span> <span class="s1">&#39;Rome&#39;</span> <span class="c1"># update of the class attribute</span>
+                     <span class="c1"># which affects all instances</span>
+
+<span class="c1"># we access the class attribute using the instance</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>      <span class="c1"># since p1 does not have an object attribute </span>
+                    <span class="c1"># named CITY, we access the class attribute</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">CITY</span> <span class="o">=</span> <span class="s1">&#39;Milan&#39;</span>   <span class="c1"># we create an object attribute named CITY</span>
+                    <span class="c1"># which shadows the class attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>      <span class="c1"># we access the object attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="n">CITY</span><span class="p">)</span>  <span class="c1"># we access the class attribute</span>
+                    <span class="c1"># It is not affected by the object attribute!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pasadena
+Rome
+Milan
+Rome
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-messy-situation-of-static-attributes-in-python-cont-d">
+<h2>The messy situation of static attributes in Python (cont’d)<a class="headerlink" href="#the-messy-situation-of-static-attributes-in-python-cont-d" title="Link to this heading">#</a></h2>
+<p>In our example, we can see that:</p>
+<ol class="arabic simple">
+<li><p>By default, no object has an attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code>. Hence, when we access the attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> for the object <code class="docutils literal notranslate"><span class="pre">p1</span></code>, Python looks for a class attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> and finds it.</p></li>
+<li><p>When we set the attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> for the object <code class="docutils literal notranslate"><span class="pre">p1</span></code>, we are actually creating a new instance attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> for <code class="docutils literal notranslate"><span class="pre">p1</span></code>, which <strong>shadows the class attribute but only within that object</strong>.</p></li>
+<li><p>Hence, we have an object attribute in <code class="docutils literal notranslate"><span class="pre">p1</span></code> called <code class="docutils literal notranslate"><span class="pre">CITY</span></code> and then a static class attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> for all the other objects. <strong>This is quite confusing and error-prone.</strong></p></li>
+</ol>
+<p>To solve such a confusion: always use the class name to access the static attribute.<br>
+For instance, we can access the static attribute <code class="docutils literal notranslate"><span class="pre">CITY</span></code> for the class <code class="docutils literal notranslate"><span class="pre">Person</span></code> using <code class="docutils literal notranslate"><span class="pre">Person.CITY</span></code>. Never use the object name to access the static attribute, otherwise, you may end up creating a new instance attribute that shadows the static attribute, leading to the confusion we have seen.</p>
+</section>
+<section id="making-an-object-iterable">
+<h2>Making an object iterable<a class="headerlink" href="#making-an-object-iterable" title="Link to this heading">#</a></h2>
+<p>We can make an object iterable by defining the <code class="docutils literal notranslate"><span class="pre">__iter__</span></code> method. This method should return an iterator, an auxiliary object (which most of the time is the original object) implementing the <code class="docutils literal notranslate"><span class="pre">__next__</span></code> method. Such auxiliary object should track the current state of the iterator, extracing as needed the data from our original object.</p>
+<p>For instance, we can make a <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class that is iterable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Counter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="n">limit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># The __iter__ method returns the iterator object itself</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># The __next__ method defines what to return for each iteration</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Raising StopIteration tells the loop to stop</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span> <span class="c1"># sentinel value</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="making-an-object-iterable-cont-d">
+<h2>Making an object iterable (cont’d)<a class="headerlink" href="#making-an-object-iterable-cont-d" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="make-an-object-pritable">
+<h2>Make an object pritable<a class="headerlink" href="#make-an-object-pritable" title="Link to this heading">#</a></h2>
+<p>For debugging, it is convenient to <code class="docutils literal notranslate"><span class="pre">print</span></code> an object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="c1"># print the instance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Person object at 0x7d618c218590&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, we get a weird string representation of the object. However, we can customize such a behavior by implementing the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method.</p>
+</section>
+<section id="make-an-object-pritable-cont-d">
+<h2>Make an object pritable (cont’d)<a class="headerlink" href="#make-an-object-pritable-cont-d" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">surname</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Penny&#39;</span><span class="p">,</span> <span class="s1">&#39;Hofstadter&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span> <span class="c1"># now get something more meaningful</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Penny Hofstadter
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="object-identity-and-equivalence">
+<h2>Object identity and equivalence<a class="headerlink" href="#object-identity-and-equivalence" title="Link to this heading">#</a></h2>
+<p>Suppose we have two objects <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> of the class <code class="docutils literal notranslate"><span class="pre">Person</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>They are different objects but they have the same values for the instance variables.</p>
+<p><em>Are they the same person?</em> This is a philosophical question!</p>
+<p>In computer programming, we have typically two distinct concepts:</p>
+<ol class="arabic simple">
+<li><p><em><strong>Object identity</strong></em>: two objects are the <strong>same</strong> object if they are stored at the same memory location.</p></li>
+<li><p><em><strong>Object equivalence</strong></em>: two objects are <strong>equivalent</strong> if they have the same values for their instance variables.</p></li>
+</ol>
+</section>
+<section id="object-identity-and-equivalence-cont-d">
+<h2>Object identity and equivalence (cont’d)<a class="headerlink" href="#object-identity-and-equivalence-cont-d" title="Link to this heading">#</a></h2>
+<p>In Python, we can check if two objects are the <strong>same</strong> object using the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span><span class="p">)</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We get a result that is technically correct: they are two distinct objects. However, most of the time, we want to compare the data within the objects, not the objects themselves. Hence, we are more interested about the <em><strong>equivalence</strong></em> of the objects, not their <em><strong>identity</strong></em>.</p>
+</section>
+<section id="id5">
+<h2>Object identity and equivalence (cont’d)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>In Python, to check the equivalence, we should use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We still get that the objects are not equivalent because Python, by default, does not know how to compare two objects of a custom class. Hence, by default, the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator compares the memory location of the objects, not their data, i.e., it checks the object identity, not the object equivalence.</p>
+<p>Nonetheless, we can define the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method to dictate how two objects of a class should be compared.</p>
+</section>
+<section id="id6">
+<h2>Object identity and equivalence (cont’d)<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">surname</span>
+    
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span> <span class="c1"># True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="copy-and-deep-copy-of-an-object">
+<h2>Copy and deep copy of an object<a class="headerlink" href="#copy-and-deep-copy-of-an-object" title="Link to this heading">#</a></h2>
+<p>To get a copy of an object, we can use the <code class="docutils literal notranslate"><span class="pre">copy</span></code> package:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">phone_numbers</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phone_numbers</span> <span class="o">=</span> <span class="n">phone_numbers</span>
+        
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> \
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">surname</span> \
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">phone_numbers</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">phone_numbers</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Amy&#39;</span><span class="p">,</span> <span class="s1">&#39;Farrah Fowler&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;5678&#39;</span><span class="p">])</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p3</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p3</span><span class="o">.</span><span class="n">surname</span><span class="p">,</span> <span class="n">p3</span><span class="o">.</span><span class="n">phone_numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p3</span> <span class="ow">is</span> <span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p3</span> <span class="o">==</span> <span class="n">p1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amy Farrah Fowler [&#39;1234&#39;, &#39;5678&#39;]
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="copy-and-deep-copy-of-an-object-cont-d">
+<h2>Copy and deep copy of an object (cont’d)<a class="headerlink" href="#copy-and-deep-copy-of-an-object-cont-d" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">copy</span></code> function creates a <em><strong>shallow</strong></em> copy of the object. This means that the object is copied but the instance variables are not. Hence, if the instance variables are mutable, the shallow copy will not create a new copy of the instance variables. For instance, in our example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span><span class="o">.</span><span class="n">phone_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0000&#39;</span> <span class="c1"># we change the phone number of p3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">surname</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">phone_numbers</span><span class="p">)</span> <span class="c1"># p1 is affected!!!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amy Farrah Fowler [&#39;0000&#39;, &#39;5678&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have update the <code class="docutils literal notranslate"><span class="pre">phone_numbers</span></code> also of <code class="docutils literal notranslate"><span class="pre">p1</span></code>. This is because <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> share the same list of phone numbers since <code class="docutils literal notranslate"><span class="pre">phone_number</span></code> is a <code class="docutils literal notranslate"><span class="pre">List</span></code> and a list is mutable. To avoid such a problem, we can use the <strong><code class="docutils literal notranslate"><span class="pre">deepcopy</span></code></strong> function from the <code class="docutils literal notranslate"><span class="pre">copy</span></code> package:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">phone_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1234&#39;</span> <span class="c1"># we fix the phone number of p1</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">phone_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1111&#39;</span> <span class="c1"># we change the phone number of p3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">surname</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">phone_numbers</span><span class="p">)</span> <span class="c1"># p1 is not affected</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amy Farrah Fowler [&#39;1234&#39;, &#39;5678&#39;]
 </pre></div>
 </div>
 </div>
@@ -1288,10 +1611,380 @@ Rome Rome Rome
 </section>
 <section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h2>
-<p>Inheritance is a mechanism that allows a class to inherit the attributes and methods of another class. The class that inherits is called a <em>subclass</em> (or <em>child class</em> or <em>derived class</em>) and the class that is inherited is called a <em>superclass</em> (or <em>parent class</em>). We can thus defined a hierarchy of classes.</p>
+<p>Inheritance is a mechanism that allows a class to inherit the attributes and methods of another class. The class that inherits is called a <em>subclass</em> (or <em>child class</em> or <em>derived class</em>) and the class that is inherited is called a <em>superclass</em> (or <em>parent class</em>). By reapeating such a relantionship, we can thus defined a hierarchy of classes.</p>
 <center>
 <img src="img/Multilevel_Inheritance.jpg">
 </center></section>
+<section id="why-do-we-want-inheritance">
+<h2>Why do we want inheritance?<a class="headerlink" href="#why-do-we-want-inheritance" title="Link to this heading">#</a></h2>
+<p>Suppose we want to define a class <code class="docutils literal notranslate"><span class="pre">Student</span></code>. If we have already a class <code class="docutils literal notranslate"><span class="pre">Person</span></code>, it makes sense to see <code class="docutils literal notranslate"><span class="pre">Student</span></code> as a specialization of <code class="docutils literal notranslate"><span class="pre">Person</span></code>, i.e., <code class="docutils literal notranslate"><span class="pre">Student</span></code> is derived from <code class="docutils literal notranslate"><span class="pre">Person</span></code>, having additional attributes and methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">student_id</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">)</span> <span class="c1"># we need to initialize the parent class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">student_id</span>    <span class="c1"># we initialize the attributes </span>
+                                        <span class="c1"># specific to this class</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that every instance of class <code class="docutils literal notranslate"><span class="pre">Student</span></code> is also an instance of class <code class="docutils literal notranslate"><span class="pre">Person</span></code>.</p>
+</section>
+<section id="is-a-relation">
+<h2><em>is-a</em> relation<a class="headerlink" href="#is-a-relation" title="Link to this heading">#</a></h2>
+<p>In our example, we have built an <em>is-a</em> relation between students and persons (because a student <em>is-a</em> person), and we have modeled this relation in our Python program by making <code class="docutils literal notranslate"><span class="pre">Student</span></code> a subclass of <code class="docutils literal notranslate"><span class="pre">Person</span></code>. In Python, we can check an <em>is-a</em> relation using the built-in <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooper&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Student&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">surname</span><span class="p">,</span> <span class="s2">&quot;with matricola&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">student_id</span><span class="p">,</span> <span class="s2">&quot;is a Person&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Student Sheldon Cooper with matricola 1234 is a Person
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that, in general, it is not true that a <code class="docutils literal notranslate"><span class="pre">Person</span></code> is a <code class="docutils literal notranslate"><span class="pre">Student</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Francesco&#39;</span><span class="p">,</span> <span class="s1">&#39;Totti&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Student</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">surname</span><span class="p">,</span> <span class="s2">&quot;is not a Student&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Person Francesco Totti is not a Student
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="benefit-of-inheritance-code-reuse">
+<h2>Benefit of inheritance: code reuse<a class="headerlink" href="#benefit-of-inheritance-code-reuse" title="Link to this heading">#</a></h2>
+<p>Besides establishing a relantionship between our data types, inheritance allows us to reuse the code of the superclass. For instance, we can define a class <code class="docutils literal notranslate"><span class="pre">Student</span></code> that inherits from <code class="docutils literal notranslate"><span class="pre">Person</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="n">surname</span>
+    
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">surname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">student_id</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">student_id</span>
+        
+<span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooper&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span> <span class="c1"># we reuse the method of the parent class</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, my name is Sheldon Cooper
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-child-class-can-override-parent-methods">
+<h2>A child class can override parent methods<a class="headerlink" href="#a-child-class-can-override-parent-methods" title="Link to this heading">#</a></h2>
+<p>In our example, it could make sense to provide a specialized <code class="docutils literal notranslate"><span class="pre">greet</span></code> for a <code class="docutils literal notranslate"><span class="pre">Student</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">student_id</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">student_id</span>
+    
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">surname</span><span class="si">}</span><span class="s2">, and my student ID is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">student_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+<span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Sheldon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cooper&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span> <span class="c1"># we reuse the method of the parent class</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, my name is Sheldon Cooper, and my student ID is 1234
+</pre></div>
+</div>
+</div>
+</div>
+<p>Broadly speaking, in computer programming, the idea of having the same method (e.g., <code class="docutils literal notranslate"><span class="pre">greet</span></code>) with different behaviors depending on the object type is known as <em><strong>polymorphism</strong></em>. In particular, <em>method overriding</em> is a form of polymorphism.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="decorators">
+<h1>Decorators<a class="headerlink" href="#decorators" title="Link to this heading">#</a></h1>
+<section id="function-decorators">
+<h2>Function decorators<a class="headerlink" href="#function-decorators" title="Link to this heading">#</a></h2>
+<p>A function decorator wraps a function, modifying its behaviour. Visually:</p>
+<center>
+<img src="img/decorator.png">
+</center></section>
+<section id="why-do-need-to-be-aware-of-decorators">
+<h2>Why do need to be aware of decorators?<a class="headerlink" href="#why-do-need-to-be-aware-of-decorators" title="Link to this heading">#</a></h2>
+<p>The community provides a lot of decorators that can be used to improve our code. We get a lot of functionalities for free.</p>
+<p>For instance:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;cache</span></code> to cache the results of a function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;log</span></code> to log the input and output of a function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;timeit</span></code> to measure the execution time of a function</p></li>
+</ol>
+<p>Let us see them in action.</p>
+</section>
+<section id="decorators-in-action-cache">
+<h2>Decorators in action: <code class="docutils literal notranslate"><span class="pre">&#64;cache</span></code><a class="headerlink" href="#decorators-in-action-cache" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;cache</span></code> decorator caches the results of a function. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="nd">@functools</span><span class="o">.</span><span class="n">cache</span>
+<span class="k">def</span> <span class="nf">compute_something</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computing something of&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="c1"># not a very useful computation</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Run #0:&quot;</span><span class="p">,</span> <span class="n">compute_something</span><span class="p">(</span><span class="mi">500000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Run #1:&quot;</span><span class="p">,</span> <span class="n">compute_something</span><span class="p">(</span><span class="mi">500000</span><span class="p">))</span> <span class="c1"># the result is cached</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computing something of 500000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run #0: 0
+Run #1: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The second call to <code class="docutils literal notranslate"><span class="pre">compute_something(500000)</span></code> is much faster than the first call because the result is cached. If you try with a large value of <code class="docutils literal notranslate"><span class="pre">n</span></code> and slow function implementartion, you will see a significant difference in the execution time.</p>
+</section>
+<section id="decorators-in-action-timeit">
+<h2>Decorators in action: <code class="docutils literal notranslate"><span class="pre">&#64;timeit</span></code><a class="headerlink" href="#decorators-in-action-timeit" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the definition of the decorator</span>
+<span class="c1"># but you can get it from several packages</span>
+<span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">timed</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">time</span>
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;func:</span><span class="si">%r</span><span class="s1"> args:[</span><span class="si">%r</span><span class="s1">, </span><span class="si">%r</span><span class="s1">] took: </span><span class="si">%2.4f</span><span class="s1"> sec&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">ts</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">timed</span>
+
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">compute_something</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computing something of&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="c1"># not a very useful computation</span>
+
+<span class="n">compute_something</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">compute_something</span><span class="p">(</span><span class="mi">500000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computing something of 1
+func:&#39;compute_something&#39; args:[(1,), {}] took: 0.0000 sec
+Computing something of 500000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>func:&#39;compute_something&#39; args:[(500000,), {}] took: 0.4526 sec
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="parallelism">
+<h1>Parallelism<a class="headerlink" href="#parallelism" title="Link to this heading">#</a></h1>
+<section id="how-does-a-computer-execute-code">
+<h2>How does a computer execute code?<a class="headerlink" href="#how-does-a-computer-execute-code" title="Link to this heading">#</a></h2>
+<p>The code of a program is executed by a CPU. A CPU has one or more cores, each of which can execute a single instruction at a time.</p>
+<p>How can make our code run faster?</p>
+</section>
+<section id="more-transistors-more-speed-20-years-ago">
+<h2>More transistors, more speed (20 years ago)<a class="headerlink" href="#more-transistors-more-speed-20-years-ago" title="Link to this heading">#</a></h2>
+<p>Moore’s Law (1965) states that the number of transistors on a microchip doubles about every two years with a minimal cost increase.</p>
+<p>For a long time, <strong>more transistors meant more speed</strong>.</p>
+<center>
+<img src="img/moore.png" width="600">
+</center></section>
+<section id="free-lunch-is-over-more-transistors-more-cores">
+<h2>Free lunch is over: more transistors, more cores<a class="headerlink" href="#free-lunch-is-over-more-transistors-more-cores" title="Link to this heading">#</a></h2>
+<p>In the past, we could rely on the fact that the CPU speed would double every two years. This is no longer the case. The CPU speed has not increased significantly in the last decade. Instead, the <strong>number of cores has increased</strong>. The problem is that <strong>most of the software is not designed to take advantage of multiple cores</strong>.</p>
+<center>
+<img src="img/moore.png" width="600">
+</center></section>
+<section id="a-python-program-likely-uses-a-single-core">
+<h2>A Python program likely uses a single core<a class="headerlink" href="#a-python-program-likely-uses-a-single-core" title="Link to this heading">#</a></h2>
+<p>Most Python code is designed to run on a single core. Up to now, we have we have written code that runs on a single core.
+Besides technical reasons, the main problem is that writing code that works on different cores is complex and error-prone. For instance:</p>
+<ol class="arabic simple">
+<li><p>How do we split a larger task into multiple subtasks?</p></li>
+<li><p>How do we synchronize the subtasks?</p></li>
+<li><p>How do we collect the results?</p></li>
+</ol>
+<p>These problems are not easy to solve. After 50 years, there is still no general solution to these problems. In other words, we cannot take a traditional program designed to run over a single core and make it run over multiple cores without rewriting it.</p>
+</section>
+<section id="parallelism-in-python">
+<h2>Parallelism in Python<a class="headerlink" href="#parallelism-in-python" title="Link to this heading">#</a></h2>
+<p>There are several ways to write parallel code in Python. The most common ways are:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">threading</span></code></strong>: the <code class="docutils literal notranslate"><span class="pre">threading</span></code> module allows us to run multiple <em><strong>threads</strong></em> within a single process. Different threads can easily share data. However, due to the Global Interpreter Lock (GIL), Python threads are not suitable for CPU-bound tasks. We will not cover this module.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code></strong>: the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module allows us to run multiple processes. Each process has its own memory space and runs in its own memory space. Hence, sharing data is expensive. This is suitable for CPU-bound tasks.</p></li>
+</ol>
+</section>
+<section id="a-small-cpu-intensive-task">
+<h2>A small cpu-intensive task<a class="headerlink" href="#a-small-cpu-intensive-task" title="Link to this heading">#</a></h2>
+<p>Let us consider a syntetic CPU-intensive task: executing 2 times <code class="docutils literal notranslate"><span class="pre">compute_something(2500000)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">compute_something</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="c1"># not a very useful computation</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">compute_something</span><span class="p">(</span><span class="mi">2500000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elapsed time:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 4.976207971572876 seconds
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiprocessing-module-running-a-function-in-parallel">
+<h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: running a function in parallel<a class="headerlink" href="#multiprocessing-module-running-a-function-in-parallel" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">compute_something</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="c1"># not a very useful computation</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">2500000</span><span class="p">,))</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">2500000</span><span class="p">,))</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">(),</span> <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()]</span> <span class="c1"># wait for the process to finish</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elapsed time:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 2.9111924171447754 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<p>On my machine, when using of 2 processes, the execution time is <em>almost</em> halved.</p>
+</section>
+<section id="multiprocessing-module-work-assignment">
+<h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: work assignment<a class="headerlink" href="#multiprocessing-module-work-assignment" title="Link to this heading">#</a></h2>
+<p>What if we have more task than processes?</p>
+<p><code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code> allows us to create a pool of processes. We can then assign tasks to the pool. The pool will take care of assigning the tasks to the processes.</p>
+<p>For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">compute_something</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="c1"># not a very useful computation</span>
+
+<span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2500000</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">]</span> <span class="c1"># we want to compute the same thing three times</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1561361386212, 1561361386212, 1561361386212]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiprocessing-module-issues-about-sharing-data">
+<h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: issues about sharing data<a class="headerlink" href="#multiprocessing-module-issues-about-sharing-data" title="Link to this heading">#</a></h2>
+<p>The processes do not share memory. By default, <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> takes care of:</p>
+<ol class="arabic simple">
+<li><p>Transfering the data related to arguments (in our example: <code class="docutils literal notranslate"><span class="pre">n=2500000</span></code>)</p></li>
+<li><p>Transfering the data related to the return value (in our example: <code class="docutils literal notranslate"><span class="pre">r</span></code>)</p></li>
+</ol>
+<p>These operations can be expensive when the data to move around is large. Depending on what we are doing, we may find a way to avoid such a data transfer. For instance, when our function needs to process a file and compute the results, instead of passing the data of the file and get back the data of the processed file, we can just read and write the file from the disk and pass to the function only the file name.</p>
+</section>
+<section id="multiprocessing-module-issues-about-sharing-data-cont-d">
+<h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: issues about sharing data (cont’d)<a class="headerlink" href="#multiprocessing-module-issues-about-sharing-data-cont-d" title="Link to this heading">#</a></h2>
+<p>There are several cases when we would like to share data between processes. For instance, we may want to share a large dataset between processes. In such cases, we can use the <code class="docutils literal notranslate"><span class="pre">multiprocessing.Manager</span></code> class to data structures (such as lists) that are shared. However, sharing data is expensive and should be avoided when possible.</p>
+<p>For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">compute_something</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">index</span><span class="p">]):</span> <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">l</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+
+<span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Manager</span><span class="p">()</span> <span class="k">as</span> <span class="n">manager</span><span class="p">:</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">list</span><span class="p">()</span> <span class="c1"># create a shared list</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2500000</span><span class="p">)</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2500000</span><span class="p">)</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1561361386212, 1561361386212]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1389,8 +2082,44 @@ Rome Rome Rome
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-attributes-can-be-updated-cont-d">Object attributes can be updated (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation-cont-d">Encapsulation (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-attributes-class-attributes">Static attributes (class attributes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-attributes-within-a-class">Static attributes within a class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-messy-situation-of-static-attributes-in-python">The messy situation of static attributes in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-messy-situation-of-static-attributes-in-python-cont-d">The messy situation of static attributes in Python (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-an-object-iterable">Making an object iterable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-an-object-iterable-cont-d">Making an object iterable (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-an-object-pritable">Make an object pritable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-an-object-pritable-cont-d">Make an object pritable (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity-and-equivalence">Object identity and equivalence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity-and-equivalence-cont-d">Object identity and equivalence (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Object identity and equivalence (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Object identity and equivalence (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-and-deep-copy-of-an-object">Copy and deep copy of an object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-and-deep-copy-of-an-object-cont-d">Copy and deep copy of an object (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-want-inheritance">Why do we want inheritance?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-a-relation"><em>is-a</em> relation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefit-of-inheritance-code-reuse">Benefit of inheritance: code reuse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-child-class-can-override-parent-methods">A child class can override parent methods</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators">Decorators</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-decorators">Function decorators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-need-to-be-aware-of-decorators">Why do need to be aware of decorators?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators-in-action-cache">Decorators in action: <code class="docutils literal notranslate"><span class="pre">@cache</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators-in-action-timeit">Decorators in action: <code class="docutils literal notranslate"><span class="pre">@timeit</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism">Parallelism</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-computer-execute-code">How does a computer execute code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-transistors-more-speed-20-years-ago">More transistors, more speed (20 years ago)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-lunch-is-over-more-transistors-more-cores">Free lunch is over: more transistors, more cores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-python-program-likely-uses-a-single-core">A Python program likely uses a single core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism-in-python">Parallelism in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-small-cpu-intensive-task">A small cpu-intensive task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-running-a-function-in-parallel"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: running a function in parallel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-work-assignment"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: work assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-issues-about-sharing-data"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: issues about sharing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-module-issues-about-sharing-data-cont-d"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module: issues about sharing data (cont’d)</a></li>
 </ul>
 </li>
 </ul>
